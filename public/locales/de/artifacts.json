@@ -1,0 +1,46 @@
+{
+    "a_name" : "Name",
+    "a_rarities" : "Raritäten",
+    "a_twoPiecesBonus" : "2-Teile-Bonus",
+    "a_fourPiecesBonus" : "4-Teile-Bonus",
+
+    "a_flower" : "Blume des Lebens",
+    "a_plume" : "Feder des Todes",
+    "a_sands" : "Sand der Zeit",
+    "a_goblet" : "Kelch der Leere",
+    "a_circlet" : "Haarreif der Vernunft",
+
+    "a_rarity" : "Seltenheit",
+
+    "a_1star" : "1 Stern",
+    "a_2star" : "2 Stern",
+    "a_3star" : "3 Stern",
+    "a_4star" : "4 Stern",
+    "a_5star" : "5 Stern",
+
+    "a_onePieceBonusDots" : "1 Stück Bonus:",
+    "a_twoPiecesBonusDots" : "2-Teile-Bonus:",
+    "a_fourPiecesBonusDots" : "4-Teile-Bonus:",
+
+    "a_mainStats" : "Hauptstatistik",
+    "a_subStats" : "Unterstatistiken",
+
+    "a_healthFlat" : "LP",
+    "a_healthPercent" : "LP%",
+    "a_attackFlat" : "ANG",
+    "a_attackPercent" : "ANG%",
+    "a_defenceFlat" : "VTD",
+    "a_defencePercent" : "VTD%",
+    "a_energyRechargePercent" : "Aufladerate%",
+    "a_elementalMastery" : "Elementarkunde",
+    "a_elementalDamagePercent" : "SCH-Bonus (Elemental)%",
+    "a_physicalDamagePercent" : "Physischer SCH-Bonus%",
+    "a_critRatePercent" : "KT%",
+    "a_critDamagePercent" : "KSCH%",
+    "a_critAdditionalHealingPercent" : "Heilungsbonus%",
+
+    "a_tier" : "Ebene"
+
+
+
+}

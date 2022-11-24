@@ -1,0 +1,46 @@
+{
+    "a_name" : "Nome",
+    "a_rarities" : "raridades",
+    "a_twoPiecesBonus" : "Bônus de 2 peças",
+    "a_fourPiecesBonus" : "Bônus de 4 peças",
+
+    "a_flower" : "Flor da Vida",
+    "a_plume" : "Pluma da Morte",
+    "a_sands" : "Areia do Tempo",
+    "a_goblet" : "Cálice de Erátema",
+    "a_circlet" : "Tiara de Logos",
+
+    "a_rarity" : "Raridade",
+
+    "a_1star" : "1 estrela",
+    "a_2star" : "2 estrelas",
+    "a_3star" : "3 estrelas",
+    "a_4star" : "4 estrelas",
+    "a_5star" : "5 estrelas",
+
+    "a_onePieceBonusDots" : "Bônus de 1 peça:",
+    "a_twoPiecesBonusDots" : "Bônus de 2 peças:",
+    "a_fourPiecesBonusDots" : "Bônus de 4 peças:",
+
+    "a_mainStats" : "Estatísticas principais",
+    "a_subStats" : "subestatísticas",
+
+    "a_healthFlat" : "Vida",
+    "a_healthPercent" : "Vida%",
+    "a_attackFlat" : "ATQ",
+    "a_attackPercent" : "ATQ%",
+    "a_defenceFlat" : "DEF",
+    "a_defencePercent" : "DEF%",
+    "a_energyRechargePercent" : "Recarga de Energia%",
+    "a_elementalMastery" : "Proficiência Elemental",
+    "a_elementalDamagePercent" : "Adição de Dano (Elemental)%",
+    "a_physicalDamagePercent" : "Bônus de Dano Físico%",
+    "a_critRatePercent" : "Taxa Crítica%",
+    "a_critDamagePercent" : "Dano Crítico%",
+    "a_critAdditionalHealingPercent" : "Bônus de Cura%",
+
+    "a_tier" : "Camada"
+
+
+
+}

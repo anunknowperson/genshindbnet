@@ -1,0 +1,25 @@
+{
+    "h_characters" : "キャラクター",
+    "h_tierlist" : "ティア一覧",
+    "h_map" : "インタラクティブ マップ",
+    "h_database" : "データベース",
+    "h_artifacts" : "アーティファクト",
+    "h_weapons" : "兵器",
+    "h_elements" : "要素",
+
+    "table_search" : "任意のフィールドで検索",
+
+    "e_filter" : "炎|水|雷|氷|草|風|岩",
+
+    "e_pyro" : "炎",
+    "e_hydro" : "水",
+    "e_electro" : "雷",
+    "e_cryo" : "氷",
+    "e_dendro" : "草",
+    "e_anemo" : "風",
+    "e_geo" : "岩",
+
+    "f_about" : "原神DBは原神インパクトゲームのキャラクター図鑑とデータベースのサイトです。",
+    "f_policy" : "プライバシーポリシー"
+    
+}

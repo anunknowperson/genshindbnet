@@ -1,0 +1,43 @@
+{
+    "a_name" : "Имя",
+    "a_rarities" : "Редкость",
+    "a_twoPiecesBonus" : "Бонус 2-х предметов",
+    "a_fourPiecesBonus" : "Бонус 4-x предметов",
+
+    "a_flower" : "Цветок жизни",
+    "a_plume" : "Перо смерти",
+    "a_sands" : "Пески времени",
+    "a_goblet" : "Кубок пространства",
+    "a_circlet" : "Корона разума",
+
+    "a_rarity" : "Редкость",
+
+    "a_1star" : "1 Звезда",
+    "a_2star" : "2 Звезды",
+    "a_3star" : "3 Звезды",
+    "a_4star" : "4 Звезды",
+    "a_5star" : "5 Звёзд",
+
+    "a_onePieceBonusDots" : "Бонус 1-х предмета:",
+    "a_twoPiecesBonusDots" : "Бонус 2-х предметов:",
+    "a_fourPiecesBonusDots" : "Бонус 4-х предметов",
+
+    "a_mainStats" : "Основные характеристики",
+    "a_subStats" : "Дополнительные характеристики",
+
+    "a_healthFlat" : "HP",
+    "a_healthPercent" : "HP%",
+    "a_attackFlat" : "Сила Атаки",
+    "a_attackPercent" : "Сила Атаки%",
+    "a_defenceFlat" : "Защита",
+    "a_defencePercent" : "Защита%",
+    "a_energyRechargePercent" : "Восстановление энергии%",
+    "a_elementalMastery" : "Мастерство стихий",
+    "a_elementalDamagePercent" : "Бонус эл. урона%",
+    "a_physicalDamagePercent" : "Бонус физ. урона%",
+    "a_critRatePercent" : "Крит. шанс%",
+    "a_critDamagePercent" : "Крит. урон%",
+    "a_critAdditionalHealingPercent" : "Бонус лечения%",
+
+    "a_tier" : "Тир"
+}

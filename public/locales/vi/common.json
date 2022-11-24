@@ -1,0 +1,25 @@
+{
+    "h_characters" : "Nhân vật",
+    "h_tierlist" : "Danh sách cấp bậc",
+    "h_map" : "Bản đồ tương tác",
+    "h_database" : "Cơ sở dữ liệu",
+    "h_artifacts" : "Hiện vật",
+    "h_weapons" : "Vũ khí",
+    "h_elements" : "Yếu tố",
+
+    "table_search" : "Tìm kiếm theo bất kỳ trường nào",
+
+    "e_filter" : "Hỏa|Thủy|Lôi|Băng|Thảo|Phong|Nham",
+
+    "e_pyro" : "hỏa",
+    "e_hydro" : "thủy",
+    "e_electro" : "lôi",
+    "e_cryo" : "băng",
+    "e_dendro" : "thảo",
+    "e_anemo" : "phong",
+    "e_geo" : "nham",
+
+    "f_about" : "Genshin DB là một trang web có hướng dẫn nhân vật và cơ sở dữ liệu cho trò chơi Genshin Impact.",
+    "f_policy" : "Chính sách bảo mật"
+    
+}

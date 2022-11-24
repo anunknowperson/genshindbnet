@@ -1,0 +1,46 @@
+{
+    "a_name" : "Nom",
+    "a_rarities" : "Raretés",
+    "a_twoPiecesBonus" : "Bonus 2 pièces",
+    "a_fourPiecesBonus" : "Bonus 4 pièces",
+
+    "a_flower" : "Fleur de la vie",
+    "a_plume" : "Plume de la mort",
+    "a_sands" : "Sables du temps",
+    "a_goblet" : "Coupe d'éonothème",
+    "a_circlet" : "Diadème de Logos",
+
+    "a_rarity" : "Rareté",
+
+    "a_1star" : "1 étoile",
+    "a_2star" : "2 étoiles",
+    "a_3star" : "3 étoiles",
+    "a_4star" : "4 étoiles",
+    "a_5star" : "5 étoiles",
+
+    "a_onePieceBonusDots" : "Bonus 1 pièce:",
+    "a_twoPiecesBonusDots" : "Bonus 2 pièces:",
+    "a_fourPiecesBonusDots" : "Bonus 4 pièces:",
+
+    "a_mainStats" : "Statistiques principales",
+    "a_subStats" : "Sous-statistiques",
+
+    "a_healthFlat" : "PV",
+    "a_healthPercent" : "PV%",
+    "a_attackFlat" : "ATQ",
+    "a_attackPercent" : "ATQ%",
+    "a_defenceFlat" : "DÉF",
+    "a_defencePercent" : "DÉF%",
+    "a_energyRechargePercent" : "Recharge d'énergie%",
+    "a_elementalMastery" : "Maîtrise élémentaire",
+    "a_elementalDamagePercent" : "Bonus de DGT (Elemental)%",
+    "a_physicalDamagePercent" : "Bonus de DGT physiques%",
+    "a_critRatePercent" : "Taux CRIT%",
+    "a_critDamagePercent" : "DGT CRIT%",
+    "a_critAdditionalHealingPercent" : "Bonus de soins%",
+
+    "a_tier" : "Étage"
+
+
+
+}

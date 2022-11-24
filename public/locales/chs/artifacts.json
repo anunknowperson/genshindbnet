@@ -1,0 +1,46 @@
+{
+    "a_name" : "姓名",
+    "a_rarities" : "珍品",
+    "a_twoPiecesBonus" : "2 件套",
+    "a_fourPiecesBonus" : "4 件套",
+
+    "a_flower" : "生之花",
+    "a_plume" : "死之羽",
+    "a_sands" : "时之沙",
+    "a_goblet" : "空之杯",
+    "a_circlet" : "理之冠",
+
+    "a_rarity" : "稀有度",
+
+    "a_1star" : "1星",
+    "a_2star" : "2星",
+    "a_3star" : "3星",
+    "a_4star" : "4星",
+    "a_5star" : "5星",
+
+    "a_onePieceBonusDots" : "1 件奖励：",
+    "a_twoPiecesBonusDots" : "2 件奖励：",
+    "a_fourPiecesBonusDots" : "4 件奖励：",
+
+    "a_mainStats" : "主要数据",
+    "a_subStats" : "子统计",
+
+    "a_healthFlat" : "生命值",
+    "a_healthPercent" : "生命值%",
+    "a_attackFlat" : "攻击力",
+    "a_attackPercent" : "攻击力%",
+    "a_defenceFlat" : "防御力",
+    "a_defencePercent" : "防御力%",
+    "a_energyRechargePercent" : "元素充能效率%",
+    "a_elementalMastery" : "元素精通",
+    "a_elementalDamagePercent" : "伤害增加  (Elemental)%",
+    "a_physicalDamagePercent" : "物理伤害加成%",
+    "a_critRatePercent" : "暴击率%",
+    "a_critDamagePercent" : "暴击伤害%",
+    "a_critAdditionalHealingPercent" : "治疗加成%",
+
+    "a_tier" : "等级"
+
+
+
+}

@@ -1,0 +1,46 @@
+{
+    "a_name" : "Tên",
+    "a_rarities" : "độ hiếm",
+    "a_twoPiecesBonus" : "Tiền thưởng 2 mảnh",
+    "a_fourPiecesBonus" : "Tiền thưởng 4 mảnh",
+
+    "a_flower" : "Hoa Sự Sống",
+    "a_plume" : "Lông Vũ Tử Vong",
+    "a_sands" : "Cát Thời Gian",
+    "a_goblet" : "Ly Không Gian",
+    "a_circlet" : "Nón Lý Trí",
+
+    "a_rarity" : "việc hiếm có",
+
+    "a_1star" : "1 sao",
+    "a_2star" : "2 sao",
+    "a_3star" : "3 sao",
+    "a_4star" : "4 sao",
+    "a_5star" : "5 sao",
+
+    "a_onePieceBonusDots" : "Tiền thưởng 1 mảnh:",
+    "a_twoPiecesBonusDots" : "Phần thưởng 2 mảnh:",
+    "a_fourPiecesBonusDots" : "Phần thưởng 4 mảnh:",
+
+    "a_mainStats" : "số liệu thống kê chính",
+    "a_subStats" : "số liệu thống kê phụ",
+
+    "a_healthFlat" : "HP",
+    "a_healthPercent" : "HP%",
+    "a_attackFlat" : "Tấn Công",
+    "a_attackPercent" : "Tấn Công%",
+    "a_defenceFlat" : "Phòng Ngự",
+    "a_defencePercent" : "Phòng Ngự%",
+    "a_energyRechargePercent" : "Hiệu Quả Nạp Nguyên Tố%",
+    "a_elementalMastery" : "Tinh Thông Nguyên Tố",
+    "a_elementalDamagePercent" : "Tăng Sát Thương (Elemental)%",
+    "a_physicalDamagePercent" : "Tăng Sát Thương Vật Lý%",
+    "a_critRatePercent" : "Tỷ Lệ Bạo Kích%",
+    "a_critDamagePercent" : "ST Bạo Kích%",
+    "a_critAdditionalHealingPercent" : "Tăng Trị Liệu%",
+
+    "a_tier" : "Tầng"
+
+
+
+}

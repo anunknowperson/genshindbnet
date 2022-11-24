@@ -1,0 +1,25 @@
+{
+    "h_characters" : "Karakter",
+    "h_tierlist" : "Daftar Tingkat",
+    "h_map" : "Peta Interaktif",
+    "h_database" : "Basis data",
+    "h_artifacts" : "Artefak",
+    "h_weapons" : "Senjata",
+    "h_elements" : "Elemen",
+
+    "table_search" : "Cari berdasarkan bidang apa pun",
+
+    "e_filter" : "Pyro|Hydro|Electro|Cryo|Dendro|Anemo|Geo",
+
+    "e_pyro" : "pyro",
+    "e_hydro" : "hydro",
+    "e_electro" : "electro",
+    "e_cryo" : "cryo",
+    "e_dendro" : "dendro",
+    "e_anemo" : "anemo",
+    "e_geo" : "geo",
+
+    "f_about" : "Genshin DB adalah situs dengan panduan karakter dan database untuk game Genshin Impact.",
+    "f_policy" : "Kebijakan pribadi"
+    
+}

@@ -1,0 +1,25 @@
+{
+    "h_characters" : "캐릭터",
+    "h_tierlist" : "계층 목록",
+    "h_map" : "인터랙티브 지도",
+    "h_database" : "데이터 베이스",
+    "h_artifacts" : "유물",
+    "h_weapons" : "무기",
+    "h_elements" : "집단",
+
+    "table_search" : "임의의 필드로 검색",
+
+    "e_filter" : "불|물|번개|얼음|풀|바람|바위",
+
+    "e_pyro" : "불",
+    "e_hydro" : "물",
+    "e_electro" : "번개",
+    "e_cryo" : "얼음",
+    "e_dendro" : "풀",
+    "e_anemo" : "바람",
+    "e_geo" : "바위",
+
+    "f_about" : "Genshin DB는 Genshin Impact 게임의 캐릭터 가이드 및 데이터베이스가 있는 사이트입니다.",
+    "f_policy" : "개인 정보 정책"
+    
+}

@@ -1,0 +1,46 @@
+{
+    "a_name" : "名前",
+    "a_rarities" : "レアリティ",
+    "a_twoPiecesBonus" : "2ピースボーナス",
+    "a_fourPiecesBonus" : "4ピースボーナス",
+
+    "a_flower" : "生の花",
+    "a_plume" : "死の羽",
+    "a_sands" : "時の砂",
+    "a_goblet" : "空の杯",
+    "a_circlet" : "理の冠",
+
+    "a_rarity" : "レアリティ",
+
+    "a_1star" : "1つ星",
+    "a_2star" : "2つ星",
+    "a_3star" : "3つ星",
+    "a_4star" : "4つ星",
+    "a_5star" : "5つ星",
+
+    "a_onePieceBonusDots" : "1 ピース ボーナス:",
+    "a_twoPiecesBonusDots" : "2 ピース ボーナス:",
+    "a_fourPiecesBonusDots" : "4点ボーナス:",
+
+    "a_mainStats" : "主な統計",
+    "a_subStats" : "サブ統計",
+
+    "a_healthFlat" : "HP",
+    "a_healthPercent" : "HP%",
+    "a_attackFlat" : "攻撃力",
+    "a_attackPercent" : "攻撃力%",
+    "a_defenceFlat" : "防御力",
+    "a_defencePercent" : "防御力%",
+    "a_energyRechargePercent" : "元素チャージ効率%",
+    "a_elementalMastery" : "元素熟知",
+    "a_elementalDamagePercent" : "ダメージ増加 (Elemental)%",
+    "a_physicalDamagePercent" : "物理ダメージ%",
+    "a_critRatePercent" : "会心率%",
+    "a_critDamagePercent" : "会心ダメージ%",
+    "a_critAdditionalHealingPercent" : "与える治療効果%",
+
+    "a_tier" : "ティア"
+
+
+
+}

@@ -1,0 +1,46 @@
+{
+    "a_name" : "ชื่อ",
+    "a_rarities" : "หายาก",
+    "a_twoPiecesBonus" : "โบนัส 2 ชิ้น",
+    "a_fourPiecesBonus" : "โบนัส 4 ชิ้น",
+
+    "a_flower" : "Flower of Life",
+    "a_plume" : "Plume of Death",
+    "a_sands" : "Sands of Eon",
+    "a_goblet" : "Goblet of Eonothem",
+    "a_circlet" : "Circlet of Logos",
+
+    "a_rarity" : "หายาก",
+
+    "a_1star" : "1 ดาว",
+    "a_2star" : "2 ดาว",
+    "a_3star" : "3 ดาว",
+    "a_4star" : "4 ดาว",
+    "a_5star" : "5 ดาว",
+
+    "a_onePieceBonusDots" : "โบนัส 1 ชิ้น:",
+    "a_twoPiecesBonusDots" : "โบนัส 2 ชิ้น:",
+    "a_fourPiecesBonusDots" : "โบนัส 4 ชิ้น:",
+
+    "a_mainStats" : "สถิติหลัก",
+    "a_subStats" : "สถิติย่อย",
+
+    "a_healthFlat" : "พลังชีวิต",
+    "a_healthPercent" : "พลังชีวิต%",
+    "a_attackFlat" : "พลังโจมตี",
+    "a_attackPercent" : "พลังโจมตี%",
+    "a_defenceFlat" : "พลังป้องกัน",
+    "a_defencePercent" : "พลังป้องกัน%",
+    "a_energyRechargePercent" : "การฟื้นฟูพลังงาน%",
+    "a_elementalMastery" : "ความชำนาญธาตุ",
+    "a_elementalDamagePercent" : "โบนัสความเสียหาย (Elemental)%",
+    "a_physicalDamagePercent" : "โบนัสความเสียหายกายภาพ%",
+    "a_critRatePercent" : "อัตราคริ%",
+    "a_critDamagePercent" : "ความแรงคริ%",
+    "a_critAdditionalHealingPercent" : "โบนัสการรักษา%",
+
+    "a_tier" : "ชั้น"
+
+
+
+}

@@ -1,0 +1,46 @@
+{
+    "a_name" : "Nombre",
+    "a_rarities" : "Rarezas",
+    "a_twoPiecesBonus" : "Bono de 2 piezas",
+    "a_fourPiecesBonus" : "Bono de 4 piezas",
+
+    "a_flower" : "Flor de la Vida",
+    "a_plume" : "Pluma de la Muerte",
+    "a_sands" : "Arenas del Eon",
+    "a_goblet" : "Cáliz de Eonothem",
+    "a_circlet" : "Tiara de Logos",
+
+    "a_rarity" : "Rareza",
+
+    "a_1star" : "1 estrella",
+    "a_2star" : "2 estrellas",
+    "a_3star" : "3 estrellas",
+    "a_4star" : "4 estrellas",
+    "a_5star" : "5 estrellas",
+
+    "a_onePieceBonusDots" : "Bono de 1 pieza:",
+    "a_twoPiecesBonusDots" : "Bono de 2 piezas:",
+    "a_fourPiecesBonusDots" : "Bono de 4 piezas:",
+
+    "a_mainStats" : "Estadísticas principales",
+    "a_subStats" : "Estadísticas secundarias",
+
+    "a_healthFlat" : "Vida",
+    "a_healthPercent" : "Vida%",
+    "a_attackFlat" : "ATQ",
+    "a_attackPercent" : "ATQ%",
+    "a_defenceFlat" : "DEF",
+    "a_defencePercent" : "DEF%",
+    "a_energyRechargePercent" : "Recarga de Energía%",
+    "a_elementalMastery" : "Maestría Elemental",
+    "a_elementalDamagePercent" : "Bono de Daño (Elemental)%",
+    "a_physicalDamagePercent" : "Bono de Daño Físico%",
+    "a_critRatePercent" : "Prob. CRIT%",
+    "a_critDamagePercent" : "Daño CRIT%",
+    "a_critAdditionalHealingPercent" : "Bono de Curación%",
+
+    "a_tier" : "Nivel"
+
+
+
+}

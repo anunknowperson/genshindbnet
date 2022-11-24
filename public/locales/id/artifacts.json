@@ -1,0 +1,46 @@
+{
+    "a_name" : "Nama",
+    "a_rarities" : "Kelangkaan",
+    "a_twoPiecesBonus" : "Bonus 2 Potong",
+    "a_fourPiecesBonus" : "Bonus 4 Potong",
+
+    "a_flower" : "Flower of Life",
+    "a_plume" : "Plume of Death",
+    "a_sands" : "Sands of Eon",
+    "a_goblet" : "Goblet of Eonothem",
+    "a_circlet" : "Circlet of Logos",
+
+    "a_rarity" : "Keanehan",
+
+    "a_1star" : "1-Bintang",
+    "a_2star" : "2-Bintang",
+    "a_3star" : "3-Bintang",
+    "a_4star" : "4-Bintang",
+    "a_5star" : "5-Bintang",
+
+    "a_onePieceBonusDots" : "Bonus 1 Buah:",
+    "a_twoPiecesBonusDots" : "Bonus 2 Potong:",
+    "a_fourPiecesBonusDots" : "Bonus 4 Potong:",
+
+    "a_mainStats" : "Statistik utama",
+    "a_subStats" : "Sub statistik",
+
+    "a_healthFlat" : "HP",
+    "a_healthPercent" : "HP%",
+    "a_attackFlat" : "ATK",
+    "a_attackPercent" : "ATK%",
+    "a_defenceFlat" : "DEF",
+    "a_defencePercent" : "DEF%",
+    "a_energyRechargePercent" : "Energy Recharge%",
+    "a_elementalMastery" : "Elemental Mastery",
+    "a_elementalDamagePercent" : "Elemental DMG%",
+    "a_physicalDamagePercent" : "Physical DMG%",
+    "a_critRatePercent" : "CRIT Rate%",
+    "a_critDamagePercent" : "CRIT DMG%",
+    "a_critAdditionalHealingPercent" : "Additional Healing%",
+
+    "a_tier" : "Tingkat"
+
+
+
+}

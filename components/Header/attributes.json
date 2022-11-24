@@ -1,0 +1,36 @@
+{
+  "title": "Header with menus",
+  "category": "headers",
+  "author": "rtivital",
+  "responsive": true,
+  "withColor": true,
+  "dependencies": [
+    "/core/app-shell/",
+    "/core/menu/",
+    "/core/group/",
+    "/core/center/",
+    "/core/burger/",
+    "/core/container/",
+    "/hooks/use-toggle/",
+    "@tabler/icons"
+  ],
+  "props": {
+    "links": [
+      { "link": "https://genshindb.net/characters", "label": "h_characters" },
+      { "link": "https://genshindb.net/tier-list/", "label": "h_tierlist" },
+      { "link": "https://genshindb.net/interactive-map/", "label": "h_map" },
+      {
+        "link": "https://genshindb.net/",
+        "label": "h_database",
+        "links": [
+          { "link": "https://genshindb.net/weapons/", "label": "h_weapons" },
+          { "link": "/artifacts/", "label": "h_artifacts" },
+          { "link": "https://genshindb.net/elements/", "label": "h_elements" }
+        ]
+      }
+    ]
+  },
+  "canvas": {
+    "center": false
+  }
+}

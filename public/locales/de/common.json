@@ -1,0 +1,25 @@
+{
+    "h_characters" : "Datenbank",
+    "h_tierlist" : "Rangliste",
+    "h_map" : "Interaktive Karte",
+    "h_database" : "Datenbank",
+    "h_artifacts" : "Artefakte",
+    "h_weapons" : "Waffen",
+    "h_elements" : "Elemente",
+
+    "table_search" : "Suchen Sie nach einem beliebigen Feld",
+
+    "e_filter" : "Pyro|Hydro|Elektro|Kryo|Dendro|Anemo|Geo",
+
+    "e_pyro" : "pyro",
+    "e_hydro" : "hydro",
+    "e_electro" : "elektro",
+    "e_cryo" : "kryo",
+    "e_dendro" : "dendro",
+    "e_anemo" : "anemo",
+    "e_geo" : "geo",
+
+    "f_about" : "Genshin DB ist eine Seite mit Charakterführern und einer Datenbank für das Spiel Genshin Impact.",
+    "f_policy" : "Datenschutz-Bestimmungen"
+    
+}

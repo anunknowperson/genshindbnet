@@ -1,0 +1,46 @@
+{
+    "a_name" : "Name",
+    "a_rarities" : "Rarities",
+    "a_twoPiecesBonus" : "2-Piece Bonus",
+    "a_fourPiecesBonus" : "4-Piece Bonus",
+
+    "a_flower" : "Flower of Life",
+    "a_plume" : "Plume of Death",
+    "a_sands" : "Sands of Eon",
+    "a_goblet" : "Goblet of Eonothem",
+    "a_circlet" : "Circlet of Logos",
+
+    "a_rarity" : "Rarity",
+
+    "a_1star" : "1-Star",
+    "a_2star" : "2-Star",
+    "a_3star" : "3-Star",
+    "a_4star" : "4-Star",
+    "a_5star" : "5-Star",
+
+    "a_onePieceBonusDots" : "1-Piece Bonus:",
+    "a_twoPiecesBonusDots" : "2-Piece Bonus:",
+    "a_fourPiecesBonusDots" : "4-Piece Bonus:",
+
+    "a_mainStats" : "Main stats",
+    "a_subStats" : "Sub stats",
+
+    "a_healthFlat" : "HP",
+    "a_healthPercent" : "HP%",
+    "a_attackFlat" : "ATK",
+    "a_attackPercent" : "ATK%",
+    "a_defenceFlat" : "DEF",
+    "a_defencePercent" : "DEF%",
+    "a_energyRechargePercent" : "Energy Recharge%",
+    "a_elementalMastery" : "Elemental Mastery",
+    "a_elementalDamagePercent" : "Elemental DMG%",
+    "a_physicalDamagePercent" : "Physical DMG%",
+    "a_critRatePercent" : "CRIT Rate%",
+    "a_critDamagePercent" : "CRIT DMG%",
+    "a_critAdditionalHealingPercent" : "Additional Healing%",
+
+    "a_tier" : "Tier"
+
+
+
+}

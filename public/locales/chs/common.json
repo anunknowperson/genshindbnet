@@ -1,0 +1,25 @@
+{
+    "h_characters" : "人物",
+    "h_tierlist" : "等级列表",
+    "h_map" : "交互式地图",
+    "h_database" : "数据库",
+    "h_artifacts" : "神器",
+    "h_weapons" : "武器",
+    "h_elements" : "元素",
+
+    "table_search" : "按任何领域搜索",
+
+    "e_filter" : "火|水|雷|冰|草|风|岩",
+
+    "e_pyro" : "火",
+    "e_hydro" : "水",
+    "e_electro" : "雷",
+    "e_cryo" : "冰",
+    "e_dendro" : "草",
+    "e_anemo" : "风",
+    "e_geo" : "岩",
+
+    "f_about" : "Genshin DB 是一个提供角色指南和 Genshin Impact 游戏数据库的网站。",
+    "f_policy" : "隐私政策"
+    
+}
