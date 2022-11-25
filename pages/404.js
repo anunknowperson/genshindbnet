@@ -1,5 +1,8 @@
 import { createStyles, Title, Text, Button, Container, Group } from '@mantine/core';
 
+
+import Link from 'next/link';
+
 const useStyles = createStyles((theme) => ({
   root: {
     paddingTop: 80,
@@ -36,6 +39,17 @@ const useStyles = createStyles((theme) => ({
     marginTop: theme.spacing.xl,
     marginBottom: theme.spacing.xl * 1.5,
   },
+
+  link: {
+    '&:visited': {
+        color: theme.colors.dark[0],
+    },
+    '&:hover': {
+        color: 'gray',
+    },
+
+    color: theme.colors.dark[0],
+},
 }));
 
 export default function NotFoundTitle() {
@@ -50,9 +64,9 @@ export default function NotFoundTitle() {
         been moved to another URL.
       </Text>
       <Group position="center">
-        <Button variant="subtle" size="md">
-          Take me back to home page
-        </Button>
+        
+          <Link  href="https://genshindb.net/"><a className={classes.link}>Take me back to home page</a></Link>
+  
       </Group>
     </Container>
   );
