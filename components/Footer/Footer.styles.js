@@ -3,7 +3,7 @@ import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
     footer: {
-        height: '80px',
+        minHeight: '80px',
         backgroundColor: theme.colors.dark[7],
         marginTop: '10px',
         textAlign: 'center',
@@ -19,5 +19,35 @@ export default createStyles((theme) => ({
         },
 
         color: 'gray',
+    },
+
+    container: {
+        paddingLeft: '50px',
+        paddingRight: '50px',
+        
+    },
+
+    containerFlex: {
+        display: 'flex',
+    },
+
+    leftAlg: {
+        textAlign: 'left',
+    },
+
+
+    friends: {
+        marginLeft: '20px',
+        textAlign: 'left',
+
+    },
+
+    friendButton: {
+        transition: '.2s',
+        '&:hover': {
+            transform: 'scale(1.1)'
+          },
     }
+
+
 }));
