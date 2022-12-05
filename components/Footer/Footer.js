@@ -40,7 +40,10 @@ export function Footer() {
                 <div>Наши друзья:</div>
             
                 <Link href="https://poklonniki.gitbook.io/poklonniki-tumana/">
+                  <a>
                   <Image className={classes.friendButton} width={30} height={30} src="/mist.png"></Image>
+                  </a>
+                  
                 </Link>
             
               </div>

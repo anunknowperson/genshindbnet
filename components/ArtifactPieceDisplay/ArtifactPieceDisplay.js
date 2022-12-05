@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 
+import {getRarityGradient} from '../../helpers/gradients';
 
 export function ArtifactPieceDisplay({label, type, strings, rarityCallback, children}) {
     const { classes } = useStyles();
@@ -29,20 +30,7 @@ export function ArtifactPieceDisplay({label, type, strings, rarityCallback, chil
 
     var gradientStyle;
 
-    if (selectedRarity == "1"){
-      gradientStyle = {background: 'linear-gradient(100deg, rgba(26,27,30,1) 48%, rgba(124,134,143,1) 100%)'};
-    } 
-    else if (selectedRarity == "2"){
-      gradientStyle = {background: 'linear-gradient(100deg, rgba(26,27,30,1) 48%, rgba(136,179,150,1) 100%)'};
-    } 
-    else if (selectedRarity == "3"){
-      gradientStyle = {background: 'linear-gradient(100deg, rgba(26,27,30,1) 48%, rgba(73,151,197,1) 100%)'};
-    } 
-    else if (selectedRarity == "4"){
-      gradientStyle = {background: 'linear-gradient(100deg, rgba(26,27,30,1) 48%, rgba(109,55,176,1) 100%)'};
-    } else if (selectedRarity == "5"){
-      gradientStyle = {background: 'linear-gradient(100deg, rgba(26,27,30,1) 48%, rgba(255,166,0,1) 100%)'};
-    }
+    var gradientStyle = getRarityGradient(selectedRarity);
 
     var bonusTable;
 
@@ -84,7 +72,7 @@ export function ArtifactPieceDisplay({label, type, strings, rarityCallback, chil
                     <div className={classes.pieceType}>{t('a_' + type.toLowerCase(), { ns: 'artifacts' })}</div>
                     
                     <div style = {{paddingLeft: '30px', paddingTop: '10px', paddingBottom: '20px',  width: '150px'}}>
-                      <RaritySelector rars={strings.rarities} callback={onRarityChanges}/>
+                      <RaritySelector rars={strings.rarities}  callback={onRarityChanges}/>
                     </div>
                     
                 </div>
@@ -95,7 +83,7 @@ export function ArtifactPieceDisplay({label, type, strings, rarityCallback, chil
                       
                       <Image
                           priority="true"
-                          src={`/resources/${label}${type}.png`}
+                          src={`/resources/${strings[type.toLowerCase()]['image']}`}
                           alt={type}
                           objectFit="contain"
                           layout="fill"
@@ -119,7 +107,7 @@ export function ArtifactPieceDisplay({label, type, strings, rarityCallback, chil
             </table>
 
             <div style={{padding: "0px 20px 20px 20px"}}>
-              <TextFormat>{strings[type.toLowerCase()]['description']}</TextFormat>
+              <TextFormat cursive={true}>{strings[type.toLowerCase()]['description']}</TextFormat>
             </div>
 
             </div>

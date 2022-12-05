@@ -53,6 +53,7 @@ const createData = (list) => {
                 'rarities': list[i].rarities,
                 'twoPiecesBonus': list[i].twoPiecesBonus,
                 'fourPiecesBonus': list[i].fourPiecesBonus,
+                'image': list[i].image,
             }
         );
     }
@@ -206,7 +207,7 @@ export function ArtifactsListTable({list}) {
           <td className={classes.td}>
             <Image
                         priority="true"
-                        src={"/resources/" + row.label + ((row.fourPiecesBonus === "") ? "Circlet.png" : "Flower.png")}
+                        src={"/resources/" + row.image}
                        alt={ row.label + ""}
                          width="50px"
                          height="50px"

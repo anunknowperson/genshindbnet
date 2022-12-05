@@ -49,20 +49,30 @@ async function fetchArtifactsFromDb(locale) {
 
     const artifacts = await lib.withMongo(async (db) => {
       const collection = db.collection('artifacts')
-      return await collection.find({}, {projection: { "_id" : 0, "name" : 1,  "rarities" : 1, "twoPiecesBonus" : 1, "fourPiecesBonus" : 1, "label" : 1}}).toArray()
+      return await collection.find({}, {projection: { "_id" : 0, "name" : 1,  "rarities" : 1, "twoPiecesBonus" : 1, "fourPiecesBonus" : 1, "label" : 1, "flower": 1, "circlet": 1}}).toArray()
     });
     
     var result = [];
 
     for (var i = 0; i < artifacts.length; i++){
+        var ln = {
+          label: artifacts[i]['label'],
+          name: artifacts[i]['name'][lang],
+          rarities: artifacts[i]['rarities'],
+          twoPiecesBonus: artifacts[i]['twoPiecesBonus'][lang],
+          fourPiecesBonus: artifacts[i]['fourPiecesBonus'][lang],
+          
+        };
+
+        if (ln['fourPiecesBonus'] === ''){
+          ln['image'] = artifacts[i]['circlet']['image'];
+
+        } else {
+          ln['image'] = artifacts[i]['flower']['image'];
+        }
+
         result.push(
-            {
-                label: artifacts[i]['label'],
-                name: artifacts[i]['name'][lang],
-                rarities: artifacts[i]['rarities'],
-                twoPiecesBonus: artifacts[i]['twoPiecesBonus'][lang],
-                fourPiecesBonus: artifacts[i]['fourPiecesBonus'][lang],
-            }
+            ln
         );
     }
 

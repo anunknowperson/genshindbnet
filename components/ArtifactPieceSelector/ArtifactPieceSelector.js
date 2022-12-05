@@ -2,7 +2,7 @@
 import useStyles from './ArtifactPieceSelector.styles';
 import Image from 'next/image'
 
-export function ArtifactPieceSelector({label, changedCallback, children}) {
+export function ArtifactPieceSelector({label, strings, changedCallback, children}) {
     const { classes } = useStyles();
 
     const setSelected = (selected) => {
@@ -11,13 +11,13 @@ export function ArtifactPieceSelector({label, changedCallback, children}) {
 
     var selectButtons;
 
-    if (!label.includes('Prayers')){
+    if (!label.includes('prayers')){
         selectButtons = <>
         <div className={classes.button}>
             <button className={classes.innerButton} onClick={() => setSelected('Flower')}>
                 <Image
                     priority="true"
-                    src={"/resources/" + label + "Flower.png"}
+                    src={"/resources/" + strings['flower']['image']}
                     alt={ label + " Flower"}
                     width="100%"
                     height="100%"
@@ -29,7 +29,7 @@ export function ArtifactPieceSelector({label, changedCallback, children}) {
             <button className={classes.innerButton} onClick={() => setSelected('Plume')}>
                 <Image
                     priority="true"
-                    src={"/resources/" + label + "Plume.png"}
+                    src={"/resources/" + strings['plume']['image']}
                     alt={ label + " Plume"}
                     width="100%"
                     height="100%"
@@ -41,7 +41,7 @@ export function ArtifactPieceSelector({label, changedCallback, children}) {
             <button className={classes.innerButton} onClick={() => setSelected('Sands')}>
                 <Image
                     priority="true"
-                    src={"/resources/" + label + "Sands.png"}
+                    src={"/resources/" + strings['sands']['image']}
                     alt={ label + " Sands"}
                     width="100%"
                     height="100%"
@@ -53,7 +53,7 @@ export function ArtifactPieceSelector({label, changedCallback, children}) {
             <button className={classes.innerButton} onClick={() => setSelected('Goblet')}>
                 <Image
                     priority="true"
-                    src={"/resources/" + label + "Goblet.png"}
+                    src={"/resources/" + strings['goblet']['image']}
                     alt={ label + " Goblet"}
                     width="100%"
                     height="100%"
@@ -73,7 +73,7 @@ export function ArtifactPieceSelector({label, changedCallback, children}) {
             <button className={classes.innerButton} onClick={() => setSelected('Circlet')}>
                 <Image
                     priority="true"
-                    src={"/resources/" + label + "Circlet.png"}
+                    src={"/resources/" + strings['circlet']['image']}
                     alt={ label + " Circlet"}
                     width="100%"
                     height="100%"

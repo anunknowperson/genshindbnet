@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 
 
 
-export function TextFormat({children}) {
+export function TextFormat({cursive, children}) {
     const { classes } = useStyles();
 
     const { t } = useTranslation(['common']);
@@ -47,6 +47,11 @@ export function TextFormat({children}) {
     }
 
     return (
+        (cursive) ?
+        <i>
+        {format(children)}
+        </i>
+        :
         <>
         {format(children)}
         </>
