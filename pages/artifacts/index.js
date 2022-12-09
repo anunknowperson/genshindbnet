@@ -6,41 +6,14 @@ import { PostWrapper } from '../../components/PostWrapper/PostWrapper';
 
 import { Layout } from '../../components/Layout/Layout';
 
-import { ArtifactsListTable } from '../../components/ArtifactsListTable/ArtifactsListTable';
 import { ArtifactsList } from '../../components/ArtifactsList/ArtifactsList';
 
-import { Chip, Group, TextInput } from '@mantine/core';
-import { IconSearch } from '@tabler/icons';
-import { useCallback, useState, useEffect } from 'react';
-
+import { Chip, Group } from '@mantine/core';
+import {  useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-const SearchBar = ({callback, placeholder}) => {
-  const [search, setSearch] = useState('');
-
-  const handleSearchChange = useCallback((event) => {
-    const { value } = event.currentTarget;
-    setSearch(value);
-  
-  });
-
-  useEffect(() => {
-    const timeOutId = setTimeout(() => callback(search), 500);
-    return () => clearTimeout(timeOutId);
-  }, [search]);
-
-  return <>
-    <TextInput
-      placeholder={placeholder}
-      mb="md"
-      icon={<IconSearch size={14} stroke={1.5} />}
-      value={search}
-      onChange={handleSearchChange}
-    />
-  </>
-
-}
+import {SearchBar} from '../../components/SearchBar/SearchBar';
 
 export default function ArtifactsPage({}) {
   const router = useRouter();

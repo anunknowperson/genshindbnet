@@ -10,36 +10,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import { WeaponsList } from '../../components/WeaponsList/WeaponsList';
+import {  useState } from 'react';
+import { Chip, Group } from '@mantine/core';
 
-import { Chip, Group, TextInput } from '@mantine/core';
-import { IconSearch } from '@tabler/icons';
-import { useCallback, useState, useEffect } from 'react';
-
-const SearchBar = ({callback, placeholder}) => {
-  const [search, setSearch] = useState('');
-
-  const handleSearchChange = useCallback((event) => {
-    const { value } = event.currentTarget;
-    setSearch(value);
-  
-  });
-
-  useEffect(() => {
-    const timeOutId = setTimeout(() => callback(search), 500);
-    return () => clearTimeout(timeOutId);
-  }, [search]);
-
-  return <>
-    <TextInput
-      placeholder={placeholder}
-      mb="md"
-      icon={<IconSearch size={14} stroke={1.5} />}
-      value={search}
-      onChange={handleSearchChange}
-    />
-  </>
-
-}
+import {SearchBar} from '../../components/SearchBar/SearchBar';
 
 export default function WeaponsPage({}) {
   const { t } = useTranslation('common');
