@@ -15,7 +15,7 @@ const SelectItem = forwardRef(
         
         <div>
           {[...Array(Number(value))].map(val =>
-            <Image width="15px" height="15px" src={"/star.svg"}/>
+            <Image width={15} height={15} src={"/star.svg"}/>
           )}
         </div>
       </Group>

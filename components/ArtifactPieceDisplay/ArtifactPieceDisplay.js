@@ -85,7 +85,7 @@ export function ArtifactPieceDisplay({label, type, strings, rarityCallback, chil
                           priority="true"
                           src={`/resources/${strings[type.toLowerCase()]['image']}`}
                           alt={type}
-                          objectFit="contain"
+                          style={{objectFit: 'contain'}}
                           fill
                       />
                       

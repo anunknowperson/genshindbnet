@@ -23,7 +23,7 @@ export function WeaponDisplay({strings, levelCallback}) {
     const [level, setLevel] = useState(strings['baseatk'].length - 1);
     const [r, setR] = useState(1);
   
-    const { t } = useTranslation(['common', 'artifacts']);
+    const { t } = useTranslation(['common', 'weapons']);
 
     const selectLevel = (selected) => {
       levelCallback(selected);
@@ -54,10 +54,6 @@ export function WeaponDisplay({strings, levelCallback}) {
 
     var effect = strings['effect'];
 
-    /*for (var i = 0; i < strings['r1'].length; i++){
-        effect = effect.replace(`{${i}}`, strings['r' + r][i]);
-        
-    } */
 
 
     String.prototype.splitAndKeep = function(separator){
@@ -112,7 +108,7 @@ export function WeaponDisplay({strings, levelCallback}) {
             >
                 <div style={{width: "50%"}}>
                     <div className={classes.pieceName}>{strings['weapontype']}</div>
-                    <div className={classes.pieceType}>{'Base ATK'}</div>
+                    <div className={classes.pieceType}>{t("w_baseatk", { ns: 'weapons' })}</div>
                     <div className={classes.statVal}>{(strings['baseatk'][level])}</div>
                     <div className={classes.pieceType}>{strings['substat']}</div>
                     <div className={classes.statVal}>{(strings['subvalue'][level] !== '0%') ? strings['subvalue'][level] : ''}</div>
@@ -131,12 +127,12 @@ export function WeaponDisplay({strings, levelCallback}) {
 
                       
                       <Image
+                          style={{objectFit: 'contain'}}
                           fill
                           priority="true"
                           src={`/resources/${(r == 1) ? strings['images']['icon'] : strings['images']['nameawakenicon']}.png`}
                           alt={strings['images']['icon']}
-                          objectFit="contain"
-                          style={{}}
+                          
                         />
                       
                       

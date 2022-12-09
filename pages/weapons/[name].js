@@ -41,7 +41,7 @@ export default function WeaponPage({label, strings}) {
   const router = useRouter();
   
   
-  const { t } = useTranslation(['common', 'artifacts']);
+  const { t } = useTranslation(['common', 'weapons']);
 
   const [level, setLevel] = useState(strings['baseatk'].length - 1);
   const [progression, setProgression] = useState(true);
@@ -70,13 +70,13 @@ export default function WeaponPage({label, strings}) {
             <div className={classes.leftCollimnPiecesDown}>
               <ContentPanel>
                 <div style={{padding: '20px 10px 10px 20px'}}>
-                <h2 style={{margin: 0, padding: '0px 0px 10px 0px'}}>{'Ascension'}</h2>
+                <h2 style={{margin: 0, padding: '0px 0px 10px 0px'}}>{t("w_ascension", { ns: 'weapons' })}</h2>
 
                 <Switch
                   style={{margin: 0, padding: '0px 0px 10px 0px'}}
                   checked={progression}
                   onChange={(event) => setProgression(event.currentTarget.checked)}
-                  label="Full progression"
+                  label={t("w_fullprogression", { ns: 'weapons' })}
                 />
 
                 <WeaponAscension level={level} progression={progression} costs={strings.costs}/>
@@ -232,7 +232,7 @@ export async function getStaticProps(context) {
   const data = await fetchArtifactDataFromDb(context.locale,label );
 
   return {
-      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'artifacts' ])) },
+      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'weapons' ])) },
   };
 }
 
