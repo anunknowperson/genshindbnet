@@ -22,7 +22,7 @@ export function WeaponsList({searchFilter, rarityFilter, typeFilter}) {
 
   const {classes} = useStyles();
 
-  const { t } = useTranslation(['common', 'artifacts']);
+  const { t } = useTranslation(['common', 'weapons']);
 
   const [page, setPage] = useState(1);
   const [sortStatus, setSortStatus] = useState({ columnAccessor: 'name', direction: 'asc' });
@@ -82,7 +82,7 @@ export function WeaponsList({searchFilter, rarityFilter, typeFilter}) {
         columns={[
           {
             accessor: 'name',
-            title: 'Name',
+            title: t("w_name", { ns: 'weapons' }),
             width: 100,
             textAlignment : 'center',
 
@@ -109,7 +109,7 @@ export function WeaponsList({searchFilter, rarityFilter, typeFilter}) {
           },
           {
             accessor: 'rarity',
-            title: 'Rarity',
+            title: t("w_rarity", { ns: 'weapons' }),
             width: 100,
             textAlignment : 'center',
             sortable: true,
@@ -130,7 +130,7 @@ export function WeaponsList({searchFilter, rarityFilter, typeFilter}) {
           },
           {
             accessor: 'effect',
-            title: 'Effect',
+            title: t("w_effect", { ns: 'weapons' }),
             width: 500,
             textAlignment : 'center',
             sortable: true,
