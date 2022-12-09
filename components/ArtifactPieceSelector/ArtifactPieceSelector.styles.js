@@ -59,5 +59,7 @@ export default createStyles((theme) => ({
 
         borderColor: theme.colors.dark[7],
         background: theme.colors.dark[6],
+
+        position: 'relative',
     }
 }));

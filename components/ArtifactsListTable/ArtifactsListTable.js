@@ -208,14 +208,14 @@ export function ArtifactsListTable({list}) {
             <Image
                         priority="true"
                         src={"/resources/" + row.image}
-                       alt={ row.label + ""}
-                         width="50px"
-                         height="50px"
-                      layout="intrinsic"
+                        alt={ row.label + ""}
+                         width={50}
+                         height={50}
+                        intrinsic
                     />
 
                     <br/>
-                    <Link  href={'/artifacts/' + row.label}>
+                    <Link  href={'/artifacts/' + row.label} legacyBehavior>
                         <a  className={classes.link}>
                             {row.name}
                         </a>
@@ -231,9 +231,9 @@ export function ArtifactsListTable({list}) {
                     priority="true"
                     src={"/star.svg"}
                     alt={ ""}
-                    width="15px"
-                    height="15px"
-                    layout="intrinsic"
+                    width={15}
+                    height={15}
+                    intrinsic
                 />
             
                 )}

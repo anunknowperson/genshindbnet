@@ -39,7 +39,7 @@ export function Footer() {
               <div className={classes.friends}>
                 <div>Наши друзья:</div>
             
-                <Link href="https://poklonniki.gitbook.io/poklonniki-tumana/">
+                <Link href="https://poklonniki.gitbook.io/poklonniki-tumana/" legacyBehavior>
                   <a>
                   <Image className={classes.friendButton} width={30} height={30} src="/mist.png"></Image>
                   </a>

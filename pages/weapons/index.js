@@ -1,20 +1,19 @@
 import { useRouter } from 'next/router';
 
-import useStyles from '../../styles/artifacts.styles';
+import useStyles from '../../styles/weapons.styles';
 
 import { PostWrapper } from '../../components/PostWrapper/PostWrapper';
 
 import { Layout } from '../../components/Layout/Layout';
 
-import { ArtifactsListTable } from '../../components/ArtifactsListTable/ArtifactsListTable';
-import { ArtifactsList } from '../../components/ArtifactsList/ArtifactsList';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+import { WeaponsList } from '../../components/WeaponsList/WeaponsList';
 
 import { Chip, Group, TextInput } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import { useCallback, useState, useEffect } from 'react';
-
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 
 const SearchBar = ({callback, placeholder}) => {
   const [search, setSearch] = useState('');
@@ -42,24 +41,31 @@ const SearchBar = ({callback, placeholder}) => {
 
 }
 
-export default function ArtifactsPage({}) {
-  const router = useRouter();
-  
+export default function WeaponsPage({}) {
   const { t } = useTranslation('common');
 
   const { classes } = useStyles();
 
   const [searchFilter, setSearchFilter] = useState('');
-  const [rarities, setRarities] = useState(['4', '5']);
-
+  const [types, setTypes] = useState(['claymore', 'polearm', 'sword', 'bow', 'catalyst']);
+  const [rarities, setRarities] = useState(['3', '4', '5']);
+  
 
   return (
     <>
-        <h1 className={classes.artifactSetNameHeader}>{t('h_artifacts')}</h1>
+        <h1 className={classes.weaponSetNameHeader}>{'Weapons'}</h1>
 
         <SearchBar callback={setSearchFilter} placeholder={t("table_search")}/>
         
         <Group position='apart' style={{marginBottom: '10px'}}>
+          <Chip.Group value={types} onChange={setTypes} multiple>
+            <Chip value="claymore">Claymore</Chip>
+            <Chip value="polearm">Polearm</Chip>
+            <Chip value="sword">Sword</Chip>
+            <Chip value="bow">Bow</Chip>
+            <Chip value="catalyst">Catalyst</Chip>
+          </Chip.Group>
+
           <Chip.Group value={rarities} onChange={setRarities} multiple>
             <Chip value="1">1</Chip>
             <Chip value="2">2</Chip>
@@ -69,13 +75,13 @@ export default function ArtifactsPage({}) {
           </Chip.Group>
         </Group>
 
-        <ArtifactsList rarityFilter={rarities} searchFilter={searchFilter}/>
+        <WeaponsList rarityFilter={rarities} typeFilter={types} searchFilter={searchFilter}/>
 
     </>
   );
 }
 
-ArtifactsPage.getLayout = function getLayout(page) {
+WeaponsPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
@@ -85,8 +91,8 @@ ArtifactsPage.getLayout = function getLayout(page) {
   )
 }
 
-export async function getStaticProps(context) {
 
+export async function getStaticProps(context) {
     return {
         props: {...(await serverSideTranslations(context.locale, ['common', 'artifacts' ])) },
     };

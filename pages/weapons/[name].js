@@ -17,7 +17,7 @@ import { TextFormat } from '../../components/TextFormat/TextFormat';
 
 import {useState} from 'react'
 
-import { Checkbox } from '@mantine/core';
+import { Switch } from '@mantine/core';
 
 import locales from '../../global/locales';
 
@@ -72,8 +72,8 @@ export default function WeaponPage({label, strings}) {
                 <div style={{padding: '20px 10px 10px 20px'}}>
                 <h2 style={{margin: 0, padding: '0px 0px 10px 0px'}}>{'Ascension'}</h2>
 
-                <Checkbox
-                  style={{margin: 0, padding: '10px 0px 10px 0px'}}
+                <Switch
+                  style={{margin: 0, padding: '0px 0px 10px 0px'}}
                   checked={progression}
                   onChange={(event) => setProgression(event.currentTarget.checked)}
                   label="Full progression"
@@ -170,11 +170,11 @@ async function fetchArtifactDataFromDb(locale, label) {
   localized.subvalue = weapons[0]['subvalue'];
   localized.baseatk = weapons[0]['baseatk'];
 
-  localized.r1 = weapons[0]['r1'];
-  localized.r2 = weapons[0]['r2'];
-  localized.r3 = weapons[0]['r3'];
-  localized.r4 = weapons[0]['r4'];
-  localized.r5 = weapons[0]['r5'];
+  localized.r1 = weapons[0]['r1'][lang];
+  localized.r2 = weapons[0]['r2'][lang];
+  localized.r3 = weapons[0]['r3'][lang];
+  localized.r4 = weapons[0]['r4'][lang];
+  localized.r5 = weapons[0]['r5'][lang];
 
   localized.effectname = weapons[0]['effectname'][lang];
   localized.effect = weapons[0]['effect'][lang];

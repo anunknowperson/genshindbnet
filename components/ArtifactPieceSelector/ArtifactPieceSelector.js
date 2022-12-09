@@ -19,9 +19,7 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['flower']['image']}
                     alt={ label + " Flower"}
-                    width="100%"
-                    height="100%"
-                    layout="intrinsic"
+                    fill
                 />
             </button>
         </div>
@@ -31,9 +29,7 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['plume']['image']}
                     alt={ label + " Plume"}
-                    width="100%"
-                    height="100%"
-                    layout="intrinsic"
+                    fill
                 />
             </button>
         </div>
@@ -43,9 +39,7 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['sands']['image']}
                     alt={ label + " Sands"}
-                    width="100%"
-                    height="100%"
-                    layout="intrinsic"
+                    fill
                 />
             </button>
         </div>
@@ -55,9 +49,7 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['goblet']['image']}
                     alt={ label + " Goblet"}
-                    width="100%"
-                    height="100%"
-                    layout="intrinsic"
+                    fill
                 />
             </button>
         </div>
@@ -75,9 +67,7 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['circlet']['image']}
                     alt={ label + " Circlet"}
-                    width="100%"
-                    height="100%"
-                    layout="intrinsic"
+                    fill
                 />
             </button>
         </div>

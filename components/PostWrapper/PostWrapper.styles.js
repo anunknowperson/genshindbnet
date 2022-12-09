@@ -7,8 +7,6 @@ export default createStyles((theme) => ({
     width:'100%',
     height: '100%',
 
-    
-
     [theme.fn.largerThan(750)]:{
         padding: '30px 50px 50px 50px',
         

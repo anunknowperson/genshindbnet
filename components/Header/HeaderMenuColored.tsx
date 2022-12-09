@@ -149,7 +149,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link} component={NextLink} href={item.link}>{t(item.label)}</Menu.Item>
+      <Menu.Item key={item.link} component={Link} href={item.link}>{t(item.label)}</Menu.Item>
     ));
 
     if (menuItems) {
@@ -171,7 +171,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
         </Menu> 
         : 
         <div key={link.label} className={cx(classes.link, classes.linkMobileDropdown)} >
-          <Link  href={link.link} >
+          <Link  href={link.link} legacyBehavior>
           <a className={classes.planeLink} style={{width: '100%', height: '100%'}} onClick={close}>
             <span className={classes.linkLabel}>{t(link.label)}</span>
           </a>
@@ -187,7 +187,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
 
     return (
       <Link key={link.label}
-      href={link.link}>
+      href={link.link} legacyBehavior>
       <a
         
         
@@ -248,7 +248,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
               {(mobileSubMenuOpened) ? 
               
               links[3].links.map((link) => (
-                <Link href={link.link} >
+                <Link href={link.link} legacyBehavior>
                 
                 <a
                   style={{marginLeft: '20px'}}

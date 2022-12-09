@@ -5,6 +5,10 @@ import { cache } from '../cache';
 
 import { appWithTranslation } from 'next-i18next';
 
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
 function MyApp(props) {
   const { Component, pageProps } = props;
 
@@ -30,9 +34,11 @@ function MyApp(props) {
         withNormalizeCSS
         emotionCache={cache}
         >
-        <NotificationsProvider>
-          {getLayout(<Component {...pageProps} />)}
-        </NotificationsProvider>
+        <QueryClientProvider client={queryClient}>
+          <NotificationsProvider>
+            {getLayout(<Component {...pageProps} />)}
+          </NotificationsProvider>
+        </QueryClientProvider>
       </MantineProvider>
     </>
   );

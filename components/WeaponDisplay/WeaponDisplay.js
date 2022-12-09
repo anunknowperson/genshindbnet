@@ -120,7 +120,7 @@ export function WeaponDisplay({strings, levelCallback}) {
 
                     <div style = {{paddingLeft: '30px', paddingTop: '10px', paddingBottom: '20px',  width: '150px'}}>
                     {[...Array(Number(parseInt(strings['rarity'])))].map((val, el) =>
-                      <Image key={el} width="15px" height="15px" src={"/star.svg"}/>
+                      <Image key={el} width={15} height={15} src={"/star.svg"}/>
                     )}
                     </div>
                     
@@ -131,11 +131,11 @@ export function WeaponDisplay({strings, levelCallback}) {
 
                       
                       <Image
+                          fill
                           priority="true"
                           src={`/resources/${(r == 1) ? strings['images']['icon'] : strings['images']['nameawakenicon']}.png`}
                           alt={strings['images']['icon']}
                           objectFit="contain"
-                          layout="fill"
                           style={{}}
                         />
                       
