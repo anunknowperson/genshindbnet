@@ -1,0 +1,46 @@
+{
+    "a_name" : "Nome",
+    "a_rarities" : "Rarità",
+    "a_twoPiecesBonus" : "Bonus 2 pezzi",
+    "a_fourPiecesBonus" : "Bonus 4 pezzi",
+
+    "a_flower" : "Flower of Life",
+    "a_plume" : "Plume of Death",
+    "a_sands" : "Sands of Eon",
+    "a_goblet" : "Goblet of Eonothem",
+    "a_circlet" : "Circlet of Logos",
+
+    "a_rarity" : "Rarità",
+
+    "a_1star" : "1 stella",
+    "a_2star" : "2 stelle",
+    "a_3star" : "3 stelle",
+    "a_4star" : "4 stelle",
+    "a_5star" : "5 stelle",
+
+    "a_onePieceBonusDots" : "Bonus 1 pezzo:",
+    "a_twoPiecesBonusDots" : "Bonus 2 pezzi:",
+    "a_fourPiecesBonusDots" : "Bonus 4 pezzi:",
+
+    "a_mainStats" : "Statistiche principali",
+    "a_subStats" : "Statistiche secondarie",
+
+    "a_healthFlat" : "PS",
+    "a_healthPercent" : "PS%",
+    "a_attackFlat" : "ATT",
+    "a_attackPercent" : "ATT%",
+    "a_defenceFlat" : "DIF",
+    "a_defencePercent" : "DIF%",
+    "a_energyRechargePercent" : "Ricarica di energia%",
+    "a_elementalMastery" : "Maestria elementale",
+    "a_elementalDamagePercent" : "Bonus DAN (Elemental)%",
+    "a_physicalDamagePercent" : "Bonus DAN fisici%",
+    "a_critRatePercent" : "Tasso di CRIT%",
+    "a_critDamagePercent" : "DAN da CRIT%",
+    "a_critAdditionalHealingPercent" : "Bonus di guarigione%",
+
+    "a_tier" : "Livello"
+
+
+
+}

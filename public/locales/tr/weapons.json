@@ -1,0 +1,16 @@
+{
+    "w_name" : "İsim",
+    "w_rarity" : "Nadirlik",
+    "w_effect" : "Etki",
+    
+    "w_claymore" : "Çift Elli Kılıç",
+    "w_polearm" : "Mızrak",
+    "w_sword" : "Kılıç",
+    "w_bow" : "Yay",
+    "w_catalyst" : "Katalizör",
+
+    "w_baseatk" : "Temel ATK",
+    "w_ascension" : "Yükseliş",
+    "w_fullprogression" : "Tam ilerleme"
+
+}

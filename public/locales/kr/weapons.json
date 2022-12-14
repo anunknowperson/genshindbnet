@@ -1,0 +1,16 @@
+{
+    "w_name" : "이름",
+    "w_rarity" : "희박",
+    "w_effect" : "효과",
+    
+    "w_claymore" : "양손검",
+    "w_polearm" : "장병기",
+    "w_sword" : "한손검",
+    "w_bow" : "활",
+    "w_catalyst" : "법구",
+
+    "w_baseatk" : "기본 공격력",
+    "w_ascension" : "승천",
+    "w_fullprogression" : "전체 진행"
+
+}

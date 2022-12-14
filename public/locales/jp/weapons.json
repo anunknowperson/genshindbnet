@@ -1,0 +1,16 @@
+{
+    "w_name" : "名前",
+    "w_rarity" : "レアリティ",
+    "w_effect" : "効果",
+    
+    "w_claymore" : "両手剣",
+    "w_polearm" : "長柄武器",
+    "w_sword" : "片手剣",
+    "w_bow" : "弓",
+    "w_catalyst" : "法器",
+
+    "w_baseatk" : "基礎攻撃力",
+    "w_ascension" : "上昇",
+    "w_fullprogression" : "完全な進行"
+
+}

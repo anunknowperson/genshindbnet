@@ -183,44 +183,6 @@ async function fetchArtifactDataFromDb(locale, label) {
 
   localized.images = weapons[0]['images'];
 
-  /*localized.rarities = artifact[0]['rarities'];
-  localized.twoPiecesBonus = artifact[0]['twoPiecesBonus'][lang];
-  localized.fourPiecesBonus = artifact[0]['fourPiecesBonus'][lang];
-
-  localized.flower = {
-    name : artifact[0]['flower']['name'][lang],
-    description : artifact[0]['flower']['description'][lang],
-    story : artifact[0]['flower']['story'][lang],
-    image:  artifact[0]['flower']['image'],
-  }
-
-  localized.plume = {
-    name : artifact[0]['plume']['name'][lang],
-    description : artifact[0]['plume']['description'][lang],
-    story : artifact[0]['plume']['story'][lang],
-    image:  artifact[0]['plume']['image'],
-  }
-
-  localized.sands = {
-    name : artifact[0]['sands']['name'][lang],
-    description : artifact[0]['sands']['description'][lang],
-    story : artifact[0]['sands']['story'][lang],
-    image:  artifact[0]['sands']['image'],
-  }
-
-  localized.goblet = {
-    name : artifact[0]['goblet']['name'][lang],
-    description : artifact[0]['goblet']['description'][lang],
-    story : artifact[0]['goblet']['story'][lang],
-    image:  artifact[0]['goblet']['image'],
-  }
-
-  localized.circlet = {
-    name : artifact[0]['circlet']['name'][lang],
-    description : artifact[0]['circlet']['description'][lang],
-    story : artifact[0]['circlet']['story'][lang],
-    image:  artifact[0]['circlet']['image'],
-  }*/
 
   return localized;
 

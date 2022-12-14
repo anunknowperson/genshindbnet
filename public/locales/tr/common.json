@@ -1,0 +1,25 @@
+{
+    "h_characters" : "Karakterler",
+    "h_tierlist" : "Seviye Listesi",
+    "h_map" : "İnteraktif harita",
+    "h_database" : "Veri tabanı",
+    "h_artifacts" : "Eserler",
+    "h_weapons" : "Silahlar",
+    "h_elements" : "Elementler",
+
+    "table_search" : "Herhangi bir alana göre ara",
+
+    "e_filter" : "Ateş|Su|Elektrik|Buz|Doğa|Rüzgar|Toprak",
+
+    "e_pyro" : "ateş",
+    "e_hydro" : "su",
+    "e_electro" : "elektrik",
+    "e_cryo" : "buz",
+    "e_dendro" : "doğa",
+    "e_anemo" : "rüzgar",
+    "e_geo" : "toprak",
+
+    "f_about" : "Genshin DB, karakter kılavuzları ve Genshin Impact oyunu için bir veritabanı içeren bir sitedir.",
+    "f_policy" : "Gizlilik Politikası"
+    
+}

@@ -33,8 +33,6 @@ async function fetchWeaponsFromDb(locale) {
 export default async function handler(req, res) {
     const {lang, page, recordsPerPage, columnAccessor, direction, search, rarities, types} = req.query;
 
-    
-
     var initList = await fetchWeaponsFromDb(lang);
 
     let list = initList.sort((a, b) => {

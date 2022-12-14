@@ -1,6 +1,5 @@
-
 import useStyles from './ArtifactPieceSelector.styles';
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export function ArtifactPieceSelector({label, strings, changedCallback, children}) {
     const { classes } = useStyles();
@@ -19,7 +18,9 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['flower']['image']}
                     alt={ label + " Flower"}
-                    fill
+                    width="100%"
+                    height="100%"
+                    layout="intrinsic"
                 />
             </button>
         </div>
@@ -29,7 +30,9 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['plume']['image']}
                     alt={ label + " Plume"}
-                    fill
+                    width="100%"
+                    height="100%"
+                    layout="intrinsic"
                 />
             </button>
         </div>
@@ -39,7 +42,9 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['sands']['image']}
                     alt={ label + " Sands"}
-                    fill
+                    width="100%"
+                    height="100%"
+                    layout="intrinsic"
                 />
             </button>
         </div>
@@ -49,7 +54,9 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['goblet']['image']}
                     alt={ label + " Goblet"}
-                    fill
+                    width="100%"
+                    height="100%"
+                    layout="intrinsic"
                 />
             </button>
         </div>
@@ -67,7 +74,9 @@ export function ArtifactPieceSelector({label, strings, changedCallback, children
                     priority="true"
                     src={"/resources/" + strings['circlet']['image']}
                     alt={ label + " Circlet"}
-                    fill
+                    width="100%"
+                    height="100%"
+                    layout="intrinsic"
                 />
             </button>
         </div>

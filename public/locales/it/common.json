@@ -1,0 +1,25 @@
+{
+    "h_characters" : "Personaggi",
+    "h_tierlist" : "Elenco dei livelli",
+    "h_map" : "Mappa interattiva",
+    "h_database" : "Banca dati",
+    "h_artifacts" : "Artefatti",
+    "h_weapons" : "Armi",
+    "h_elements" : "Elementi",
+
+    "table_search" : "Cerca per qualsiasi campo",
+
+    "e_filter" : "Pyro|Hydro|Electro|Cryo|Dendro|Anemo|Geo",
+
+    "e_pyro" : "pyro",
+    "e_hydro" : "hydro",
+    "e_electro" : "electro",
+    "e_cryo" : "cryo",
+    "e_dendro" : "dendro",
+    "e_anemo" : "anemo",
+    "e_geo" : "geo",
+
+    "f_about" : "Genshin DB è un sito con guide ai personaggi e un database per il gioco Genshin Impact.",
+    "f_policy" : "Politica sulla riservatezza"
+    
+}

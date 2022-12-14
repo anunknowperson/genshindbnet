@@ -125,7 +125,7 @@ export function ArtifactsList({searchFilter, rarityFilter}) {
                         alt={ ""}
                         width={15}
                         height={15}
-                        intrinsic
+                        
                     />
                     
                     )}

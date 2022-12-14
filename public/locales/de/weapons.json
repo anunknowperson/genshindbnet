@@ -1,0 +1,16 @@
+{
+    "w_name" : "Name",
+    "w_rarity" : "Seltenheit",
+    "w_effect" : "Wirkung",
+    
+    "w_claymore" : "Zweihänder",
+    "w_polearm" : "Stangenwaffe",
+    "w_sword" : "Einhänder",
+    "w_bow" : "Bogen",
+    "w_catalyst" : "Katalysator",
+
+    "w_baseatk" : "Basis-ANG",
+    "w_ascension" : "Aufstieg",
+    "w_fullprogression" : "Voller Fortschritt"
+
+}

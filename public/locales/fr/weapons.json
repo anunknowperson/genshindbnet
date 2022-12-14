@@ -1,0 +1,16 @@
+{
+    "w_name" : "Nom",
+    "w_rarity" : "Rareté",
+    "w_effect" : "Effet",
+    
+    "w_claymore" : "Épée à deux mains",
+    "w_polearm" : "Arme d'hast",
+    "w_sword" : "Épée à une main",
+    "w_bow" : "Arc",
+    "w_catalyst" : "Catalyseur",
+
+    "w_baseatk" : "ATT de base",
+    "w_ascension" : "Ascension",
+    "w_fullprogression" : "Progression complète"
+
+}

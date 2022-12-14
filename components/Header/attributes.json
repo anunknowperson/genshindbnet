@@ -23,7 +23,7 @@
         "link": "https://genshindb.net/",
         "label": "h_database",
         "links": [
-          { "link": "https://genshindb.net/weapons/", "label": "h_weapons" },
+          { "link": "/weapons/", "label": "h_weapons" },
           { "link": "/artifacts/", "label": "h_artifacts" },
           { "link": "https://genshindb.net/elements/", "label": "h_elements" }
         ]

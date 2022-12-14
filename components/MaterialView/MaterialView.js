@@ -27,12 +27,12 @@ export function MaterialView({name, rarity, image, count}) {
 
             <div className={classes.imageContainer}>
                 
-            <Image className={classes.topPanel} width={70} height={70} src={rarityImage}/>
+            <Image className={classes.topPanel} width={70} height={70} src={rarityImage} alt={`Rarity ${rarity}`}/>
 
             
                 <div className={classes.materialIcon}>
                 
-                    <Image  width={70} height={70} src={`/resources/${image}.png`}/>
+                    <Image  width={70} height={70} src={`/resources/${image}.png`} alt={name}/>
                 </div>
             </div>
             

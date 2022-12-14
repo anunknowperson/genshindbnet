@@ -116,7 +116,7 @@ export function WeaponDisplay({strings, levelCallback}) {
 
                     <div style = {{paddingLeft: '30px', paddingTop: '10px', paddingBottom: '20px',  width: '150px'}}>
                     {[...Array(Number(parseInt(strings['rarity'])))].map((val, el) =>
-                      <Image key={el} width={15} height={15} src={"/star.svg"}/>
+                      <Image key={el} width={15} alt={'star'} height={15} src={"/star.svg"}/>
                     )}
                     </div>
                     
