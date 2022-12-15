@@ -130,7 +130,7 @@ export function WeaponDisplay({strings, levelCallback}) {
                           style={{objectFit: 'contain'}}
                           fill
                           priority="true"
-                          src={`/resources/${(r == 1) ? strings['images']['icon'] : strings['images']['nameawakenicon']}.png`}
+                          src={`/resources/${(level < 4) ? strings['images']['icon'] : strings['images']['nameawakenicon']}.png`}
                           alt={strings['images']['icon']}
                           
                         />
