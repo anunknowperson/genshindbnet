@@ -1,17 +1,15 @@
 import { useRouter } from 'next/router'
 
-import { Welcome } from '../../components/Welcome/Welcome';
-
-import { ArtifactPieceSelector } from '../../components/ArtifactPieceSelector/ArtifactPieceSelector';
+import { ArtifactPieceSelector } from '../../components/Artifacts/ArtifactPieceSelector/ArtifactPieceSelector';
 
 import { ContentPanel } from '../../components/ContentPanel/ContentPanel';
 
-import { ArtifactPieceDisplay } from '../../components/ArtifactPieceDisplay/ArtifactPieceDisplay';
+import { ArtifactPieceDisplay } from '../../components/Artifacts/ArtifactPieceDisplay/ArtifactPieceDisplay';
 
-import { ArtifactMainStatsTable } from '../../components/ArtifactMainStatsTable/ArtifactMainStatsTable';
-import {ArtifactSubStatsTable} from '../../components/ArtifactSubStatsTable/ArtifactSubStatsTable';
+import { ArtifactMainStatsTable } from '../../components/Artifacts/ArtifactMainStatsTable/ArtifactMainStatsTable';
+import {ArtifactSubStatsTable} from '../../components/Artifacts/ArtifactSubStatsTable/ArtifactSubStatsTable';
 
-import useStyles from '../../components/ArtifactView/ArtifactView.style';
+import useStyles from '../../styles/artifact.styles';
 
 import { TextFormat } from '../../components/TextFormat/TextFormat';
 
@@ -27,7 +25,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
 import { useTranslation } from 'next-i18next';
-
+import Link from 'next/link';
 
 // Server only
 import { withMongo } from '../../lib/mongowrapper'
@@ -52,6 +50,9 @@ export default function ArtifactSetPage({label, strings}) {
 
   return (
     <>
+        <div className={classes.breadcrumbs}>
+          <Link className={classes.breadcrumbsLink}  href="/artifacts">{t('h_artifacts')}</Link> &gt;
+        </div>
 
         <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
 

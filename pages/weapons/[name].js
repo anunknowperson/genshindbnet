@@ -1,15 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { Welcome } from '../../components/Welcome/Welcome';
-
-import { ArtifactPieceSelector } from '../../components/ArtifactPieceSelector/ArtifactPieceSelector';
-
 import { ContentPanel } from '../../components/ContentPanel/ContentPanel';
-
-import { ArtifactPieceDisplay } from '../../components/ArtifactPieceDisplay/ArtifactPieceDisplay';
-
-import { ArtifactMainStatsTable } from '../../components/ArtifactMainStatsTable/ArtifactMainStatsTable';
-import {ArtifactSubStatsTable} from '../../components/ArtifactSubStatsTable/ArtifactSubStatsTable';
 
 import useStyles from '../../styles/weapon.style'
 
@@ -30,13 +21,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { useTranslation } from 'next-i18next';
 
-import { WeaponDisplay } from '../../components/WeaponDisplay/WeaponDisplay';
+import { WeaponDisplay } from '../../components/Weapons/WeaponDisplay/WeaponDisplay';
 
 // Server only
 import { withMongo } from '../../lib/mongowrapper'
-import { WeaponAscension } from '../../components/WeaponAscension/WeaponAscension';
+import { WeaponAscension } from '../../components/Weapons/WeaponAscension/WeaponAscension';
 
-
+import { Text } from '@mantine/core';
+import Link from 'next/link';
 export default function WeaponPage({label, strings}) {
   const router = useRouter();
   
@@ -54,7 +46,11 @@ export default function WeaponPage({label, strings}) {
 
   return (
     <>
-
+      <div className={classes.breadcrumbs}>
+        <Link className={classes.breadcrumbsLink}  href="/weapons">{t('h_weapons')}</Link> &gt;
+      </div>
+      
+      
       <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
 
         

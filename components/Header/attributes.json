@@ -25,7 +25,9 @@
         "links": [
           { "link": "/weapons/", "label": "h_weapons" },
           { "link": "/artifacts/", "label": "h_artifacts" },
+          { "link": "/materials/", "label": "h_materials" },
           { "link": "https://genshindb.net/elements/", "label": "h_elements" }
+          
         ]
       }
     ]

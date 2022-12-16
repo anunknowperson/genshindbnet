@@ -20,6 +20,9 @@
     "e_geo" : "바위",
 
     "f_about" : "Genshin DB는 Genshin Impact 게임의 캐릭터 가이드 및 데이터베이스가 있는 사이트입니다.",
-    "f_policy" : "개인 정보 정책"
+    "f_policy" : "개인 정보 정책",
+
+    "filter" : "필터",
+    "select_all" : "모두 선택"
     
 }

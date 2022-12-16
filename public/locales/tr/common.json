@@ -20,6 +20,9 @@
     "e_geo" : "toprak",
 
     "f_about" : "Genshin DB, karakter kılavuzları ve Genshin Impact oyunu için bir veritabanı içeren bir sitedir.",
-    "f_policy" : "Gizlilik Politikası"
+    "f_policy" : "Gizlilik Politikası",
+
+    "filter" : "Filtre",
+    "select_all" : "Hepsini seç"
     
 }

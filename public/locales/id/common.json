@@ -20,6 +20,9 @@
     "e_geo" : "geo",
 
     "f_about" : "Genshin DB adalah situs dengan panduan karakter dan database untuk game Genshin Impact.",
-    "f_policy" : "Kebijakan pribadi"
+    "f_policy" : "Kebijakan pribadi",
+
+    "filter" : "Saring",
+    "select_all" : "Pilih Semua"
     
 }

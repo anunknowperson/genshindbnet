@@ -20,6 +20,9 @@
     "e_geo" : "岩",
 
     "f_about" : "Genshin DB 是一个提供角色指南和 Genshin Impact 游戏数据库的网站。",
-    "f_policy" : "隐私政策"
+    "f_policy" : "隐私政策",
+
+    "filter" : "筛选",
+    "select_all" : "全选"
     
 }

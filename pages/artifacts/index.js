@@ -6,7 +6,7 @@ import { PostWrapper } from '../../components/PostWrapper/PostWrapper';
 
 import { Layout } from '../../components/Layout/Layout';
 
-import { ArtifactsList } from '../../components/ArtifactsList/ArtifactsList';
+import { ArtifactsList } from '../../components/Artifacts/ArtifactsList/ArtifactsList';
 
 import { Chip, Group } from '@mantine/core';
 import {  useState } from 'react';

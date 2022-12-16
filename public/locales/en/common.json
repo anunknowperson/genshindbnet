@@ -5,6 +5,7 @@
     "h_database" : "Database",
     "h_artifacts" : "Artifacts",
     "h_weapons" : "Weapons",
+    "h_materials" : "Materials",
     "h_elements" : "Elements",
 
     "table_search" : "Search by any field",
@@ -20,6 +21,9 @@
     "e_geo" : "geo",
 
     "f_about" : "Genshin DB is a site with character guides and a database for the Genshin Impact game.",
-    "f_policy" : "Privacy Policy"
+    "f_policy" : "Privacy Policy",
+
+    "filter" : "Filter",
+    "select_all" : "Select All"
     
 }

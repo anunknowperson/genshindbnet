@@ -9,7 +9,7 @@ import { Layout } from '../../components/Layout/Layout';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-import { WeaponsList } from '../../components/WeaponsList/WeaponsList';
+import { WeaponsList } from '../../components/Weapons/WeaponsList/WeaponsList';
 import {  useState } from 'react';
 import { Chip, Group } from '@mantine/core';
 

@@ -20,6 +20,9 @@
     "e_geo" : "géo",
 
     "f_about" : "Genshin DB est un site avec des guides de personnages et une base de données pour le jeu Genshin Impact.",
-    "f_policy" : "Politique de confidentialité"
+    "f_policy" : "Politique de confidentialité",
+
+    "filter" : "Filtre",
+    "select_all" : "Tout sélectionner"
     
 }

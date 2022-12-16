@@ -20,6 +20,9 @@
     "e_geo" : "nham",
 
     "f_about" : "Genshin DB là một trang web có hướng dẫn nhân vật và cơ sở dữ liệu cho trò chơi Genshin Impact.",
-    "f_policy" : "Chính sách bảo mật"
+    "f_policy" : "Chính sách bảo mật",
+
+    "filter" : "Lọc",
+    "select_all" : "Chọn tất cả"
     
 }
