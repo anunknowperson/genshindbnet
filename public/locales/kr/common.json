@@ -23,6 +23,9 @@
     "f_policy" : "개인 정보 정책",
 
     "filter" : "필터",
-    "select_all" : "모두 선택"
+    "select_all" : "모두 선택",
+
+    "select_any_elements" : "모든 요소 선택",
+    "h_materials" : "재료"
     
 }

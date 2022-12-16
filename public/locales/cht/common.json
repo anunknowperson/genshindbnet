@@ -23,6 +23,9 @@
     "f_policy" : "隱私政策",
 
     "filter" : "篩選",
-    "select_all" : "全選"
+    "select_all" : "全選",
+
+    "select_any_elements" : "選擇任何元素",
+    "h_materials" : "材料"
     
 }

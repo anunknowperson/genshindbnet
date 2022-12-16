@@ -23,6 +23,9 @@
     "f_policy" : "Kebijakan pribadi",
 
     "filter" : "Saring",
-    "select_all" : "Pilih Semua"
+    "select_all" : "Pilih Semua",
+
+    "select_any_elements" : "Pilih Elemen Apapun",
+    "h_materials" : "Bahan"
     
 }

@@ -23,6 +23,9 @@
     "f_policy" : "Política de privacidad",
 
     "filter" : "Filtrar",
-    "select_all" : "Seleccionar todo"
+    "select_all" : "Seleccionar todo",
+
+    "select_any_elements" : "Seleccionar cualquier elemento",
+    "h_materials" : "Materiales"
     
 }

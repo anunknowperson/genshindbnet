@@ -23,6 +23,9 @@
     "f_policy" : "Chính sách bảo mật",
 
     "filter" : "Lọc",
-    "select_all" : "Chọn tất cả"
+    "select_all" : "Chọn tất cả",
+
+    "select_any_elements" : "Chọn bất kỳ phần tử nào",
+    "h_materials" : "Vật liệu"
     
 }

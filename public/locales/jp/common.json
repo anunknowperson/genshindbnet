@@ -23,6 +23,9 @@
     "f_policy" : "プライバシーポリシー",
 
     "filter" : "フィルター",
-    "select_all" : "すべて選択"
+    "select_all" : "すべて選択",
+
+    "select_any_elements" : "任意の要素を選択",
+    "h_materials" : "材料"
     
 }

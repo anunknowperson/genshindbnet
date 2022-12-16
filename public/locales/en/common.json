@@ -5,7 +5,6 @@
     "h_database" : "Database",
     "h_artifacts" : "Artifacts",
     "h_weapons" : "Weapons",
-    "h_materials" : "Materials",
     "h_elements" : "Elements",
 
     "table_search" : "Search by any field",
@@ -24,6 +23,9 @@
     "f_policy" : "Privacy Policy",
 
     "filter" : "Filter",
-    "select_all" : "Select All"
+    "select_all" : "Select All",
+
+    "select_any_elements" : "Select Any Elements",
+    "h_materials" : "Materials"
     
 }

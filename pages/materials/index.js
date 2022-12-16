@@ -41,7 +41,7 @@ export default function MaterialsPage({materialtypes}) {
 
   return (
     <>
-        <h1 className={classes.materialsNameHeader}>{'Materials'}</h1>
+        <h1 className={classes.materialsNameHeader}>{t('h_materials')}</h1>
 
         <SearchBar callback={setSearchFilter} placeholder={t("table_search")}/>
         
@@ -54,7 +54,7 @@ export default function MaterialsPage({materialtypes}) {
 
             value={types} onChange={setTypes}
 
-            placeholder="Select any elements"
+            placeholder={t('select_any_elements')}
 
             searchable
             clearable

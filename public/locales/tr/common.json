@@ -23,6 +23,9 @@
     "f_policy" : "Gizlilik Politikası",
 
     "filter" : "Filtre",
-    "select_all" : "Hepsini seç"
+    "select_all" : "Hepsini seç",
+
+    "select_any_elements" : "Herhangi Bir Öğe Seçin",
+    "h_materials" : "Malzemeler"
     
 }
