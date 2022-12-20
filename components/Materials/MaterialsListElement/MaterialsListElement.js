@@ -36,7 +36,7 @@ export function MaterialsListElement({label, name, rarity, image}) {
             
             
 
-            <a  className={classes.link}>
+            <div  className={classes.link}>
             <div className={classes.botPanel}>
             
             <Text lineClamp={2}>
@@ -44,7 +44,7 @@ export function MaterialsListElement({label, name, rarity, image}) {
             </Text>
             
             </div>
-            </a>
+            </div>
         </div>
         </Link>
         

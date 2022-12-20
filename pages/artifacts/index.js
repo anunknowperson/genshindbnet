@@ -23,7 +23,7 @@ export default function ArtifactsPage({}) {
   const { classes } = useStyles();
 
   const [searchFilter, setSearchFilter] = useState('');
-  const [rarities, setRarities] = useState(['4', '5']);
+  const [rarities, setRarities] = useState(['5']);
 
 
   return (

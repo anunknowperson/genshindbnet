@@ -41,7 +41,7 @@ export function Footer() {
             
                 <Link href="https://poklonniki.gitbook.io/poklonniki-tumana/" legacyBehavior>
                   <a>
-                  <Image className={classes.friendButton} width={30} height={30} src="/mist.png"></Image>
+                  <Image className={classes.friendButton} width={30} height={30} src="/mist.png" alt={'Friends'}></Image>
                   </a>
                   
                 </Link>

@@ -73,7 +73,7 @@ export function MaterialsList({searchFilter, rarityFilter, typeFilter}) {
     if (!isFetching){
         materialTableElements = <>
             <div className={classes.grid}>
-                {data.materials.map ((el, val) => <MaterialsListElement label={el.label} name = {el.name} rarity={(el.rarity == null) ? 1 : el.rarity} image={el.images.icon}/>)}
+                {data.materials.map ((el, val) => <MaterialsListElement key={val} label={el.label} name = {el.name} rarity={(el.rarity == null) ? 1 : el.rarity} image={el.images.icon}/>)}
             </div>
 
             <Group position='apart' style={{marginTop: '20px'}}>
