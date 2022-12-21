@@ -26,6 +26,9 @@
     "select_all" : "全选",
 
     "select_any_elements" : "选择任何元素",
-    "h_materials" : "材料"
+    "h_materials" : "材料",
+
+    "h_foods" : "食品",
+    "remove_all" : "取消全选"
     
 }

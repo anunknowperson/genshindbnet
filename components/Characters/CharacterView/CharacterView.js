@@ -18,7 +18,7 @@ export function CharacterView({ label, rarity, image, name}) {
 
 
     return (
-        <Link style={{color: 'inherit', textDecoration: 'none',}} href={`/characters/${label}`}>
+        <div style={{color: 'inherit', textDecoration: 'none',}} href={`/characters/${label}`}>
         <div className={classes.container}>
 
             <div className={classes.imageContainer}>
@@ -43,6 +43,6 @@ export function CharacterView({ label, rarity, image, name}) {
             </div>
             
         </div>
-        </Link>
+        </div>
     );
 }

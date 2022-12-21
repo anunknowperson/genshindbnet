@@ -26,6 +26,9 @@
     "select_all" : "Hepsini seç",
 
     "select_any_elements" : "Herhangi Bir Öğe Seçin",
-    "h_materials" : "Malzemeler"
+    "h_materials" : "Malzemeler",
+
+    "h_foods" : "Gıdalar",
+    "remove_all" : "Hiçbirini seçme"
     
 }

@@ -26,6 +26,9 @@
     "select_all" : "Selecionar tudo",
 
     "select_any_elements" : "Selecione quaisquer elementos",
-    "h_materials" : "Materiais"
+    "h_materials" : "Materiais",
+
+    "h_foods" : "Alimentos",
+    "remove_all" : "Desmarcar todos"
     
 }

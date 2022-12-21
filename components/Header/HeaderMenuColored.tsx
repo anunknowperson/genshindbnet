@@ -25,6 +25,7 @@ const useStyles = createStyles((theme) => ({
   header: {
     backgroundColor: theme.colors.dark[6],
     
+    
     //borderBottom: '0px solid ' + theme.colors.dark[8],
   },
 
@@ -211,7 +212,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
 
   return (
     
-    <PageWrapper mBottom={10}>
+    <PageWrapper  mBottom={10}>
     <Header height={80} className={classes.header} mb={0}>
       <Container px={(width > 750) ? 40 : 20} fluid={true}>
         <div className={classes.inner}>

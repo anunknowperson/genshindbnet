@@ -26,6 +26,9 @@
     "select_all" : "เลือกทั้งหมด",
 
     "select_any_elements" : "เลือกองค์ประกอบใด ๆ",
-    "h_materials" : "วัสดุ"
+    "h_materials" : "วัสดุ",
+
+    "h_foods" : "อาหาร",
+    "remove_all" : "ยกเลิกการเลือกทั้งหมด"
     
 }

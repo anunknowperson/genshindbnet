@@ -23,7 +23,7 @@ export function FoodsPageView({strings}) {
     const { classes } = useStyles();
     const { height, width } = useViewportSize();
 
-    const { t } = useTranslation(['common', 'weapons']);
+    const { t } = useTranslation(['common', 'foods']);
 
     var selectedRarity = strings['rarity'];
     var gradientStyle = getRarityGradient((selectedRarity != null && !isNaN(selectedRarity)) ? parseInt(selectedRarity) : 1);
@@ -31,9 +31,9 @@ export function FoodsPageView({strings}) {
     const [quality, setQuality] = useState(2);
 
     var marks = [
-        { value: 0, label: 'Suspicious' },
-        { value: 1, label: 'Normal' },
-        { value: 2, label: 'Delicious' },
+        { value: 0, label: t("f_suspicious", { ns: 'foods' }) },
+        { value: 1, label: t("f_normal", { ns: 'foods' }) },
+        { value: 2, label: t("f_delicious", { ns: 'foods' }) },
       ];
 
     const getQualityString = () => {
@@ -96,7 +96,7 @@ export function FoodsPageView({strings}) {
             <>
             <Slider label={null} min={0} max={2} step={1} defaultValue={2} marks={marks} value={quality} onChange={setQuality}
             style={{
-                padding: '30px 40px 20px 40px'
+                padding: '30px 50px 20px 50px'
             }}
             ></Slider>
             
@@ -116,7 +116,7 @@ export function FoodsPageView({strings}) {
             }}>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                   <div style={{display: 'flex', justifyContent: 'center', color: 'white', paddingBottom: '10px'}}>
-                  Base dish
+                  {t("f_basedish", { ns: 'foods' }) }
                   </div>
                   
                   <FoodView label={strings['basedish']['label']} rarity={strings['basedish']['rarity']} image={strings['basedish']['image']} name={strings['basedish']['name']} category={strings['basedish']['foodcategory']}>
@@ -126,7 +126,7 @@ export function FoodsPageView({strings}) {
                 </div>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                   <div style={{display: 'flex', justifyContent: 'center', color: 'white', paddingBottom: '10px'}}>
-                  Character
+                  {t("f_character", { ns: 'foods' }) }
                   </div>
 
                   <CharacterView label={strings['character']['label']} rarity={strings['character']['rarity']} image={strings['character']['image']} name={strings['character']['name']}>
@@ -146,7 +146,7 @@ export function FoodsPageView({strings}) {
             </div> 
             </>}
 
-            <div style={{color: 'white', padding: "0px 20px 10px 20px"}}>{('Ingredients')}</div>
+            <div style={{color: 'white', padding: "0px 20px 10px 20px"}}>{(t("f_ingredients", { ns: 'foods' }))}</div>
 
             <div className={classes.ingredientsContainer}>
 

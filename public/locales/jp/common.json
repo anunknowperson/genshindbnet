@@ -26,6 +26,9 @@
     "select_all" : "すべて選択",
 
     "select_any_elements" : "任意の要素を選択",
-    "h_materials" : "材料"
+    "h_materials" : "材料",
+
+    "h_foods" : "食品",
+    "remove_all" : "選択を解除"
     
 }

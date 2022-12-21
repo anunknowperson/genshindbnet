@@ -26,6 +26,9 @@
     "select_all" : "Pilih Semua",
 
     "select_any_elements" : "Pilih Elemen Apapun",
-    "h_materials" : "Bahan"
+    "h_materials" : "Bahan",
+
+    "h_foods" : "Makanan",
+    "remove_all" : "Batalkan pilihan Semua"
     
 }

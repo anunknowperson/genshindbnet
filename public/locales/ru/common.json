@@ -26,5 +26,8 @@
     "select_all" : "Выбрать всё",
 
     "select_any_elements" : "Выберите любые элементы",
-    "h_materials" : "Материалы"
+    "h_materials" : "Материалы",
+
+    "h_foods" : "Еда",
+    "remove_all" : "Очистить выбор"
 }

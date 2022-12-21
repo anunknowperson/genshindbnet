@@ -99,6 +99,6 @@ async function fetchMaterialTypesDataFromDb(locale) {
 
 export async function getStaticProps(context) {
     return {
-        props: {materialtypes: await fetchMaterialTypesDataFromDb(context.locale), ...(await serverSideTranslations(context.locale, ['common', 'weapons' ])) },
+        props: {materialtypes: await fetchMaterialTypesDataFromDb(context.locale), ...(await serverSideTranslations(context.locale, ['common'])) },
     };
   }

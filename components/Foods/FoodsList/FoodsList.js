@@ -20,7 +20,7 @@ import { useRouter } from 'next/router';
 
 import { Pagination, Group, Loader } from '@mantine/core';
 
-export function FoodsList({searchFilter, rarityFilter}) {
+export function FoodsList({categoryFilter, searchFilter, rarityFilter}) {
   const recordsPerPage = 100;
 
   const {classes} = useStyles();
@@ -39,10 +39,10 @@ export function FoodsList({searchFilter, rarityFilter}) {
 
   useEffect(() => {
     setPage(1);
-  }, [searchFilter, rarityFilter]);
+  }, [searchFilter, rarityFilter, categoryFilter]);
 
-  const fetchFoods = async (page, columnAccessor, direction, search, raritiesFilter, typesFilter) => {
-    const res = await fetch(`/api/foods?lang=${locale}&page=${page}&recordsPerPage=${recordsPerPage}&columnAccessor=${columnAccessor}&direction=${direction}&search=${search}&rarities=${JSON.stringify(raritiesFilter)}`);
+  const fetchFoods = async (page, columnAccessor, direction, search, raritiesFilter, categoryFilter) => {
+    const res = await fetch(`/api/foods?lang=${locale}&page=${page}&recordsPerPage=${recordsPerPage}&columnAccessor=${columnAccessor}&direction=${direction}&search=${search}&rarities=${JSON.stringify(raritiesFilter)}&categories=${JSON.stringify(categoryFilter)}`);
 
     const result = await res.json();
 
@@ -50,8 +50,8 @@ export function FoodsList({searchFilter, rarityFilter}) {
   };
 
   const { data, isFetching } = useQuery(
-    ['foods', page, sortStatus, searchFilter, rarityFilter, locale],
-    async () => fetchFoods(page, sortStatus.columnAccessor, sortStatus.direction, searchFilter, rarityFilter),
+    ['foods', page, sortStatus, searchFilter, rarityFilter, categoryFilter, locale],
+    async () => fetchFoods(page, sortStatus.columnAccessor, sortStatus.direction, searchFilter, rarityFilter, categoryFilter),
     { refetchOnWindowFocus: false }
   );
 

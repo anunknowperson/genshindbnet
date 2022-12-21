@@ -161,7 +161,7 @@ export async function getStaticProps(context) {
   const data = await fetchFoodDataFromDb(context.locale,label );
 
   return {
-      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'weapons' ])) },
+      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'foods' ])) },
   };
 }
 

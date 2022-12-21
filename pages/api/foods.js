@@ -27,15 +27,26 @@ async function fetchFoodsFromDb(locale) {
 }
 
 export default async function handler(req, res) {
-    const {lang, page, recordsPerPage, columnAccessor, direction, search, rarities, types} = req.query;
+    const {lang, page, recordsPerPage, columnAccessor, direction, search, rarities, categories} = req.query;
 
-    var list = await fetchFoodsFromDb(lang);
+    var initList = await fetchFoodsFromDb(lang);
 
-    /*let list = initList.sort((a, b) => {
+    let list = initList.sort((a, b) => {
         
-        return (a['sortorder'] == b['sortorder']) ? 0 : b['sortorder'] - a['sortorder']
+        
+        if (a['rarity'] === b['rarity']) {
+            var cmp = String(b['category']).localeCompare(String(a['category']))
+            
+            if (cmp == 0){
+                return String(a['name']).localeCompare(String(b['name']));
+            }
+            
+            return cmp;
+        }
 
-      });*/
+        return  a['rarity'] - b['rarity'];
+
+      });
 
     
     if (search !== ''){
@@ -58,12 +69,12 @@ export default async function handler(req, res) {
         
     );
 
-    /*
-    const typeFilter = JSON.parse(types);
+    
+    const categoryFilter = JSON.parse(categories);
 
     list =  list.filter((item) =>
-        typeFilter.includes((item.materialtype))
-    );*/
+        categoryFilter.includes((item.category))
+    );
 
     const total = list.length;
 
