@@ -1,4 +1,4 @@
-import { createStyles, Header, Menu, Group, Center, Burger, Container, Transition, Paper } from '@mantine/core';
+import { createStyles, Header, Menu, Group, Center, Burger, Container, Transition, Paper, Button, Flex } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons';
 import { Image } from '@mantine/core';
@@ -6,7 +6,7 @@ import { Image } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import { NextLink } from '@mantine/next';
-
+import { SessionButton } from '../Authentication/SessionButton'
 import { SetStateAction, useState, useEffect } from 'react';
 import { Select } from '@mantine/core';
 import { useRouter } from 'next/router'
@@ -24,8 +24,8 @@ const HEADER_HEIGHT = 80;
 const useStyles = createStyles((theme) => ({
   header: {
     backgroundColor: theme.colors.dark[6],
-    
-    
+
+
     //borderBottom: '0px solid ' + theme.colors.dark[8],
   },
 
@@ -58,16 +58,16 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
-    
 
-    [theme.fn.smallerThan(751)] : {
+
+    [theme.fn.smallerThan(751)]: {
       minHeight: '75px',
       display: 'flex',
       justifyContent: 'center',
       alignContent: 'center',
       flexDirection: 'column',
     },
-    
+
 
     '&:hover': {
       backgroundColor: theme.fn.lighten(
@@ -83,26 +83,26 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     minHeight: '75px',
 
-    [theme.fn.smallerThan(751)] : {
+    [theme.fn.smallerThan(751)]: {
       flexDirection: 'row',
     },
 
-    
+
   },
 
-    planeLink: {
-    
+  planeLink: {
+
     lineHeight: 1,
-    
+
     textDecoration: 'none',
     color: theme.white,
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
-    },
-  
+  },
+
   dropdown: {
-    
+
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
@@ -127,9 +127,9 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
 
   const [opened, { toggle, close }] = useDisclosure(false);
 
-  const [mobileSubMenuOpened, mobileSubMenuHandlers ] = useDisclosure(false);
+  const [mobileSubMenuOpened, mobileSubMenuHandlers] = useDisclosure(false);
 
-  const { classes , cx} = useStyles();
+  const { classes, cx } = useStyles();
 
   const { height, width } = useViewportSize();
 
@@ -142,7 +142,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
     setLang(locale!);
   });
 
-  const onLanguageSelect = (lang :String | null) =>{
+  const onLanguageSelect = (lang: String | null) => {
     setLang(lang as SetStateAction<string | null>);
 
     router.push({ pathname, query }, asPath, { locale: lang as string | false | undefined })
@@ -154,7 +154,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
     ));
 
     if (menuItems) {
-      return ( (width > 750) ?
+      return ((width > 750) ?
         <Menu key={link.label} trigger="hover" exitTransitionDuration={0}>
           <Menu.Target>
             <a
@@ -162,25 +162,25 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
               href={link.link}
             >
 
-                  <Center>
-                    <span className={classes.linkLabel}>{t(link.label)}</span>
-                    <IconChevronDown  size={15} stroke={1.5} />
-                  </Center> 
+              <Center>
+                <span className={classes.linkLabel}>{t(link.label)}</span>
+                <IconChevronDown size={15} stroke={1.5} />
+              </Center>
             </a>
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu> 
-        : 
+        </Menu>
+        :
         <div key={link.label} className={cx(classes.link, classes.linkMobileDropdown)} >
-          <Link  href={link.link} legacyBehavior>
-          <a className={classes.planeLink} style={{width: '100%', height: '100%'}} onClick={close}>
-            <span className={classes.linkLabel}>{t(link.label)}</span>
-          </a>
+          <Link href={link.link} legacyBehavior>
+            <a className={classes.planeLink} style={{ width: '100%', height: '100%' }} onClick={close}>
+              <span className={classes.linkLabel}>{t(link.label)}</span>
+            </a>
           </Link>
-          
 
-          <div style={{width: '100%', height: '100%'}} onClick={(event) => mobileSubMenuHandlers.toggle()}>
-            <IconChevronDown style={{float: 'right', marginRight: '10px'}} size={20} stroke={1.5}/>
+
+          <div style={{ width: '100%', height: '100%' }} onClick={(event) => mobileSubMenuHandlers.toggle()}>
+            <IconChevronDown style={{ float: 'right', marginRight: '10px' }} size={20} stroke={1.5} />
           </div>
         </div>
       );
@@ -188,92 +188,107 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
 
     return (
       <Link key={link.label}
-      href={link.link} legacyBehavior>
-      <a
-        
-        
-        className={classes.link}
-        onClick={close}
-      >
-        {t(link.label)}
-      </a>
+        href={link.link} legacyBehavior>
+        <a
+
+
+          className={classes.link}
+          onClick={close}
+        >
+          {t(link.label)}
+        </a>
       </Link>
-      
+
     );
   });
 
   var languagesData = [];
 
-  for (const language of locales){
-    languagesData.push({value: language, label: language});
+  for (const language of locales) {
+    languagesData.push({ value: language, label: language });
   }
 
-  
+
 
   return (
-    
-    <PageWrapper  mBottom={10}>
-    <Header height={80} className={classes.header} mb={0}>
-      <Container px={(width > 750) ? 40 : 20} fluid={true}>
-        <div className={classes.inner}>
 
-        
-          <Group spacing={5} className={classes.links}>
-            {items}
-          </Group>
-          
-          <div style={{width: '70px'}}>
-            <Select value={lang} onChange={onLanguageSelect} data={languagesData} />
+    <PageWrapper mBottom={10}>
+      <Header height={80} className={classes.header} mb={0}>
+        <Container px={(width > 750) ? 40 : 20} fluid={true}>
+          <div className={classes.inner}>
+
+            <div style={{display: 'flex'}}>
+              <Image src={'/logo.png'} width={50} height={50} mr={10} />
+
+              <Group spacing={5} className={classes.links}>
+                {items}
+              </Group>
+            </div>
+
+
+            <Flex
+              gap="md"
+              direction={(width > 750) ? "row" : "row-reverse"}
+            >
+              {<SessionButton>
+                Sign in
+              </SessionButton>}
+
+
+              <div style={{ width: '70px' }}>
+                <Select value={lang} onChange={onLanguageSelect} data={languagesData} />
+              </div>
+            </Flex>
+
+
+            <Burger
+              opened={opened}
+              onClick={toggle}
+              className={classes.burger}
+              size="sm"
+              color="#fff"
+            />
+
+
           </div>
 
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            className={classes.burger}
-            size="sm"
-            color="#fff"
-          />
-          
-
-        </div>
-        
-      </Container>
-    </Header>
+        </Container>
+      </Header>
 
       <Transition transition={"pop-top-right"} duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              <>
+        {(styles) => (
+          <Paper className={classes.dropdown} withBorder style={styles}>
+            <>
               {items}
 
-              {(mobileSubMenuOpened) ? 
-              
-              links[3].links.map((link) => (
-                <Link href={link.link} legacyBehavior>
-                
-                <a
-                  style={{marginLeft: '20px'}}
-                  key={link.label}
-                  onClick={close}
-                  className={classes.link}
-                  
-                  >
-                    
-                  {'> ' + t(link.label)}
+              {(mobileSubMenuOpened) ?
 
-                </a>
+                links[3].links.map((link) => (
+                  <Link href={link.link} legacyBehavior>
 
-                </Link>
-                
-              ))
-              
-              : <></>}
-              </>
-            </Paper>
-          )}
+                    <a
+                      style={{ marginLeft: '20px' }}
+                      key={link.label}
+                      onClick={close}
+                      className={classes.link}
+
+                    >
+
+                      {'> ' + t(link.label)}
+
+                    </a>
+
+                  </Link>
+
+                ))
+
+                : <></>}
+            </>
+          </Paper>
+        )}
       </Transition>
 
     </PageWrapper>
-    
+
   );
 }

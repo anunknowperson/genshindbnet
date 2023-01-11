@@ -6,7 +6,7 @@ export function PostWrapper({children}) {
 
   return (
     <>
-        <div className={classes.wrapper}>
+        <div  className={classes.wrapper}>
           
             {children}
         

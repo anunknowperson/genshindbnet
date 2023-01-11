@@ -16,9 +16,9 @@
   ],
   "props": {
     "links": [
-      { "link": "https://genshindb.net/characters", "label": "h_characters" },
-      { "link": "https://genshindb.net/tier-list/", "label": "h_tierlist" },
-      { "link": "https://genshindb.net/interactive-map/", "label": "h_map" },
+      { "link": "/characters", "label": "h_characters" },
+      { "link": "/tutorials", "label": "h_tutorials" },
+      
       {
         "link": "#",
         "label": "h_database",

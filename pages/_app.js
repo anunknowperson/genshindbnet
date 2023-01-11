@@ -7,10 +7,12 @@ import { appWithTranslation } from 'next-i18next';
 
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 
+import { SessionProvider } from "next-auth/react"
+
 const queryClient = new QueryClient()
 
 function MyApp(props) {
-  const { Component, pageProps } = props;
+  const { Component, pageProps: { session, ...pageProps } } = props;
 
   const myTheme = {
     colorScheme: 'dark',
@@ -34,11 +36,13 @@ function MyApp(props) {
         withNormalizeCSS
         emotionCache={cache}
         >
-        <QueryClientProvider client={queryClient}>
-          <NotificationsProvider>
-            {getLayout(<Component {...pageProps} />)}
-          </NotificationsProvider>
-        </QueryClientProvider>
+        <SessionProvider session={session}>
+          <QueryClientProvider client={queryClient}>
+            <NotificationsProvider>
+              {getLayout(<Component {...pageProps} />)}
+            </NotificationsProvider>
+          </QueryClientProvider>
+        </SessionProvider>
       </MantineProvider>
     </>
   );

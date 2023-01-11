@@ -79,7 +79,7 @@ export function WeaponAscension({level, progression, costs}) {
         <div className={classes.container}>
 
             {selectedCosts.map((element, i) => 
-                <MaterialView key={i}  name={element['name']} rarity={element['rarity']} image={element['image']} count={element['count']}></MaterialView>
+                <MaterialView key={i}  name={element['name']} rarity={(element['rarity'] == null) ? 1 : element['rarity']} image={element['image']} count={element['count']}></MaterialView>
             )}
             
 

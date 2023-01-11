@@ -78,11 +78,11 @@ export function MaterialPageView({strings}) {
             
 
             {strings.source.map((val, el) =>
-                <div id={el} className={classes.sourceDiv}>
-                <div>
-                    {val}
+                <div key={el} className={classes.sourceDiv}>
+                    <div>
+                        {val}
+                    </div>
                 </div>
-            </div>
             )}
 
             
