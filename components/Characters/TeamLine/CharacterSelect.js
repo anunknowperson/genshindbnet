@@ -25,7 +25,21 @@ export function CharacterSelect({ selected, selectCallback }) {
         const charSelect = [];
 
         for (const a of result.list) {
-            charSelect.push({ value: a.label, label: a.name, group: a.rarity + ' Star', image: a.images.namesideicon });
+            var nameh = a.name;
+
+            if (a.label == 'traveleranemo') {
+                nameh += ' (Anemo)';
+            }
+            if (a.label == 'travelergeo') {
+                nameh += ' (Geo)';
+            }
+            if (a.label == 'travelerelectro') {
+                nameh += ' (Electro)';
+            }
+            if (a.label == 'travelerdendro') {
+                nameh += ' (Dendro)';
+            }
+            charSelect.push({ value: a.label, label: nameh, group: a.element , image: a.images.namesideicon });
         }
 
         return charSelect;

@@ -13,15 +13,19 @@ import { IconChevronDown } from '@tabler/icons';
 import { Text } from '@mantine/core';
 import { IconSettings, IconDoorExit, IconWriting } from '@tabler/icons';
 
+import { useTranslation } from "next-i18next";
+import Link from 'next/link';
+
 import dynamic from 'next/dynamic'
 import { Center } from '@mantine/core';
 const ParentLoginForm = dynamic(() => import("./ParentLoginForm"), {
     loading: () => 'Loading...',
 })
 
-export function SessionButton() {
+export function SessionButton({}) {
     const { data: session, status } = useSession()
 
+    const { t } = useTranslation(['common']);
     const [opened, setOpened] = useState(false);
 
 
@@ -45,15 +49,15 @@ export function SessionButton() {
                     </Menu.Target>
 
                     <Menu.Dropdown>
-                        <Menu.Label>Application</Menu.Label>
-                        <Menu.Item icon={<IconWriting size={14} /> } component='a' href='/internal/posts/list'>My posts</Menu.Item>
+                        <Menu.Label>{t('application')}</Menu.Label>
+                        <Menu.Item icon={<IconWriting size={14} /> } component={Link} href='/internal/posts/list'>{t('myposts')}</Menu.Item>
                         
                         
 
                         <Menu.Divider />
 
-                        <Menu.Item icon={<IconSettings size={14} />}>Account settings</Menu.Item>
-                        <Menu.Item color="red" icon={<IconDoorExit size={14} />} onClick={() => signOut()}>Log out</Menu.Item>
+                        <Menu.Item icon={<IconSettings size={14} />} component={Link} href='/internal/account'>{t('accountsettings')}</Menu.Item>
+                        <Menu.Item color="red" icon={<IconDoorExit size={14} />} onClick={() => signOut()}>{t('logout')}</Menu.Item>
                     </Menu.Dropdown>
 
 
@@ -65,7 +69,7 @@ export function SessionButton() {
 
 
             {(status === 'unauthenticated') && <Button onClick={() => { setOpened(true) }}>
-                Sign in
+                {t('signin')}
             </Button>}
 
 

@@ -6,7 +6,7 @@ import useStyles from '../../styles/weapon.style'
 
 import { TextFormat } from '../../components/TextFormat/TextFormat';
 
-import {useState} from 'react'
+import { useState } from 'react'
 
 import { Switch } from '@mantine/core';
 
@@ -29,10 +29,11 @@ import { WeaponAscension } from '../../components/Weapons/WeaponAscension/Weapon
 
 import { Text } from '@mantine/core';
 import Link from 'next/link';
-export default function WeaponPage({label, strings}) {
+import Head from 'next/head';
+export default function WeaponPage({ label, strings }) {
   const router = useRouter();
-  
-  
+
+
   const { t } = useTranslation(['common', 'weapons']);
 
   const [level, setLevel] = useState(strings['baseatk'].length - 1);
@@ -46,57 +47,61 @@ export default function WeaponPage({label, strings}) {
 
   return (
     <>
+      <Head>
+        <title>{strings.name}</title>
+      </Head>
+
       <div className={classes.breadcrumbs}>
-        <Link className={classes.breadcrumbsLink}  href="/weapons">{t('h_weapons')}</Link> &gt;
+        <Link className={classes.breadcrumbsLink} href="/weapons">{t('h_weapons')}</Link> &gt;
       </div>
-      
-      
+
+
       <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
 
-        
+
       <div className={classes.firstLine}>
 
-          <div className={classes.leftCollumnBox}>
-            
-            <div className={classes.leftCollimnPiecesUp}>
-              <ContentPanel>
-                <WeaponDisplay levelCallback={onLevelChanged} strings={strings}/>
-              </ContentPanel>
-            </div>
-            <div className={classes.leftCollimnPiecesDown}>
-              <ContentPanel>
-                <div style={{padding: '20px 10px 10px 20px'}}>
-                <h2 style={{margin: 0, padding: '0px 0px 10px 0px'}}>{t("w_ascension", { ns: 'weapons' })}</h2>
+        <div className={classes.leftCollumnBox}>
+
+          <div className={classes.leftCollimnPiecesUp}>
+            <ContentPanel>
+              <WeaponDisplay levelCallback={onLevelChanged} strings={strings} />
+            </ContentPanel>
+          </div>
+          <div className={classes.leftCollimnPiecesDown}>
+            <ContentPanel>
+              <div style={{ padding: '20px 10px 10px 20px' }}>
+                <h2 style={{ margin: 0, padding: '0px 0px 10px 0px' }}>{t("w_ascension", { ns: 'weapons' })}</h2>
 
                 <Switch
-                  style={{margin: 0, padding: '0px 0px 10px 0px'}}
+                  style={{ margin: 0, padding: '0px 0px 10px 0px' }}
                   checked={progression}
                   onChange={(event) => setProgression(event.currentTarget.checked)}
                   label={t("w_fullprogression", { ns: 'weapons' })}
                 />
 
-                <WeaponAscension level={level} progression={progression} costs={strings.costs}/>
-                </div>
-                
-              </ContentPanel>
-            </div>
-
-          </div>
-          <div className={classes.artifactStoryBox}>
-            <ContentPanel>
-              <div className={classes.artifactStory}>
-                <TextFormat>{strings.story}</TextFormat>
+                <WeaponAscension level={level} progression={progression} costs={strings.costs} />
               </div>
+
             </ContentPanel>
           </div>
 
         </div>
+        <div className={classes.artifactStoryBox}>
+          <ContentPanel>
+            <div className={classes.artifactStory}>
+              <TextFormat>{strings.story}</TextFormat>
+            </div>
+          </ContentPanel>
+        </div>
+
+      </div>
 
 
-      
 
-      
-      
+
+
+
     </>
   );
 }
@@ -105,7 +110,7 @@ WeaponPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
@@ -114,20 +119,20 @@ WeaponPage.getLayout = function getLayout(page) {
 export async function getStaticPaths() {
   var weapons = await withMongo(async (db) => {
     const collection = db.collection('weapons')
-    return await collection.find({}, {projection: {label : true, _id : false}}).toArray()
+    return await collection.find({}, { projection: { label: true, _id: false } }).toArray()
   });
 
 
   var paths = []
 
-  for (const weapon of weapons){
+  for (const weapon of weapons) {
 
-    for (const locale of locales){
-      
+    for (const locale of locales) {
 
-      paths.push({params: {name: weapon['label']}, locale: locale });
+
+      paths.push({ params: { name: weapon['label'] }, locale: locale });
     }
-    
+
   }
 
 
@@ -135,7 +140,7 @@ export async function getStaticPaths() {
     // ['chs', 'cht', 'en', 'fr', 'de', 'es', 'pt', 'ru', 'jp', 'kr', 'th', 'vi', 'id'],
     // Only `/posts/1` and `/posts/2` are generated at build time
 
-    
+
 
     paths: paths,
 
@@ -151,7 +156,7 @@ async function fetchArtifactDataFromDb(locale, label) {
 
   const weapons = await withMongo(async (db) => {
     const collection = db.collection('weapons')
-    return await collection.find({label: label}).toArray()
+    return await collection.find({ label: label }).toArray()
   });
 
   var localized = {}
@@ -187,10 +192,10 @@ async function fetchArtifactDataFromDb(locale, label) {
 export async function getStaticProps(context) {
   var label = context.params.name;
 
-  const data = await fetchArtifactDataFromDb(context.locale,label );
+  const data = await fetchArtifactDataFromDb(context.locale, label);
 
   return {
-      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'weapons' ])) },
+    props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'weapons'])) },
   };
 }
 

@@ -6,7 +6,7 @@ import useStyles from '../../styles/material.style'
 
 import { TextFormat } from '../../components/TextFormat/TextFormat';
 
-import {useState} from 'react'
+import { useState } from 'react'
 
 import locales from '../../global/locales';
 
@@ -23,45 +23,49 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 // Server only
 import { withMongo } from '../../lib/mongowrapper'
+import Head from 'next/head';
 
 
-export default function MaterialPage({label, strings}) {
+export default function MaterialPage({ label, strings }) {
   const router = useRouter();
-  
-  
+
+
   const { t } = useTranslation(['common', 'weapons']);
 
   const { classes } = useStyles();
 
   return (
     <>
+      <Head>
+        <title>{strings.name}</title>
+      </Head>
 
       <div className={classes.breadcrumbs}>
-        <Link className={classes.breadcrumbsLink}  href="/materials">{t('h_materials')}</Link> &gt;
+        <Link className={classes.breadcrumbsLink} href="/materials">{t('h_materials')}</Link> &gt;
       </div>
 
       <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
 
-        
+
       <div className={classes.firstLine}>
 
-          <div className={classes.collumnContainer}>
-            
-              <ContentPanel>
-                <MaterialPageView strings={strings}>
+        <div className={classes.collumnContainer}>
 
-                </MaterialPageView>
-              </ContentPanel>
-          
-          </div>
+          <ContentPanel>
+            <MaterialPageView strings={strings}>
+
+            </MaterialPageView>
+          </ContentPanel>
 
         </div>
 
-      <div style={{height: '200px'}}/>
-      
+      </div>
 
-      
-      
+      <div style={{ height: '200px' }} />
+
+
+
+
     </>
   );
 }
@@ -70,7 +74,7 @@ MaterialPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
@@ -79,20 +83,20 @@ MaterialPage.getLayout = function getLayout(page) {
 export async function getStaticPaths() {
   var materials = await withMongo(async (db) => {
     const collection = db.collection('materials')
-    return await collection.find({}, {projection: {label : true, _id : false}}).toArray()
+    return await collection.find({}, { projection: { label: true, _id: false } }).toArray()
   });
 
 
   var paths = []
 
-  for (const material of materials){
+  for (const material of materials) {
 
-    for (const locale of locales){
-      
+    for (const locale of locales) {
 
-      paths.push({params: {name: material['label']}, locale: locale });
+
+      paths.push({ params: { name: material['label'] }, locale: locale });
     }
-    
+
   }
 
 
@@ -110,7 +114,7 @@ async function fetchMaterialDataFromDb(locale, label) {
 
   const materials = await withMongo(async (db) => {
     const collection = db.collection('materials')
-    return await collection.find({label: label}).toArray()
+    return await collection.find({ label: label }).toArray()
   });
 
   var localized = {}
@@ -132,10 +136,10 @@ async function fetchMaterialDataFromDb(locale, label) {
 export async function getStaticProps(context) {
   var label = context.params.name;
 
-  const data = await fetchMaterialDataFromDb(context.locale,label );
+  const data = await fetchMaterialDataFromDb(context.locale, label);
 
   return {
-      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'weapons' ])) },
+    props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'weapons'])) },
   };
 }
 

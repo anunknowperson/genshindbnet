@@ -29,16 +29,27 @@ import { IconWriting } from '@tabler/icons';
 
 import { PostList } from '../../../components/Posts/PostList';
 
+import Link from 'next/link';
+
+import Date from 'dayjs';
+import Head from 'next/head';
+
+import { Text } from '@mantine/core';
+
 export default function PostListPage({ }) {
     const router = useRouter();
 
-    
+
     const queryClient = useQueryClient();
 
     const { pathname, asPath, query, locale } = router;
     const { data: session, status } = useSession()
 
+    
+
     const { t } = useTranslation('common');
+
+    
 
     const [cStatus, setcStatus] = useState({ ok: false, text: '' });
 
@@ -46,15 +57,25 @@ export default function PostListPage({ }) {
 
     const [searchFilter, setSearchFilter] = useState('');
 
+    const [lastChange, setLastChange] = useState(Date(1));
+
     if (status === "loading") {
         return <Center style={{ width: '100%', height: '100%' }}> <Loader /></Center>;
     }
 
     if (status === "unauthenticated") {
         router.push('/');
+        return;
     }
 
     const createPost = async (type) => {
+        if (Date().diff(lastChange, 'second') < 10) {
+            alert('Please wait before creating new post.');
+            return;
+        }
+
+        setLastChange(Date());
+
 
         const res = await fetch('/api/posts/createNew', {
             method: 'POST',
@@ -69,13 +90,13 @@ export default function PostListPage({ }) {
         });
 
         if (res.status == 201) {
-            setcStatus({ok: true, text: 'New post has been created.'})
+            setcStatus({ ok: true, text: t('newpostcreated') })
 
             queryClient.invalidateQueries('myPosts');
         } else if (res.status == 422) {
-            setcStatus({ok: false, text: 'New post already exists.'})
+            setcStatus({ ok: false, text: t('newpostexist') })
         } else {
-            setcStatus({ok: false, text: 'Something went wrong.'})
+            setcStatus({ ok: false, text: t('fail') })
         }
 
         return res.status;
@@ -84,25 +105,53 @@ export default function PostListPage({ }) {
 
     return (
         <>
-            <h1 className={classes.artifactSetNameHeader}>{'My posts'}</h1>
+            <Head>
+                <title>Post List</title>
+            </Head>
 
-            <Button mb={20} mr ={10} variant="outline" leftIcon={<IconWriting size={14} />} onClick={() => {createPost('character')}}>
-                Create new character guide
+            <h1 className={classes.artifactSetNameHeader}>{t('myposts')}</h1>
+
+            <div>
+                <Link href='/posts/WfS3ABYhMDv3wd3O5hqE5' legacyBehavior>
+                    <a className={classes.link}>
+
+                        Publication rules
+
+                    </a>
+                </Link>
+
+            </div>
+            <div>
+                <Link href='/posts/rZaw6KIk2SInAW4WT8uCK' legacyBehavior>
+                    <a className={classes.link}>
+
+                        Publication guidelines
+
+                    </a>
+                </Link>
+
+            </div>
+
+
+
+            <Button mt={10} mb={20} mr={10} variant="outline" leftIcon={<IconWriting size={14} />} onClick={() => { createPost('character') }}>
+                {t('newcharacter')}
             </Button>
 
-            <Button  variant="outline" leftIcon={<IconWriting size={14} />} onClick={() => {createPost('post')}}>
-                Create new post
+            <Button variant="outline" leftIcon={<IconWriting size={14} />} onClick={() => { createPost('post') }}>
+                {t('newtutorial')}
             </Button>
 
-            { (cStatus.text !== '') && ((cStatus.ok) ?
-            <Alert mb={10} icon={<IconCircleCheck size={16} />} title="Success" color="green">
-              {cStatus.text}
-            </Alert> :
-            <Alert mb = {10} icon={<IconAlertCircle size={16} />} title="Bummer!" color="red">
-              {cStatus.text}
-            </Alert>
-          )
-          }
+            {
+                (cStatus.text !== '') && ((cStatus.ok) ?
+                    <Alert mb={10} icon={<IconCircleCheck size={16} />} title={t('success')} color="green">
+                        {cStatus.text}
+                    </Alert> :
+                    <Alert mb={10} icon={<IconAlertCircle size={16} />} title={t('fail')} color="red">
+                        {cStatus.text}
+                    </Alert>
+                )
+            }
 
             <SearchBar callback={setSearchFilter} placeholder={t("table_search")} />
 

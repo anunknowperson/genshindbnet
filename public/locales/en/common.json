@@ -29,6 +29,8 @@
     "h_materials" : "Materials",
 
     "h_foods" : "Foods",
-    "remove_all" : "Deselect All"
-    
-}
+    "remove_all" : "Deselect All",
+
+    "h_tutorials" : "Tutorials",
+
+    "by" : "by","top":"The best","recent":"Recent","languages":"Languages","f_credits":"Authors","reply":"Answer","your_comment":"Your comment","b_post":"Send","c_fullname":"Full name","c_title":"Title","c_region":"Region","c_affiliation":"Affiliation","c_birthday":"Birthday","c_talents":"Talents","c_passivetalents":"Passive talents","c_constellations":"Constellations","c_ascensioncosts":"Ascension costs","c_talentascensioncosts":"Talent ascension costs","h_teams":"Teams","ascended":"Ascended","full_progression":"Full progression","description":"Description","attributes":"Attributes","save":"Save","pleasewait":"Please wait...","postsuccesfull":"The post is successfully updated!","postfail":"Something went wrong! Please save your work.","uploading":"Loading data to the server ...","success":"Successfully!","fail":"Sorry! Something went wrong.","application":"Application","myposts":"My posts","accountsettings":"Account settings","logout":"Logout","newcharacter":"Create a guide for a character","newtutorial":"Create a tutorial","newpostcreated":"The new post was created","newpostexist":"New post already exists","postname":"Post name","name":"Name","type":"Type","character":"Character","language":"Language","public_q":"Published","action":"Action","signin":"Sign in","emailconfirmed":"Your e-mail has been confirmed. please come in","invalidemail":"Incorrect e-mail","password6":"The password should have at least six characters","linksent":"The confirmation link was sent to your e-mail","emailused":"This e-mail is already used","welcomeback":"Welcome back!","welcometoour":"Welcome! Log in with","visiblename":"Your visible name","password":"Password","yourpassword":"Нour password","alreadyaccount":"Already have an account? Log in","noaccount":"No account? Register","forgotpassword":"Forgot your password","restorepassword":"Restore password","return":"Return","continue":"Continue","passwordresetsent":"The password reset link was sent to your e-mail.","login":"Login","register":"Registration"}

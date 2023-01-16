@@ -14,9 +14,8 @@ import { useRouter } from 'next/router'
 import { useViewportSize } from '@mantine/hooks';
 
 import locales from "../../global/locales"
-import { debug } from 'console';
 
-import { PageWrapper } from '../../components/PageWrapper/PageWrapper';
+import { PageWrapper } from '../PageWrapper/PageWrapper';
 import Link from 'next/link';
 
 const HEADER_HEIGHT = 80;
@@ -71,7 +70,7 @@ const useStyles = createStyles((theme) => ({
 
     '&:hover': {
       backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background!,
+        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
         0.1
       ),
     },
@@ -118,11 +117,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface HeaderSearchProps {
-  links: { link: string; label: string; links: { link: string; label: string }[] }[];
-}
-
-export function HeaderMenuColored({ links }: HeaderSearchProps) {
+export function HeaderMenuColored({ links }) {
   const { t } = useTranslation('common');
 
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -136,16 +131,16 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
   const router = useRouter()
   const { pathname, asPath, query, locale } = router
 
-  const [lang, setLang] = useState<string | null>(locale!);
+  const [lang, setLang] = useState(locale);
 
   useEffect(() => {
-    setLang(locale!);
+    setLang(locale);
   });
 
-  const onLanguageSelect = (lang: String | null) => {
-    setLang(lang as SetStateAction<string | null>);
+  const onLanguageSelect = (lang) => {
+    setLang(lang );
 
-    router.push({ pathname, query }, asPath, { locale: lang as string | false | undefined })
+    router.push({ pathname, query }, asPath, { locale: lang  })
   }
 
   const items = links.map((link) => {
@@ -217,8 +212,14 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
         <Container px={(width > 750) ? 40 : 20} fluid={true}>
           <div className={classes.inner}>
 
-            <div style={{display: 'flex'}}>
-              <Image src={'/logo.png'} width={50} height={50} mr={10} />
+            <div style={{ display: 'flex' }}>
+              <Link href="/" legacyBehavior>
+                <a>
+                  <Image src={'/logo.png'} width={50} height={50} mr={10} />
+                </a>
+
+              </Link>
+
 
               <Group spacing={5} className={classes.links}>
                 {items}

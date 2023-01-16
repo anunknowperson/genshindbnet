@@ -65,7 +65,7 @@ export default function NotFoundTitle() {
       </Text>
       <Group position="center">
         
-          <Link  href="https://genshindb.net/" legacyBehavior><a className={classes.link}>Take me back to home page</a></Link>
+          <Link  href="/" legacyBehavior><a className={classes.link}>Take me back to home page</a></Link>
   
       </Group>
     </Container>

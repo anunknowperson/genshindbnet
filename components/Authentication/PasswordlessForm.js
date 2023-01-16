@@ -28,22 +28,20 @@ import { useState } from 'react';
 import { signIn } from "next-auth/react"
 
 
-export function PasswordlessForm({returnToLogin, sendLink}) {
+export function PasswordlessForm({returnToLogin}) {
   
   const { pathname, asPath, query, locale } = useRouter();
 
   const [status, setStatus] = useState('');
 
   const sendLinkCb = async () => {
-    var result = await signIn("email", { redirect: false, email: form.values.email, callbackUrl: pathname  })
+    var result = await signIn("email", { redirect: false, email: form.values.email, callbackUrl: asPath  })
 
     if (result.ok){
       setStatus('ok');
     } else {
       setStatus(result.error);
     }
-
-    sendLink();
   }
 
   const form = useForm({

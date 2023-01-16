@@ -67,6 +67,7 @@ export function TalentView({ readOnly, talent, image, nick, comment, commentCall
 
             var val = talent.attributes.parameters[param][level];
 
+
             if (match.split(':')[1].includes('P')) {
                 val = Math.round(val * 1000) / 10;
 
@@ -86,8 +87,8 @@ export function TalentView({ readOnly, talent, image, nick, comment, commentCall
                 <div style={{ paddingLeft: '5px', paddingRight: '5px' }}>
                     <Tabs defaultValue="description">
                         <Tabs.List>
-                            <Tabs.Tab value="description">Description</Tabs.Tab>
-                            <Tabs.Tab value="attributes">Attributes</Tabs.Tab>
+                            <Tabs.Tab value="description">{t('description')}</Tabs.Tab>
+                            <Tabs.Tab value="attributes">{t('attributes')}</Tabs.Tab>
                         </Tabs.List>
 
                         <Tabs.Panel value="description" pt="xs">

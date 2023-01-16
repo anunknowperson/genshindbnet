@@ -1,0 +1,19 @@
+{
+    "i_header" : "Welcome to our theorycrafting subcommunity!!",
+
+    "i_explore" : "Explore",
+    "i_discuss" : "Discuss",
+    "i_create" : "Create",
+    "i_share" : "Share",
+
+    "i_list_1" : " – Use tutorials, character guides, and other content created by community members",
+    "i_list_2" : " – Discuss other people's posts to bring feedback to the creators and improve their content",
+    "i_list_3" : " – Each user can create his own posts with tutorials/character guides with the easy visual editor",
+    "i_list_4" : " – Share your posts with friends and other community members",
+
+    "i_tip" : "Please use the links at the top of the page",
+
+    "i_official" : "Last official posts",
+    "i_character" : "Last character guides",
+    "i_tutorials" : "Last tutorials"
+}

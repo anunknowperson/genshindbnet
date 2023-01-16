@@ -52,16 +52,13 @@ export const authOptions = {
     }),
 
 
-    EmailProvider({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM
-    }),
   ],
 
   callbacks: {
     
     async jwt({ token, user}) {
       
+
       if (user){
         token.name = user.name;
         token.uid = user.uid;

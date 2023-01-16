@@ -9,28 +9,29 @@ import { Layout } from '../../components/Layout/Layout';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-import {  useState } from 'react';
+import { useState } from 'react';
 import { Chip, Group, Text } from '@mantine/core';
 
-import {SearchBar} from '../../components/SearchBar/SearchBar';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
 
 import { MaterialsList } from '../../components/Materials/MaterialsList/MaterialsList';
 
 import { useEffect } from 'react';
 import { withMongo } from '../../lib/mongowrapper'
 import { MultiSelect } from '@mantine/core';
-export default function MaterialsPage({materialtypes}) {
+import Head from 'next/head';
+export default function MaterialsPage({ materialtypes }) {
   const { t } = useTranslation('common');
 
   const { classes } = useStyles();
 
   const [searchFilter, setSearchFilter] = useState('');
 
-  const typesSelectData =  materialtypes.map( (val, el ) => ({value: val, label: val}))
+  const typesSelectData = materialtypes.map((val, el) => ({ value: val, label: val }))
 
   const [types, setTypes] = useState(materialtypes);
   const [rarities, setRarities] = useState(['1', '2', '3', '4', '5']);
-  
+
   useEffect(() => {
     setTypes(materialtypes);
   }, [materialtypes]);
@@ -41,35 +42,39 @@ export default function MaterialsPage({materialtypes}) {
 
   return (
     <>
-        <h1 className={classes.materialsNameHeader}>{t('h_materials')}</h1>
+      <Head>
+        <title>Materials List</title>
+      </Head>
 
-        <SearchBar callback={setSearchFilter} placeholder={t("table_search")}/>
-        
-          <Text style={{marginBottom: '15px'}}  fz="sm" fw={500}>
-            {t('filter')} (<Text  span td="underline" c="blue" inherit><a className={classes.resetAll} onClick={selectAllCallback}>{t('select_all')}</a></Text>)
-          </Text>
-          
-          <MultiSelect
-            data={typesSelectData}
+      <h1 className={classes.materialsNameHeader}>{t('h_materials')}</h1>
 
-            value={types} onChange={setTypes}
+      <SearchBar callback={setSearchFilter} placeholder={t("table_search")} />
 
-            placeholder={t('select_any_elements')}
+      <Text style={{ marginBottom: '15px' }} fz="sm" fw={500}>
+        {t('filter')} (<Text span td="underline" c="blue" inherit><a className={classes.resetAll} onClick={selectAllCallback}>{t('select_all')}</a></Text>)
+      </Text>
 
-            searchable
-            clearable
-          />
+      <MultiSelect
+        data={typesSelectData}
 
-          <Chip.Group style={{paddingTop: '20px', paddingBottom: '10px'}} value={rarities} onChange={setRarities} multiple>
-            <Chip value="1">1</Chip>
-            <Chip value="2">2</Chip>
-            <Chip value="3">3</Chip>
-            <Chip value="4">4</Chip>
-            <Chip value="5">5</Chip>
-          </Chip.Group>
-        
+        value={types} onChange={setTypes}
 
-        <MaterialsList typeFilter={types} rarityFilter={rarities} searchFilter={searchFilter}/>
+        placeholder={t('select_any_elements')}
+
+        searchable
+        clearable
+      />
+
+      <Chip.Group style={{ paddingTop: '20px', paddingBottom: '10px' }} value={rarities} onChange={setRarities} multiple>
+        <Chip value="1">1</Chip>
+        <Chip value="2">2</Chip>
+        <Chip value="3">3</Chip>
+        <Chip value="4">4</Chip>
+        <Chip value="5">5</Chip>
+      </Chip.Group>
+
+
+      <MaterialsList typeFilter={types} rarityFilter={rarities} searchFilter={searchFilter} />
     </>
   );
 }
@@ -78,7 +83,7 @@ MaterialsPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
@@ -98,7 +103,7 @@ async function fetchMaterialTypesDataFromDb(locale) {
 }
 
 export async function getStaticProps(context) {
-    return {
-        props: {materialtypes: await fetchMaterialTypesDataFromDb(context.locale), ...(await serverSideTranslations(context.locale, ['common'])) },
-    };
-  }
+  return {
+    props: { materialtypes: await fetchMaterialTypesDataFromDb(context.locale), ...(await serverSideTranslations(context.locale, ['common'])) },
+  };
+}

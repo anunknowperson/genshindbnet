@@ -35,7 +35,6 @@ import { ConstellationView } from '../Characters/ConstellationView/Constellation
 import { WeaponAscension } from '../Weapons/WeaponAscension/WeaponAscension';
 import { TalentAscension } from '../Characters/TalentAscension/TalentAscension';
 
-import Editor from '../Editor/Editor';
 import { IconPlus } from '@tabler/icons';
 import { ArtifactsLine } from '../Characters/ArtifactsLine/ArtifactsLine';
 
@@ -47,8 +46,10 @@ import { TeamLine } from '../Characters/TeamLine/TeamLine';
 
 import { nanoid } from 'nanoid'
 
-export function CharacterEdit({ character, initMainContent, mainContentChangeCallback, initWeapons, weaponsChangeCallback, initArtifacts, artifactsChangeCallback, initComments, commentsChangeCallback, initTeams, teamsChangeCallback }) {
+import dynamic from "next/dynamic";
 
+export function CharacterEdit({ ed, character, initMainContent, mainContentChangeCallback, initWeapons, weaponsChangeCallback, initArtifacts, artifactsChangeCallback, initComments, commentsChangeCallback, initTeams, teamsChangeCallback }) {
+    const Editor = ed;
 
     const { classes } = useStyles();
 
@@ -117,7 +118,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
     const removeLine = (id) => {
 
-        var newLines = artifactLines.filter((_, i) => { console.log(i); return i !== id; });
+        var newLines = artifactLines.filter((_, i) => { return i !== id; });
 
         setArtifactLines(newLines);
 
@@ -138,7 +139,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
     const removeWeaponLine = (id) => {
 
-        var newLines = weaponLines.filter((_, i) => { console.log(i); return i !== id; });
+        var newLines = weaponLines.filter((_, i) => { return i !== id; });
 
         setWeaponLines(newLines);
 
@@ -158,7 +159,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
     const removeTeamLine = (id) => {
 
-        var newLines = teamLines.filter((_, i) => { console.log(i); return i !== id; });
+        var newLines = teamLines.filter((_, i) => { return i !== id; });
 
         setTeamLines(newLines);
 
@@ -207,11 +208,11 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
                             <div style={{ marginRight: '20px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
 
-                                <Text c={'white'} ml={5} fz={18}>Full name:</Text>
-                                <Text c={'white'} ml={5} fz={18}>Title:</Text>
-                                <Text c={'white'} ml={5} fz={18}>Region:</Text>
-                                <Text c={'white'} ml={5} fz={18}>Affiliation:</Text>
-                                <Text c={'white'} ml={5} fz={18}>Birthday:</Text>
+                                <Text c={'white'} ml={5} fz={18}>{t('c_fullname')}</Text>
+                                <Text c={'white'} ml={5} fz={18}>{t('c_title')}</Text>
+                                <Text c={'white'} ml={5} fz={18}>{t('c_region')}</Text>
+                                <Text c={'white'} ml={5} fz={18}>{t('c_affiliation')}</Text>
+                                <Text c={'white'} ml={5} fz={18}>{t('c_birthday')}</Text>
                             </div>
 
                             <div style={{ marginRight: '20px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
@@ -233,18 +234,18 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
 
                 <Button className={classes.buttons} onClick={() => talentsHeader.current.scrollIntoView()}>
-                    Talents
+                    {t('c_talents')}
                 </Button>
 
                 <Button className={classes.buttons} onClick={() => passiveTalentsHeader.current.scrollIntoView()}>
-                    Passive Talents
+                    {t('c_passivetalents')}
                 </Button>
                 <Button className={classes.buttons} onClick={() => constellationsHeader.current.scrollIntoView()}>
-                    Constellations
+                    {t('c_constellations')}
                 </Button>
 
                 <Button className={classes.buttons} onClick={() => ascensionHeader.current.scrollIntoView()} >
-                    Ascension costs
+                    {t('c_ascensioncosts')}
                 </Button>
 
 
@@ -266,13 +267,16 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
                 }}
 
+                disabled={false}
             />
+
+
 
 
             <div className={classes.waContainer}>
 
                 <div style={{ flex: '1' }}>
-                    <h2>Weapons</h2>
+                    <h2>{t('h_weapons')}</h2>
 
                     {weaponLines.map((el, index) => (
                         <WeaponLine id={index} removeCallback={removeWeaponLine} changeCallback={changeWeaponLine} key={el.uid} selected={el.selected} comment={el.comment} weaponType={character.weapontypeint}></WeaponLine>
@@ -280,7 +284,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
                     <ActionIcon color="teal" variant="light" onClick={() => {
 
-                        setWeaponLines(weaponLines.concat({uid: nanoid(), selected: '', comment: '' }));
+                        setWeaponLines(weaponLines.concat({ uid: nanoid(), selected: '', comment: '' }));
 
                     }}>
                         <IconPlus size={20} />
@@ -288,7 +292,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
                 </div>
 
                 <div style={{ flex: '1' }}>
-                    <h2>Artifacts</h2>
+                <h2>{t('h_artifacts')}</h2>
 
 
                     {artifactLines.map((el, index) => (
@@ -307,7 +311,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
             </div>
 
-            <h2>Teams</h2>
+            <h2>{t('h_teams')}</h2>
 
             {teamLines.map((el, index) => (
                 <TeamLine id={index} removeCallback={removeTeamLine} changeCallback={changeTeamLine} key={el.uid} selected1={el.c1} selected2={el.c2} selected3={el.c3} selected4={el.c4} comment={el.comment} />
@@ -330,7 +334,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
                     <Checkbox style={{ paddingTop: '20px', paddingLeft: '20px', paddingBottom: '10px' }}
                         checked={ascension}
                         onChange={(event) => setAscension(event.currentTarget.checked)}
-                        label={'Ascended'}
+                        label={t('ascended')}
                     />
 
                     <Slider
@@ -356,29 +360,33 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
 
                 </ContentPanel>
 
-                <h2 ref={talentsHeader}>Talents</h2>
+                <h2 ref={talentsHeader}>{t('c_talents')}</h2>
 
                 <div className={classes.rows}>
 
                     <TalentView talent={character.talents.combat1} image={character.talents.images.combat1} nick={'t1'} comment={initComments['t1']} commentCallback={commentsChangeCallback} />
                     <TalentView talent={character.talents.combat2} image={character.talents.images.combat2} nick={'t2'} comment={initComments['t2']} commentCallback={commentsChangeCallback} />
-                    <TalentView talent={character.talents.combat3} image={character.talents.images.combat3} nick={'t3'} comment={initComments['t3']} commentCallback={commentsChangeCallback} />
 
+                    <TalentView talent={character.talents.combat3} image={character.talents.images.combat3} nick={'t3'} comment={initComments['t3']} commentCallback={commentsChangeCallback} />
+                    {(character.talents.combatsp != undefined) &&
+                        <TalentView talent={character.talents.combatsp} image={character.talents.images.combatsp} nick={'t4'} comment={initComments['t4']} commentCallback={commentsChangeCallback} />
+                    }
 
                 </div>
 
-                <h2 ref={passiveTalentsHeader}>Passive talents</h2>
+                <h2 ref={passiveTalentsHeader}>{t('c_passivetalents')}</h2>
 
                 <div className={classes.rows}>
 
                     <PassiveView talent={character.talents.passive1} image={character.talents.images.passive1} nick={'p1'} comment={initComments['p1']} commentCallback={commentsChangeCallback} />
                     <PassiveView talent={character.talents.passive2} image={character.talents.images.passive2} nick={'p2'} comment={initComments['p2']} commentCallback={commentsChangeCallback} />
-                    <PassiveView talent={character.talents.passive3} image={character.talents.images.passive3} nick={'p3'} comment={initComments['p3']} commentCallback={commentsChangeCallback} />
-
+                    {(character.talents.passive3 != undefined) &&
+                        <PassiveView talent={character.talents.passive3} image={character.talents.images.passive3} nick={'p3'} comment={initComments['p3']} commentCallback={commentsChangeCallback} />
+                    }
 
                 </div>
 
-                <h2 ref={constellationsHeader}>Constellations</h2>
+                <h2 ref={constellationsHeader}>{t('c_constellations')}</h2>
 
                 <div className={classes.rows}>
 
@@ -393,7 +401,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
                     <ConstellationView talent={character.constellations.c6} image={character.constellations.images.c6} nick={'c6'} comment={initComments['c6']} commentCallback={commentsChangeCallback} />
                 </div>
 
-                <h2 ref={ascensionHeader}>Ascension cost</h2>
+                <h2 ref={ascensionHeader}>{t('c_ascensioncosts')}</h2>
 
                 <ContentPanel>
                     <div style={{ padding: '10px 10px 1px 10px' }}>
@@ -409,7 +417,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
                         <Checkbox style={{ paddingTop: '20px', paddingLeft: '20px', paddingBottom: '10px' }}
                             checked={progression}
                             onChange={(event) => setProgression(event.currentTarget.checked)}
-                            label={'Full progression'}
+                            label={t('full_progression')}
                         />
                         {(width < 751) &&
                             <div style={{ display: 'flex', flexDirection: 'row' }}>Level: {<Text ml={10} c={'white'}>{(level == 0) ? '1' : (level + '0')}</Text>}</div>
@@ -418,7 +426,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
                     </div>
                 </ContentPanel>
 
-                <h2>Talent ascension cost</h2>
+                <h2>{t('c_talentascensioncosts')}</h2>
 
                 <ContentPanel>
                     <div style={{ padding: '10px 10px 1px 10px' }}>
@@ -434,7 +442,7 @@ export function CharacterEdit({ character, initMainContent, mainContentChangeCal
                         <Checkbox style={{ paddingTop: '20px', paddingLeft: '20px', paddingBottom: '10px' }}
                             checked={tprogression}
                             onChange={(event) => settProgression(event.currentTarget.checked)}
-                            label={'Full progression'}
+                            label={t('full_progression')}
                         />
                         {(width < 751) &&
                             <div style={{ display: 'flex', flexDirection: 'row' }}>Level: {<Text ml={10} c={'white'}>{tlevel}</Text>}</div>

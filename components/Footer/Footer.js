@@ -13,69 +13,91 @@ import { IconArrowUp } from '@tabler/icons';
 import { useWindowScroll } from '@mantine/hooks';
 import { Affix, Button, Text, Transition } from '@mantine/core';
 
+import { DiscordIcon } from '@mantine/ds';
+
 export function Footer() {
-    const { classes, cx } = useStyles();
-  
-    const { pathname, asPath, query, locale } = useRouter();
-  
-    const { t } = useTranslation(['common']);
+  const { classes, cx } = useStyles();
 
-    const [scroll, scrollTo] = useWindowScroll();
+  const { pathname, asPath, query, locale } = useRouter();
 
-    var friends = false;
+  const { t } = useTranslation(['common']);
 
-    if (locale == 'ru') {
-      friends = true;
-    }
+  const [scroll, scrollTo] = useWindowScroll();
 
-    return (
-      <PageWrapper mTop={10}>
-        <Affix position={{ bottom: 20, right: 20 }}>
-          <Transition transition="slide-up" mounted={scroll.y > 0}>
-            {(transitionStyles) => (
-              <Button
-                leftIcon={<IconArrowUp size={16} />}
-                style={transitionStyles}
-                onClick={() => scrollTo({ y: 0 })}
-              >
-                Scroll to top
-              </Button>
-            )}
-          </Transition>
-        </Affix>
+  var friends = false;
+
+  if (locale == 'ru') {
+    friends = true;
+  }
+
+  return (
+    <PageWrapper mTop={10}>
+      <Affix position={{ bottom: 20, right: 20 }}>
+        <Transition transition="slide-up" mounted={scroll.y > 0}>
+          {(transitionStyles) => (
+            <Button
+              leftIcon={<IconArrowUp size={16} />}
+              style={transitionStyles}
+              onClick={() => scrollTo({ y: 0 })}
+            >
+              Scroll to top
+            </Button>
+          )}
+        </Transition>
+      </Affix>
 
       <footer className={classes.footer}>
-        <div className={friends ? cx(classes.container, classes.containerFlex) : classes.container}>
+        <div className={cx(classes.container, classes.containerFlex)}>
           <div>
-            <div className={ friends ? classes.leftAlg : null}>
-              {t('f_about')} <a className={classes.privacyLink} href='https://genshindb.net/privacy'>{t('f_policy')}</a>.
+            <div className={classes.leftAlg}>
+              {t('f_about')} <Link className={classes.privacyLink} href='/credits'>{t('f_credits')}</Link> <Link className={classes.privacyLink} href='/policy'>{t('f_policy')}</Link>.
             </div>
-      
-            <div className={ friends ? classes.leftAlg : null}>© genshindb.net 2023</div>
+
+            <div className={classes.leftAlg}>© genshindb.net 2023</div>
 
           </div>
           {
             friends ?
               <div className={classes.friends}>
-                <div>Наши друзья:</div>
-            
+                <div>Полезные ссылки:</div>
+                <Link href="https://discord.gg/jE8gCxvyeq" legacyBehavior>
+                  <a>
+                    <Image className={classes.friendButton} width={30} height={30} src="/discord.svg" alt={'Friends'}></Image>
+                  </a>
+
+                </Link>
                 <Link href="https://poklonniki.gitbook.io/poklonniki-tumana/" legacyBehavior>
                   <a>
-                  <Image className={classes.friendButton} width={30} height={30} src="/mist.png" alt={'Friends'}></Image>
+                    <Image className={classes.friendButton} width={30} height={30} src="/mist.png" alt={'Friends'}></Image>
+                  </a>
+
+                </Link>
+                <Link href="http://theorylib.space/" legacyBehavior>
+                  <a>
+                  <Image className={classes.friendButton} width={30} height={30} src="/theory.png" alt={'Friends'}></Image>
                   </a>
                   
                 </Link>
-            
+
               </div>
-            : <></>
+              : <div className={classes.friends}>
+                <div>Useful links:</div>
+
+                <Link href="https://discord.gg/jE8gCxvyeq" legacyBehavior>
+                  <a>
+                    <Image className={classes.friendButton} width={30} height={30} src="/discord.svg" alt={'Friends'}></Image>
+                  </a>
+
+                </Link>
+
+              </div>
           }
-          
+
         </div>
-        
-      
+
+
       </footer>
-      </PageWrapper>
-      
-    );
-  }
-  
+    </PageWrapper>
+
+  );
+}

@@ -9,15 +9,16 @@ import { Layout } from '../../components/Layout/Layout';
 import { ArtifactsList } from '../../components/Artifacts/ArtifactsList/ArtifactsList';
 
 import { Chip, Group } from '@mantine/core';
-import {  useState } from 'react';
+import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-import {SearchBar} from '../../components/SearchBar/SearchBar';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
+import Head from 'next/head';
 
-export default function ArtifactsPage({}) {
+export default function ArtifactsPage({ }) {
   const router = useRouter();
-  
+
   const { t } = useTranslation('common');
 
   const { classes } = useStyles();
@@ -28,21 +29,25 @@ export default function ArtifactsPage({}) {
 
   return (
     <>
-        <h1 className={classes.artifactSetNameHeader}>{t('h_artifacts')}</h1>
+      <Head>
+        <title>Artifacts List</title>
+      </Head>
 
-        <SearchBar callback={setSearchFilter} placeholder={t("table_search")}/>
-        
-        <Group position='apart' style={{marginBottom: '10px'}}>
-          <Chip.Group value={rarities} onChange={setRarities} multiple>
-            <Chip value="1">1</Chip>
-            <Chip value="2">2</Chip>
-            <Chip value="3">3</Chip>
-            <Chip value="4">4</Chip>
-            <Chip value="5">5</Chip>
-          </Chip.Group>
-        </Group>
+      <h1 className={classes.artifactSetNameHeader}>{t('h_artifacts')}</h1>
 
-        <ArtifactsList rarityFilter={rarities} searchFilter={searchFilter}/>
+      <SearchBar callback={setSearchFilter} placeholder={t("table_search")} />
+
+      <Group position='apart' style={{ marginBottom: '10px' }}>
+        <Chip.Group value={rarities} onChange={setRarities} multiple>
+          <Chip value="1">1</Chip>
+          <Chip value="2">2</Chip>
+          <Chip value="3">3</Chip>
+          <Chip value="4">4</Chip>
+          <Chip value="5">5</Chip>
+        </Chip.Group>
+      </Group>
+
+      <ArtifactsList rarityFilter={rarities} searchFilter={searchFilter} />
 
     </>
   );
@@ -52,7 +57,7 @@ ArtifactsPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
@@ -60,7 +65,7 @@ ArtifactsPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps(context) {
 
-    return {
-        props: {...(await serverSideTranslations(context.locale, ['common', 'artifacts' ])) },
-    };
-  }
+  return {
+    props: { ...(await serverSideTranslations(context.locale, ['common', 'artifacts'])) },
+  };
+}

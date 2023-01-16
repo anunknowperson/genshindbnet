@@ -2,7 +2,7 @@ import useStyles from './PostList.styles'
 
 import { useTranslation } from 'next-i18next';
 
-import { Box, Checkbox, useMantineTheme } from '@mantine/core';
+import { Box, Checkbox, Textarea, useMantineTheme } from '@mantine/core';
 
 import { useQuery } from '@tanstack/react-query';
 
@@ -12,7 +12,7 @@ import { Button } from '@mantine/core';
 import Link from 'next/link';
 import Image from "next/image"
 import { useRouter } from 'next/router';
-
+import { Text } from '@mantine/core';
 import { Group } from '@mantine/core';
 import { ActionIcon } from '@mantine/core';
 
@@ -47,6 +47,9 @@ export function PostList({ uid, searchFilter }) {
     const [toChangeCharacter, setToChangeCharacter] = useState(null);
     const [charSelect, setCharSelect] = useState('');
 
+    const [toChangeDescription, setToChangeDescription] = useState(null);
+    const [cDescription, setcDescription] = useState('');
+
     useEffect(() => {
         setPage(1);
     }, [searchFilter]);
@@ -62,7 +65,7 @@ export function PostList({ uid, searchFilter }) {
     const { data, isFetching } = useQuery(
         ['myPosts', page, searchFilter],
         async () => fetchPosts(page, searchFilter),
-        { refetchOnWindowFocus: false, enable: false }
+        { refetchOnWindowFocus: true, enable: false }
     );
 
 
@@ -113,7 +116,7 @@ export function PostList({ uid, searchFilter }) {
 
         return <TextInput
 
-            placeholder="Post name"
+            placeholder={t('postname')}
             withAsterisk
             error={(value == "") ? true : false}
             value={value}
@@ -187,7 +190,7 @@ export function PostList({ uid, searchFilter }) {
                     columns={[
                         {
                             accessor: 'name',
-                            title: 'Name',
+                            title: t('name'),
                             width: 140,
                             textAlignment: 'center',
 
@@ -196,7 +199,7 @@ export function PostList({ uid, searchFilter }) {
                         },
                         {
                             accessor: 'type',
-                            title: 'Type',
+                            title: t('type'),
                             width: 140,
                             textAlignment: 'center',
 
@@ -205,7 +208,7 @@ export function PostList({ uid, searchFilter }) {
                         },
                         {
                             accessor: 'character',
-                            title: 'Character',
+                            title: t('character'),
                             width: 140,
                             textAlignment: 'center',
 
@@ -223,8 +226,27 @@ export function PostList({ uid, searchFilter }) {
                                 </div>,
                         },
                         {
+                            accessor: 'description',
+                            title: t('description'),
+                            width: 140,
+                            textAlignment: 'center',
+
+                            sortable: true,
+                            render: ({ id, description }) =>
+                                <div style={{ display: 'flex' }}>
+                                    <Text lineClamp={1}>{description}</Text>
+                                    <ActionIcon color="blue" onClick={() => {
+                                        setcDescription(description);
+                                        setToChangeDescription(id);
+
+                                    }}>
+                                        <IconEdit size={16} />
+                                    </ActionIcon>
+                                </div>,
+                        },
+                        {
                             accessor: 'lang',
-                            title: 'Language',
+                            title: t('language'),
                             width: 140,
                             textAlignment: 'center',
 
@@ -233,7 +255,7 @@ export function PostList({ uid, searchFilter }) {
                         },
                         {
                             accessor: 'public',
-                            title: 'Public?',
+                            title: t('public_q'),
                             width: 140,
                             textAlignment: 'center',
 
@@ -242,7 +264,7 @@ export function PostList({ uid, searchFilter }) {
                         },
                         {
                             accessor: 'id',
-                            title: 'Action',
+                            title: t('action'),
                             width: 140,
                             textAlignment: 'center',
 
@@ -266,7 +288,7 @@ export function PostList({ uid, searchFilter }) {
                     totalRecords={data?.total}
                     recordsPerPage={recordsPerPage}
 
-                    idAccessor="name"
+                    idAccessor="id"
 
                     classNames={classes}
 
@@ -324,6 +346,45 @@ export function PostList({ uid, searchFilter }) {
                     }
 
                     setToChangeCharacter(null);
+
+                }} >
+                    Apply
+                </Button>
+            </Modal>
+
+            <Modal
+                opened={toChangeDescription != null}
+                onClose={() => setToChangeDescription(null)}
+                title="Select"
+            >
+                Change Description
+
+                <br /><br />
+
+                <Textarea value={cDescription} onChange={(event) => setcDescription(event.currentTarget.value)}  />
+
+                <br /><br />
+
+                <Button mr={20} variant="outline" color="green" onClick={() => { setToChangeDescription(null) }}>
+                    Return
+                </Button>
+
+                <Button variant="outline" color="red" onClick={() => {
+
+                    if (cDescription.length > 300) {
+                        alert('The number of characters must be less than 300!');
+                        return;
+                    }
+
+                    editPost(toChangeDescription, 'description', cDescription);
+
+                    for (const post of data.posts) {
+                        if (post.id == toChangeDescription) {
+                            post['description'] = cDescription;
+                        }
+                    }
+
+                    setToChangeDescription(null);
 
                 }} >
                     Apply

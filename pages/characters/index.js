@@ -10,16 +10,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import { WeaponsList } from '../../components/Weapons/WeaponsList/WeaponsList';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Chip, Group } from '@mantine/core';
-
-import { SearchBar } from '../../components/SearchBar/SearchBar';
 
 import Image from 'next/image';
 
 import { CharacterFilter } from '../../components/Characters/CharacterFilter/CharacterFilter';
 
-export default function WeaponsPage({ }) {
+import { CharacterPosts } from '../../components/Posts/CharacterPosts';
+import Head from 'next/head';
+
+export default function CharactersPage({ }) {
     const { t } = useTranslation('common');
 
     const { classes } = useStyles();
@@ -30,33 +31,44 @@ export default function WeaponsPage({ }) {
 
     const [selected, setSelected] = useState('');
 
+    const scroll = useRef();
+
+    const changeCharacter = (val) => {
+        setSelected(val);
+        scroll.current.scrollIntoView()
+    }
+
     return (
         <>
+            <Head>
+                <title>Character guides</title>
+            </Head>
+
             <h1 className={classes.weaponSetNameHeader}>{t('h_characters')}</h1>
 
             <Group position='apart' style={{ marginBottom: '10px' }}>
                 <Chip.Group value={elements} onChange={setElements} multiple>
                     <Chip value="pyro">{
-                        <Image src="/pyro.png" width={15} height={15} />
+                        <Image alt={'pyro'} src="/pyro.png" width={15} height={15} />
                     }</Chip>
                     <Chip value="hydro">{
-                        <Image src="/hydro.png" width={15} height={15} />
+                        <Image alt={'hydro'} src="/hydro.png" width={15} height={15} />
                     }</Chip>
                     <Chip value="anemo">{
-                        <Image src="/anemo.png" width={15} height={15} />
+                        <Image alt={'anemo'} src="/anemo.png" width={15} height={15} />
                     }</Chip>
                     <Chip value="electro">{
-                        <Image src="/electro.png" width={15} height={15} />
+                        <Image alt={'electro'} src="/electro.png" width={15} height={15} />
                     }</Chip>
 
                     <Chip value="dendro">{
-                        <Image src="/dendro.png" width={15} height={15} />
+                        <Image alt={'dendro'} src="/dendro.png" width={15} height={15} />
                     }</Chip>
                     <Chip value="cryo">{
-                        <Image src="/cryo.png" width={15} height={15} />
+                        <Image alt={'cryo'} src="/cryo.png" width={15} height={15} />
                     }</Chip>
                     <Chip value="geo">{
-                        <Image src="/geo.png" width={15} height={15} />
+                        <Image alt={'geo'} src="/geo.png" width={15} height={15} />
                     }</Chip>
 
                 </Chip.Group>
@@ -75,14 +87,17 @@ export default function WeaponsPage({ }) {
                 </Chip.Group>
             </Group>
 
-            <CharacterFilter selectionChanged={setSelected} elements={elements} weapons={types} rarities={rarities}/>
+            <CharacterFilter selectionChanged={changeCharacter} elements={elements} weapons={types} rarities={rarities} />
+
+            <div style={{ marginBottom: '40px' }} ref={scroll} />
 
 
+            <CharacterPosts character={selected} />
         </>
     );
 }
 
-WeaponsPage.getLayout = function getLayout(page) {
+CharactersPage.getLayout = function getLayout(page) {
     return (
         <Layout>
             <PostWrapper>

@@ -12,6 +12,20 @@ import { useState } from 'react';
 
 import { Paper } from '@mantine/core';
 
+function CharacterButton({ el }) {
+    return <div style={{ position: 'relative' }}>
+        <Image alt={'Selected ' + el.label} width={75} height={75} src={'/resources/' + el.image + '.png'} />
+        {[...Array(el.rarity)].map((el2, val2) =>
+            <div key={val2} style={{ position: 'absolute', top: '60px', left: (((el.rarity == 5) ? 13 : 20) + val2 * 10) + 'px' }}>
+                <Image style={{}} alt={'Rarity'} width={12} height={12} src={'/star.svg'} />
+            </div>
+        )}
+        <div style={{ position: 'absolute', top: '15px', left: '10px' }}>
+            <Image style={{}} alt={'Element'} width={20} height={20} src={`/${el.element.toLowerCase()}.png`} />
+        </div>
+    </div>
+}
+
 export function CharacterFilter({ selectionChanged, elements, weapons, rarities }) {
 
     const { t } = useTranslation(['common']);
@@ -37,7 +51,6 @@ export function CharacterFilter({ selectionChanged, elements, weapons, rarities 
             charSelect.push({ value: a.label, label: a.name, rarity: a.rarity, weapontype: a.weapontype, element: a.element, image: a.images.namesideicon });
         }
 
-        console.log(charSelect)
 
         return charSelect;
     };
@@ -68,11 +81,14 @@ export function CharacterFilter({ selectionChanged, elements, weapons, rarities 
                     }
 
                     return (selected == el.value) ?
-                        <Paper shadow="xs" withBorder>
-                            <Image width={75} height={75} src={'/resources/' + el.image + '.png'} />
+                        <Paper key={el.value} shadow="xs" withBorder>
+                            <CharacterButton  el={el} />
                         </Paper>
                         :
-                        <Image onClick={() => { selectCharacter(el.value) }} width={75} height={75} src={'/resources/' + el.image + '.png'} />
+                        <div key={el.value} onClick={() => { selectCharacter(el.value) }}>
+                            <CharacterButton  el={el} />
+
+                        </div>
 
                 }
                 )

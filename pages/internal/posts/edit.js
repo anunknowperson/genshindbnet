@@ -10,17 +10,20 @@ import useStyles from '../../../styles/internal/posts/edit.styles';
 import { Notification } from '@mantine/core';
 import { IconCheck, IconX } from '@tabler/icons';
 
-import Editor from '../../../components/Editor/Editor';
 import { Button, Group } from '@mantine/core';
 
 import { CharacterEdit } from '../../../components/Posts/CharacterEdit';
 
+import { useTranslation } from "next-i18next";
 import { useRef } from 'react';
+import Head from 'next/head';
 
+import dynamic from "next/dynamic";
 export default function PostEditPage({ postId, postName, postContent, postType, characterData, postArtifacts, postWeapons, postComments, postTeams }) {
-
+    const Editor = dynamic(() => import('../../../components/Editor/Editor'), { ssr: false })
     const { classes } = useStyles();
 
+    const { t } = useTranslation(['common']);
     const [notificationLoading, setNotificationLoading] = useState(false);
     const [notificationSuccess, setNotificationSuccess] = useState(false);
     const [notificationFail, setNotificationFail] = useState(false);
@@ -85,8 +88,6 @@ export default function PostEditPage({ postId, postName, postContent, postType, 
             }),
         });
 
-        console.log(teamsList.current);
-
         const res5 = await fetch('/api/posts/propEdit', {
             method: 'POST',
             headers: {
@@ -111,28 +112,32 @@ export default function PostEditPage({ postId, postName, postContent, postType, 
 
     return (
         <>
+            <Head>
+                <title>{'Edit: ' + postName}</title>
+            </Head>
+
             {notificationLoading &&
                 <Notification
                     loading
-                    title="Uploading data to the server"
+                    title={t('uploading')}
                     disallowClose
                 >
-                    Please wait...
+                    {t('pleasewait')}
                 </Notification>}
 
             {notificationSuccess &&
-                <Notification icon={<IconCheck size={18} />} color="teal" title="Success" onClose={() => { setNotificationSuccess(false) }}>
-                    Post successfully updated!
+                <Notification icon={<IconCheck size={18} />} color="teal" title={t('success')} onClose={() => { setNotificationSuccess(false) }}>
+                    {t('postsuccesfull')}
                 </Notification>}
 
             {notificationFail &&
-                <Notification icon={<IconX size={18} />} color="red" title="Sorry! Something went wrong" onClose={() => { setNotificationSuccess(false) }}>
-                    Please backup your work.
+                <Notification icon={<IconX size={18} />} color="red" title={t('fail')} onClose={() => { setNotificationSuccess(false) }}>
+                    {t('postfail')}
                 </Notification>}
 
             <Group position='apart'>
                 <h1 className={classes.nameHeader}>{postName}</h1>
-                <Button mb={10} variant="light" color="teal" onClick={upload}>Save</Button>
+                <Button mb={10} variant="light" color="teal" onClick={upload}>{t('save')}</Button>
             </Group>
 
             {(postType === 'post') &&
@@ -140,19 +145,21 @@ export default function PostEditPage({ postId, postName, postContent, postType, 
                 <Editor
                     name="description"
 
-                    value={postContent}
+                    value={mainPostContent.current}
 
                     onChange={(data) => {
                         mainPostContent.current = data;
 
                     }}
 
+                    disabled={false}
+
                 />
             }
 
             {(postType === 'character') &&
 
-                <CharacterEdit character={characterData} initMainContent={postContent} mainContentChangeCallback={(val) => { mainPostContent.current = val; }} initArtifacts={postArtifacts}
+                <CharacterEdit ed={Editor} character={characterData} initMainContent={mainPostContent.current} mainContentChangeCallback={(val) => { mainPostContent.current = val; }} initArtifacts={postArtifacts}
                     artifactsChangeCallback={
                         (val) => { artifactsList.current = val; }
                     } initWeapons={postWeapons}

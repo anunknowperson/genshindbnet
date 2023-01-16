@@ -24,6 +24,7 @@ import { useRouter } from 'next/router';
 
 import { useState } from 'react';
 
+import { useTranslation } from "next-i18next";
 
 import { signIn } from "next-auth/react"
 
@@ -32,6 +33,7 @@ export function ForgotForm({returnToLogin}) {
   
   const { pathname, asPath, query, locale } = useRouter();
 
+  const { t } = useTranslation(['common']);
   const [status, setStatus] = useState('');
 
   const sendLinkCb = async (email) => {
@@ -73,7 +75,7 @@ export function ForgotForm({returnToLogin}) {
       <form style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column'}} onSubmit={form.onSubmit(() => {sendLinkCb(form.values.email)})}>
       
       <Text size="lg" weight={500}>
-      Restore password
+      {t('restorepassword')}
       </Text>
 
 
@@ -89,18 +91,18 @@ export function ForgotForm({returnToLogin}) {
       />
       { (status) && ((status === 'ok') ?
       <Alert style={{marginTop: '20px'}} icon={<IconCircleCheck size={16} />} title="Success" color="green">
-        A password reset link has been sent to your email.
+        {t('passwordresetsent')}
       </Alert> :
       <Alert style={{marginTop: '20px'}} icon={<IconAlertCircle size={16} />} title="Bummer!" color="red">
-        Something terrible happened! {status}
+        {t('fail')} {status}
       </Alert>
       )
       }
       <div style={{ flex: '1 1 auto'}}/>
 
       <Group style={{flex: '0 1', width: '100%'}} position="apart" mt="xl">
-        <Button onClick={returnToLogin}>Return</Button>
-        <Button type="submit" data-disabled={(status == 'ok' ? true : undefined)} >Continue</Button>
+        <Button onClick={returnToLogin}>{t('return')}</Button>
+        <Button type="submit" data-disabled={(status == 'ok' ? true : undefined)} >{t('continue')}</Button>
       </Group>
         
       </form>

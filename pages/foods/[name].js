@@ -6,7 +6,7 @@ import useStyles from '../../styles/food.styles'
 
 import { TextFormat } from '../../components/TextFormat/TextFormat';
 
-import {useState} from 'react'
+import { useState } from 'react'
 
 import locales from '../../global/locales';
 
@@ -23,45 +23,49 @@ import { FoodsPageView } from '../../components/Foods/FoodsPageView/FoodsPageVie
 import Link from 'next/link';
 // Server only
 import { withMongo } from '../../lib/mongowrapper'
+import Head from 'next/head';
 
 
-export default function FoodPage({label, strings}) {
+export default function FoodPage({ label, strings }) {
   const router = useRouter();
-  
-  
+
+
   const { t } = useTranslation(['common', 'weapons']);
 
   const { classes } = useStyles();
 
   return (
     <>
+      <Head>
+        <title>{strings.name}</title>
+      </Head>
 
       <div className={classes.breadcrumbs}>
-        <Link className={classes.breadcrumbsLink}  href="/foods">{t('h_foods')}</Link> &gt;
+        <Link className={classes.breadcrumbsLink} href="/foods">{t('h_foods')}</Link> &gt;
       </div>
 
       <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
 
-        
+
       <div className={classes.firstLine}>
 
-          <div className={classes.collumnContainer}>
-            
-              <ContentPanel>
-                <FoodsPageView strings={strings}>
+        <div className={classes.collumnContainer}>
 
-                </FoodsPageView>
-              </ContentPanel>
-          
-          </div>
+          <ContentPanel>
+            <FoodsPageView strings={strings}>
+
+            </FoodsPageView>
+          </ContentPanel>
 
         </div>
 
-      <div style={{height: '200px'}}/>
-      
+      </div>
 
-      
-      
+      <div style={{ height: '200px' }} />
+
+
+
+
     </>
   );
 }
@@ -70,7 +74,7 @@ FoodPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
@@ -79,20 +83,20 @@ FoodPage.getLayout = function getLayout(page) {
 export async function getStaticPaths() {
   var foods = await withMongo(async (db) => {
     const collection = db.collection('foods')
-    return await collection.find({}, {projection: {label : true, _id : false}}).toArray()
+    return await collection.find({}, { projection: { label: true, _id: false } }).toArray()
   });
 
 
   var paths = []
 
-  for (const food of foods){
+  for (const food of foods) {
 
-    for (const locale of locales){
-      
+    for (const locale of locales) {
 
-      paths.push({params: {name: food['label']}, locale: locale });
+
+      paths.push({ params: { name: food['label'] }, locale: locale });
     }
-    
+
   }
 
 
@@ -110,7 +114,7 @@ async function fetchFoodDataFromDb(locale, label) {
 
   const foods = await withMongo(async (db) => {
     const collection = db.collection('foods')
-    return await collection.find({label: label}).toArray()
+    return await collection.find({ label: label }).toArray()
   });
 
   var localized = {}
@@ -120,7 +124,7 @@ async function fetchFoodDataFromDb(locale, label) {
   localized.foodcategory = foods[0]['foodcategory'];
   localized.rarity = foods[0]['rarity'];
 
-  if (localized.foodtype !== 'NORMAL'){
+  if (localized.foodtype !== 'NORMAL') {
     localized.basedish = foods[0]['basedish'];
     localized.basedish.name = foods[0]['basedish']['name'][lang];
     localized.character = foods[0]['character'];
@@ -129,22 +133,22 @@ async function fetchFoodDataFromDb(locale, label) {
     localized.effect = foods[0]['effect'][lang];
   } else {
     localized.suspicious = {
-      effect : foods[0]['suspicious']['effect'][lang],
-      description : foods[0]['suspicious']['description'][lang],
+      effect: foods[0]['suspicious']['effect'][lang],
+      description: foods[0]['suspicious']['description'][lang],
     };
-  
+
     localized.normal = {
-      effect : foods[0]['normal']['effect'][lang],
-      description : foods[0]['normal']['description'][lang],
+      effect: foods[0]['normal']['effect'][lang],
+      description: foods[0]['normal']['description'][lang],
     };
-  
+
     localized.delicious = {
-      effect : foods[0]['delicious']['effect'][lang],
-      description : foods[0]['delicious']['description'][lang],
+      effect: foods[0]['delicious']['effect'][lang],
+      description: foods[0]['delicious']['description'][lang],
     };
   }
-  
-  
+
+
 
   localized.ingredients = foods[0]['ingredients'];
 
@@ -158,10 +162,10 @@ async function fetchFoodDataFromDb(locale, label) {
 export async function getStaticProps(context) {
   var label = context.params.name;
 
-  const data = await fetchFoodDataFromDb(context.locale,label );
+  const data = await fetchFoodDataFromDb(context.locale, label);
 
   return {
-      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'foods' ])) },
+    props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'foods'])) },
   };
 }
 

@@ -2,11 +2,21 @@ import { withMongo } from '../../../lib/mw';
 
 import { nanoid } from 'nanoid'
 
+import Date from 'dayjs';
+import { getToken } from 'next-auth/jwt';
+
 async function handler(req, res) {
     //Only POST mothod is accepted
     if (req.method === 'POST') {
         //Getting email and password from body
         const { uid, type, lang } = req.body;
+
+        const sessionUid =  (await getToken({ req })).uid;
+
+        if (uid !== sessionUid) {
+            res.status(401).json({});
+            return;
+        }
 
         var postId = nanoid();
         var postType = 'post';
@@ -26,6 +36,13 @@ async function handler(req, res) {
             res.status(422).json({ message: 'New post already exists' });
             return;
         }
+
+        await withMongo('data', async (db) => {
+            return await db.collection('likes').insertOne({
+                post: postId,
+                likes: [],
+            });
+        });
 
         await withMongo('data', async (db) => {
             return await db.collection('posts').insertOne({
@@ -55,6 +72,11 @@ async function handler(req, res) {
                     'c5' : '',
                     'c6' : '',
                 },
+
+                description : '',
+
+                time: Date().toDate(),
+
 
                 teams: [],
 
