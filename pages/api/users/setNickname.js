@@ -1,4 +1,5 @@
 import { getToken } from 'next-auth/jwt';
+import log from '../../../lib/logging';
 import { withMongo } from '../../../lib/mw';
 
 
@@ -6,13 +7,13 @@ async function handler(req, res) {
   if (req.method === 'POST') {
     const { uid, newNickname } = req.body;
 
-    const sessionUid =  (await getToken({ req })).uid;
+    const sessionUid = (await getToken({ req })).uid;
 
     if (uid !== sessionUid) {
-        res.status(401).json({});
-        return;
+      res.status(401).json({});
+      return;
     }
-    
+
     const user = await withMongo('data', async (db) => {
       const collection = db.collection('users');
       return await collection.findOne({ id: uid });
@@ -21,13 +22,16 @@ async function handler(req, res) {
 
     if (user) {
 
-      
+
 
       const updateDoc = {
         $set: {
           name: newNickname,
         }
       };
+
+
+      log('Name changed. Name: ' + newNickname + ' id: ' + uid);
 
       const result = await withMongo('data', async (db) => {
         const collection = db.collection('users');

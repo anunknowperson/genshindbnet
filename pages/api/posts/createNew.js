@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid'
 
 import Date from 'dayjs';
 import { getToken } from 'next-auth/jwt';
+import log from '../../../lib/logging';
 
 async function handler(req, res) {
     //Only POST mothod is accepted
@@ -84,7 +85,8 @@ async function handler(req, res) {
             });
           });
 
-        
+        log('New post created: ' + process.env.SITE_URL + '/posts/' + postId);
+
         //Send success response
         res.status(201).json({ message: 'Post created'});
 

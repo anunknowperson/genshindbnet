@@ -3,6 +3,7 @@ import { withMongo } from '../../../lib/mw';
 import { nanoid } from 'nanoid'
 
 import Date from 'dayjs';
+import log from '../../../lib/logging';
 
 async function handler(req, res) {
     //Only POST mothod is accepted
@@ -64,16 +65,19 @@ async function handler(req, res) {
             await withMongo('data', async (db) => {
                 const collection = db.collection('comments')
 
+                var newCommentId = nanoid();
+
                 var change = {};
                 change[fpath + '.children'] = [{
 
                     name: name,
                     date: Date().toString(),
                     text: text,
-                    id: nanoid()
+                    id: newCommentId,
 
                 }];
 
+                log('New comment created: ' + process.env.SITE_URL + '/posts/' + postId + '\nid: ' + newCommentId + '\nText: ' + text);
 
                 return await collection.updateOne(
                     { post: postId },
@@ -88,6 +92,9 @@ async function handler(req, res) {
             await withMongo('data', async (db) => {
                 const collection = db.collection('comments')
 
+                var newCommentId = nanoid();
+
+                log('New comment created: ' + process.env.SITE_URL + '/posts/' + postId + '\nid: ' + newCommentId + '\nText: ' + text);
 
                 return await collection.updateOne(
                     { post: postId },
@@ -97,15 +104,17 @@ async function handler(req, res) {
                                 name: name,
                                 date: Date().toString(),
                                 text: text,
-                                id: nanoid(),
+                                id: newCommentId,
                             }
                         },
                     }
                 )
+
+                
             });
         }
 
-        /**/
+        
 
 
         //Send success response

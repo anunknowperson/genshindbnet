@@ -43,6 +43,7 @@
     "ckeditor5-custom-build": "file:ckeditor5",
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.7",
+    "discord.js": "^14.7.1",
     "embla-carousel-react": "^7.0.5",
     "fs": "^0.0.1-security",
     "html-react-parser": "^3.0.6",

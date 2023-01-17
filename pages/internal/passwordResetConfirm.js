@@ -63,7 +63,7 @@ export default function PasswordResetConfirmPage() {
             const delay = ms => new Promise(res => setTimeout(res, ms));
             await delay(1000);
 
-            router.push('/login');
+            router.push('/');
 
             return;
         } else {

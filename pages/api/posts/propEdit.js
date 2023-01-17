@@ -2,6 +2,7 @@ import { withMongo } from '../../../lib/mw';
 
 import Date from 'dayjs';
 import { getToken } from 'next-auth/jwt';
+import log from '../../../lib/logging';
 async function handler(req, res) {
     //Only POST mothod is accepted
     if (req.method === 'POST') {
@@ -23,6 +24,8 @@ async function handler(req, res) {
             res.status(401).json({});
             return;
         }
+
+        log('Post edited: ' + process.env.SITE_URL + '/posts/' + id);
 
         const result = await withMongo('data', async (db) => {
             const collection = db.collection('posts');
