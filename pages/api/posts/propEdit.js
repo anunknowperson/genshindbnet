@@ -32,7 +32,7 @@ async function handler(req, res) {
             return await collection.updateOne(post, updateDoc, { upsert: false });
         });
 
-
+        await res.revalidate('/posts/' + id);
 
         //Send success response
         res.status(201).json({ message: 'Post edited' });
