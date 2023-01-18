@@ -30,7 +30,7 @@ async function handler(req, res) {
 
         const checkExisting = await withMongo('data', async (db) => {
             const collection = db.collection('posts');
-            return await collection.findOne({ name: 'My new post' });
+            return await collection.findOne({ createdBy: uid, name: 'My new post' });
           });
 
         if (checkExisting) {
