@@ -264,7 +264,7 @@ export function HeaderMenuColored({ links }) {
 
               {(mobileSubMenuOpened) ?
 
-                links[3].links.map((link) => (
+                links[2].links.map((link) => (
                   <Link href={link.link} legacyBehavior>
 
                     <a
