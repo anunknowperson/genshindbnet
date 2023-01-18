@@ -1,0 +1,16 @@
+{
+    "w_name" : "姓名",
+    "w_rarity" : "稀有度",
+    "w_effect" : "影响",
+    
+    "w_claymore" : "双手剑",
+    "w_polearm" : "长柄武器",
+    "w_sword" : "单手剑",
+    "w_bow" : "弓",
+    "w_catalyst" : "法器",
+
+    "w_baseatk" : "基础攻击力",
+    "w_ascension" : "阿森松岛",
+    "w_fullprogression" : "全面进展"
+
+}

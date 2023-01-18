@@ -3,7 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://wip.genshindb.net
+Host: http://testtest:3000
 
 # Sitemaps
-Sitemap: https://wip.genshindb.net/sitemap.xml
+Sitemap: http://testtest:3000/sitemap.xml
+Sitemap: http://testtest:3000/server-sitemap.xml

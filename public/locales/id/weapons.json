@@ -1,0 +1,16 @@
+{
+    "w_name" : "Nama",
+    "w_rarity" : "Keanehan",
+    "w_effect" : "Memengaruhi",
+    
+    "w_claymore" : "Claymore",
+    "w_polearm" : "Polearm",
+    "w_sword" : "Sword",
+    "w_bow" : "Bow",
+    "w_catalyst" : "Catalyst",
+
+    "w_baseatk" : "ATK dasar",
+    "w_ascension" : "Kenaikan",
+    "w_fullprogression" : "Perkembangan penuh"
+
+}

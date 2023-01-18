@@ -1,0 +1,16 @@
+{
+    "w_name" : "Tên",
+    "w_rarity" : "Việc hiếm có",
+    "w_effect" : "Hiệu ứng",
+    
+    "w_claymore" : "Trọng Kiếm",
+    "w_polearm" : "Vũ Khí Cán Dài",
+    "w_sword" : "Kiếm Đơn",
+    "w_bow" : "Cung",
+    "w_catalyst" : "Pháp Khí",
+
+    "w_baseatk" : "ATK cơ bản",
+    "w_ascension" : "Thăng thiên",
+    "w_fullprogression" : "Tiến trình đầy đủ"
+
+}

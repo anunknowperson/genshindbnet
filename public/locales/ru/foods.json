@@ -1,0 +1,11 @@
+{
+    "f_suspicious" : "Подозрительная",
+    "f_normal" : "Обычная",
+    "f_delicious" : "Вкусная",
+    
+    "f_basedish" : "Базовое блюдо",
+    "f_character" : "Персонаж",
+
+    "f_ingredients" : "Ингридиенты"
+
+}

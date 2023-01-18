@@ -1,0 +1,46 @@
+{
+    "a_name" : "İsim",
+    "a_rarities" : "Nadirlikler",
+    "a_twoPiecesBonus" : "2 Adet Bonus",
+    "a_fourPiecesBonus" : "4 Parçalı Bonus",
+
+    "a_flower" : "Flower of Life",
+    "a_plume" : "Plume of Death",
+    "a_sands" : "Sands of Eon",
+    "a_goblet" : "Goblet of Eonothem",
+    "a_circlet" : "Circlet of Logos",
+
+    "a_rarity" : "Nadirlik",
+
+    "a_1star" : "1 Yıldızlı",
+    "a_2star" : "2 Yıldızlı",
+    "a_3star" : "3 Yıldızlı",
+    "a_4star" : "4 Yıldızlı",
+    "a_5star" : "5 Yıldız",
+
+    "a_onePieceBonusDots" : "1 Adet Bonus:",
+    "a_twoPiecesBonusDots" : "2 Parça Bonusu:",
+    "a_fourPiecesBonusDots" : "4 Parça Bonusu:",
+
+    "a_mainStats" : "Ana istatistikler",
+    "a_subStats" : "Alt istatistikler",
+
+    "a_healthFlat" : "Can",
+    "a_healthPercent" : "Can%",
+    "a_attackFlat" : "Saldırı",
+    "a_attackPercent" : "Saldırı%",
+    "a_defenceFlat" : "Savunma",
+    "a_defencePercent" : "Savunma%",
+    "a_energyRechargePercent" : "Enerji Yüklemesi%",
+    "a_elementalMastery" : "Element Ustalığı",
+    "a_elementalDamagePercent" : "Hasar Bonusu (Elemental)%",
+    "a_physicalDamagePercent" : "Fiziksel Hasar Bonusu%",
+    "a_critRatePercent" : "Kritik Oranı%",
+    "a_critDamagePercent" : "Kritik Hasar%",
+    "a_critAdditionalHealingPercent" : "İyileştirme Bonusu%",
+
+    "a_tier" : "Aşama"
+
+
+
+}

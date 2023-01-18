@@ -20,6 +20,13 @@
     "e_geo" : "geo",
 
     "f_about" : "Genshin DB é um site com guias de personagens e um banco de dados para o jogo Genshin Impact.",
-    "f_policy" : "Política de Privacidade"
-    
-}
+    "f_policy" : "Política de Privacidade",
+
+    "filter" : "Filtro",
+    "select_all" : "Selecionar tudo",
+
+    "select_any_elements" : "Selecione quaisquer elementos",
+    "h_materials" : "Materiais",
+
+    "h_foods" : "Alimentos",
+    "remove_all" : "Desmarcar todos","h_tutorials":"Tutoriais","by":"de","top":"O melhor","recent":"Recente","languages":"línguas","f_credits":"Autoras","reply":"Responder","your_comment":"Seu comentário","b_post":"Mandar","c_fullname":"Nome completo","c_title":"Título","c_region":"Região","c_affiliation":"Afiliação","c_birthday":"Aniversário","c_talents":"Talentos","c_passivetalents":"Talentos passivos","c_constellations":"Constelações","c_ascensioncosts":"Custos de ascensão","c_talentascensioncosts":"Custos de ascensão de talento","h_teams":"Equipes","ascended":"Ascendente","full_progression":"Progressão total","description":"Descrição","attributes":"Atributos","save":"Salve ","pleasewait":"Por favor, espere...","postsuccesfull":"A postagem é atualizada com sucesso!","postfail":"Algo deu errado! Por favor, salve seu trabalho.","uploading":"Carregando dados no servidor ...","success":"Com sucesso!","fail":"Desculpa! Algo deu errado.","application":"Aplicativa","myposts":"Minhas postagens","accountsettings":"Configurações da conta","logout":"Sair","newcharacter":"Crie um guia para um personagem","newtutorial":"Crie um tutorial","newpostcreated":"O novo post foi criado","newpostexist":"Nova postagem já existe","postname":"Nome do post","name":"Nome","type":"Tipo","character":"Personagem","language":"Linguagem","public_q":"Publicadas","action":"Ação","signin":"Entrar","emailconfirmed":"Seu email foi confirmado. por favor entre","invalidemail":"E-mail incorreto","password6":"A senha deve ter pelo menos seis caracteres","linksent":"O link de confirmação foi enviado ao seu e-mail","emailused":"Este e-mail já está usado","welcomeback":"Bem vindo de volta!","welcometoour":"Bem-vindo! Faça login com","visiblename":"Seu nome visível","password":"Senha","yourpassword":"A senha","alreadyaccount":"já tem uma conta? Conecte-se","noaccount":"Sem conta? Registro","forgotpassword":"Esqueceu sua senha","restorepassword":"Restaurar a senha","return":"Retornar","continue":"Prosseguir","passwordresetsent":"O link de redefinição de senha foi enviado para o seu e-mail.","login":"Conecte-se","register":"Cadastro"}

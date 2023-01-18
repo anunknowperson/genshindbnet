@@ -1,21 +1,19 @@
 import { useRouter } from 'next/router'
 
-import { Welcome } from '../../components/Welcome/Welcome';
-
-import { ArtifactPieceSelector } from '../../components/ArtifactPieceSelector/ArtifactPieceSelector';
+import { ArtifactPieceSelector } from '../../components/Artifacts/ArtifactPieceSelector/ArtifactPieceSelector';
 
 import { ContentPanel } from '../../components/ContentPanel/ContentPanel';
 
-import { ArtifactPieceDisplay } from '../../components/ArtifactPieceDisplay/ArtifactPieceDisplay';
+import { ArtifactPieceDisplay } from '../../components/Artifacts/ArtifactPieceDisplay/ArtifactPieceDisplay';
 
-import { ArtifactMainStatsTable } from '../../components/ArtifactMainStatsTable/ArtifactMainStatsTable';
-import {ArtifactSubStatsTable} from '../../components/ArtifactSubStatsTable/ArtifactSubStatsTable';
+import { ArtifactMainStatsTable } from '../../components/Artifacts/ArtifactMainStatsTable/ArtifactMainStatsTable';
+import { ArtifactSubStatsTable } from '../../components/Artifacts/ArtifactSubStatsTable/ArtifactSubStatsTable';
 
-import useStyles from '../../components/ArtifactView/ArtifactView.style';
+import useStyles from '../../styles/artifact.styles';
 
 import { TextFormat } from '../../components/TextFormat/TextFormat';
 
-import {useState} from 'react'
+import { useState } from 'react'
 
 import locales from '../../global/locales';
 
@@ -27,16 +25,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
 import { useTranslation } from 'next-i18next';
-
+import Link from 'next/link';
 
 // Server only
 import { withMongo } from '../../lib/mongowrapper'
+import Head from 'next/head';
 
 
-export default function ArtifactSetPage({label, strings}) {
+export default function ArtifactSetPage({ label, strings }) {
   const router = useRouter();
-  
-  
+
+
   const { t } = useTranslation(['common', 'artifacts']);
 
 
@@ -48,42 +47,49 @@ export default function ArtifactSetPage({label, strings}) {
 
   const selectedCallback = (selected) => {
     setSelected(selected);
-  } 
+  }
 
   return (
     <>
+      <Head>
+        <title>{strings.name}</title>
+      </Head>
 
-        <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
+      <div className={classes.breadcrumbs}>
+        <Link className={classes.breadcrumbsLink} href="/artifacts">{t('h_artifacts')}</Link> &gt;
+      </div>
 
-        <div className={classes.firstLine}>
-          
-          <ArtifactPieceSelector label={label} strings={strings} changedCallback={selectedCallback}/>
+      <h1 className={classes.artifactSetNameHeader}>{strings.name}</h1>
 
-          <div className={classes.artifactPieceBox}>
-            <ContentPanel>
-              <ArtifactPieceDisplay label={label} type={selected} strings={strings} rarityCallback={setRarity}/>
-            </ContentPanel>
+      <div className={classes.firstLine}>
 
-          </div>
-          <div className={classes.artifactStoryBox}>
-            <ContentPanel>
-              <div className={classes.artifactStory}>
-              <TextFormat>{strings[selected.toLowerCase()]['story']}</TextFormat>
-              </div>
-            </ContentPanel>
-          </div>
+        <ArtifactPieceSelector label={label} strings={strings} changedCallback={selectedCallback} />
+
+        <div className={classes.artifactPieceBox}>
+          <ContentPanel>
+            <ArtifactPieceDisplay label={label} type={selected} strings={strings} rarityCallback={setRarity} />
+          </ContentPanel>
 
         </div>
+        <div className={classes.artifactStoryBox}>
+          <ContentPanel>
+            <div className={classes.artifactStory}>
+              <TextFormat>{strings[selected.toLowerCase()]['story']}</TextFormat>
+            </div>
+          </ContentPanel>
+        </div>
 
-      <h2 style={{margin: '40px 0px 10px 0px'}}>{t('a_mainStats', { ns: 'artifacts' })}</h2>
+      </div>
 
-      <ArtifactMainStatsTable type={selected} rarity={Number(rarity)}/>
-      
+      <h2 style={{ margin: '40px 0px 10px 0px' }}>{t('a_mainStats', { ns: 'artifacts' })}</h2>
 
-      <h2 style={{margin: '40px 0px 10px 0px'}}>{t('a_subStats', { ns: 'artifacts' })}</h2>
-      
-      <ArtifactSubStatsTable type={selected} rarity={Number(rarity)}/>
-      
+      <ArtifactMainStatsTable type={selected} rarity={Number(rarity)} />
+
+
+      <h2 style={{ margin: '40px 0px 10px 0px' }}>{t('a_subStats', { ns: 'artifacts' })}</h2>
+
+      <ArtifactSubStatsTable type={selected} rarity={Number(rarity)} />
+
     </>
   );
 }
@@ -92,7 +98,7 @@ ArtifactSetPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
@@ -101,19 +107,19 @@ ArtifactSetPage.getLayout = function getLayout(page) {
 export async function getStaticPaths() {
   var artifacts = await withMongo(async (db) => {
     const collection = db.collection('artifacts')
-    return await collection.find({}, {projection: {label : true, _id : false}}).toArray()
+    return await collection.find({}, { projection: { label: true, _id: false } }).toArray()
   });
 
   var paths = []
 
-  for (const artifact of artifacts){
+  for (const artifact of artifacts) {
 
-    for (const locale of locales){
-      
+    for (const locale of locales) {
 
-      paths.push({params: {name: artifact['label']}, locale: locale });
+
+      paths.push({ params: { name: artifact['label'] }, locale: locale });
     }
-    
+
   }
 
 
@@ -121,7 +127,7 @@ export async function getStaticPaths() {
     // ['chs', 'cht', 'en', 'fr', 'de', 'es', 'pt', 'ru', 'jp', 'kr', 'th', 'vi', 'id'],
     // Only `/posts/1` and `/posts/2` are generated at build time
 
-    
+
 
     paths: paths,
 
@@ -137,7 +143,7 @@ async function fetchArtifactDataFromDb(locale, label) {
 
   const artifact = await withMongo(async (db) => {
     const collection = db.collection('artifacts')
-    return await collection.find({label: label}).toArray()
+    return await collection.find({ label: label }).toArray()
   });
 
   var localized = {}
@@ -148,38 +154,38 @@ async function fetchArtifactDataFromDb(locale, label) {
   localized.fourPiecesBonus = artifact[0]['fourPiecesBonus'][lang];
 
   localized.flower = {
-    name : artifact[0]['flower']['name'][lang],
-    description : artifact[0]['flower']['description'][lang],
-    story : artifact[0]['flower']['story'][lang],
-    image:  artifact[0]['flower']['image'],
+    name: artifact[0]['flower']['name'][lang],
+    description: artifact[0]['flower']['description'][lang],
+    story: artifact[0]['flower']['story'][lang],
+    image: artifact[0]['flower']['image'],
   }
 
   localized.plume = {
-    name : artifact[0]['plume']['name'][lang],
-    description : artifact[0]['plume']['description'][lang],
-    story : artifact[0]['plume']['story'][lang],
-    image:  artifact[0]['plume']['image'],
+    name: artifact[0]['plume']['name'][lang],
+    description: artifact[0]['plume']['description'][lang],
+    story: artifact[0]['plume']['story'][lang],
+    image: artifact[0]['plume']['image'],
   }
 
   localized.sands = {
-    name : artifact[0]['sands']['name'][lang],
-    description : artifact[0]['sands']['description'][lang],
-    story : artifact[0]['sands']['story'][lang],
-    image:  artifact[0]['sands']['image'],
+    name: artifact[0]['sands']['name'][lang],
+    description: artifact[0]['sands']['description'][lang],
+    story: artifact[0]['sands']['story'][lang],
+    image: artifact[0]['sands']['image'],
   }
 
   localized.goblet = {
-    name : artifact[0]['goblet']['name'][lang],
-    description : artifact[0]['goblet']['description'][lang],
-    story : artifact[0]['goblet']['story'][lang],
-    image:  artifact[0]['goblet']['image'],
+    name: artifact[0]['goblet']['name'][lang],
+    description: artifact[0]['goblet']['description'][lang],
+    story: artifact[0]['goblet']['story'][lang],
+    image: artifact[0]['goblet']['image'],
   }
 
   localized.circlet = {
-    name : artifact[0]['circlet']['name'][lang],
-    description : artifact[0]['circlet']['description'][lang],
-    story : artifact[0]['circlet']['story'][lang],
-    image:  artifact[0]['circlet']['image'],
+    name: artifact[0]['circlet']['name'][lang],
+    description: artifact[0]['circlet']['description'][lang],
+    story: artifact[0]['circlet']['story'][lang],
+    image: artifact[0]['circlet']['image'],
   }
 
   return localized;
@@ -189,10 +195,10 @@ async function fetchArtifactDataFromDb(locale, label) {
 export async function getStaticProps(context) {
   var label = context.params.name;
 
-  const data = await fetchArtifactDataFromDb(context.locale,label );
+  const data = await fetchArtifactDataFromDb(context.locale, label);
 
   return {
-      props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'artifacts' ])) },
+    props: { label: label, strings: data, ...(await serverSideTranslations(context.locale, ['common', 'artifacts'])) },
   };
 }
 

@@ -1,0 +1,11 @@
+{
+    "f_suspicious" : "可疑的",
+    "f_normal" : "普通的",
+    "f_delicious" : "可口的",
+    
+    "f_basedish" : "底菜",
+    "f_character" : "特点",
+
+    "f_ingredients" : "原料"
+
+}

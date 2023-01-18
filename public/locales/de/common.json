@@ -20,6 +20,13 @@
     "e_geo" : "geo",
 
     "f_about" : "Genshin DB ist eine Seite mit Charakterführern und einer Datenbank für das Spiel Genshin Impact.",
-    "f_policy" : "Datenschutz-Bestimmungen"
-    
-}
+    "f_policy" : "Datenschutz-Bestimmungen",
+
+    "filter" : "Filter",
+    "select_all" : "Wählen Sie Alle",
+
+    "select_any_elements" : "Wählen Sie beliebige Elemente aus",
+    "h_materials" : "Materialien",
+
+    "h_foods" : "Lebensmittel",
+    "remove_all" : "Alle abwählen","h_tutorials":"Tutorials","by":"von","top":"Der beste","recent":"Kürzlich","languages":"Sprachen","f_credits":"Autorinnen","reply":"Antworten","your_comment":"Dein Kommentar","b_post":"Senden","c_fullname":"Vollständiger Name","c_title":"Titel","c_region":"Region","c_affiliation":"Zugehörigkeit","c_birthday":"Geburtstag","c_talents":"Talente","c_passivetalents":"Passive Talente","c_constellations":"Konstellationen","c_ascensioncosts":"Aufstiegskosten","c_talentascensioncosts":"Talentaufstiegskosten","h_teams":"Teams","ascended":"Aufgestiegen","full_progression":"Vollständiger Fortschritt","description":"Beschreibung","attributes":"Attribute","save":"Speichern","pleasewait":"Warten Sie mal...","postsuccesfull":"Der Beitrag wird erfolgreich aktualisiert!","postfail":"Etwas ist schief gelaufen! Bitte speichern Sie Ihre Arbeit.","uploading":"Daten auf den Server laden ...","success":"Erfolgreich!","fail":"Es tut uns leid! Etwas ist schief gelaufen.","application":"Anwendung","myposts":"Meine Posts","accountsettings":"Account Einstellungen","logout":"Ausloggen","newcharacter":"Erstellen Sie eine Anleitung für einen Charakter","newtutorial":"Erstellen Sie ein Tutorial","newpostcreated":"Der neue Beitrag wurde erstellt","newpostexist":"Es gibt bereits ein neuer Beitrag","postname":"Anschriftname","name":"Name","type":"Art","character":"Charakter","language":"Sprache","public_q":"Veröffentlicht","action":"Handlung","signin":"Einloggen","emailconfirmed":"Deine Email wurde bestätigt. Bitte kommen Sie herein","invalidemail":"Falsche Email","password6":"Das Passwort sollte mindestens sechs Zeichen haben","linksent":"Der Bestätigungslink wurde an Ihre E-Mail gesendet","emailused":"Diese E-Mail wird bereits verwendet","welcomeback":"Willkommen zurück!","welcometoour":"Herzlich willkommen! Einloggen mit","visiblename":"Ihr sichtbarer Name","password":"Passwort","yourpassword":"Kennwort","alreadyaccount":"Sie haben bereits ein Konto? Einloggen","noaccount":"Kein Account? Registrieren","forgotpassword":"Passwort vergessen","restorepassword":"Passwort wiederherstellen","return":"Zurückkehren","continue":"Weitermachen","passwordresetsent":"Der Link zum Zurücksetzen des Passworts wurde an Ihre E-Mail gesendet.","login":"Anmeldung","register":"Anmeldung"}

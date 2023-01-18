@@ -1,0 +1,32 @@
+{
+    "h_characters" : "Personaggi",
+    "h_tierlist" : "Elenco dei livelli",
+    "h_map" : "Mappa interattiva",
+    "h_database" : "Banca dati",
+    "h_artifacts" : "Artefatti",
+    "h_weapons" : "Armi",
+    "h_elements" : "Elementi",
+
+    "table_search" : "Cerca per qualsiasi campo",
+
+    "e_filter" : "Pyro|Hydro|Electro|Cryo|Dendro|Anemo|Geo",
+
+    "e_pyro" : "pyro",
+    "e_hydro" : "hydro",
+    "e_electro" : "electro",
+    "e_cryo" : "cryo",
+    "e_dendro" : "dendro",
+    "e_anemo" : "anemo",
+    "e_geo" : "geo",
+
+    "f_about" : "Genshin DB è un sito con guide ai personaggi e un database per il gioco Genshin Impact.",
+    "f_policy" : "Politica sulla riservatezza",
+
+    "filter" : "Filtro",
+    "select_all" : "Seleziona tutto",
+
+    "select_any_elements" : "Seleziona Qualsiasi elemento",
+    "h_materials" : "Materiali",
+
+    "h_foods" : "Alimenti",
+    "remove_all" : "Deselezionare tutto","h_tutorials":"Tutorial","by":"di","top":"Il migliore","recent":"Recente","languages":"Le lingue","f_credits":"Autrici","reply":"Risposta","your_comment":"Il tuo commento","b_post":"Inviare","c_fullname":"Nome e cognome","c_title":"Titolo","c_region":"Regione","c_affiliation":"Affiliazione","c_birthday":"Compleanno","c_talents":"Talenti","c_passivetalents":"Talenti passivi","c_constellations":"Costellazioni","c_ascensioncosts":"Costi di ascensione","c_talentascensioncosts":"Costi di ascensione dei talenti","h_teams":"Squadre","ascended":"Ascesa","full_progression":"Progressione completa","description":"Descrizione","attributes":"Attributi","save":"Salva","pleasewait":"Attendere prego...","postsuccesfull":"Il post viene aggiornato con successo!","postfail":"Qualcosa è andato storto! Si prega di salvare il tuo lavoro.","uploading":"Caricamento dei dati sul server ...","success":"Con successo!","fail":"Spiacente! Qualcosa è andato storto.","application":"Applicazione","myposts":"I miei post","accountsettings":"Impostazioni dell 'account","logout":"Disconnettersi","newcharacter":"Crea una guida per un personaggio","newtutorial":"Crea un tutorial","newpostcreated":"Il nuovo post è stato creato","newpostexist":"Esiste già un nuovo post","postname":"Post Nome","name":"Nome","type":"Tipa","character":"Carattere","language":"Lingua","public_q":"Pubblicata","action":"Azione","signin":"Registrazione","emailconfirmed":"La tua email è stata confermata. prego entra","invalidemail":"Email errata","password6":"La password dovrebbe avere almeno sei caratteri","linksent":"Il collegamento di conferma è stato inviato alla tua e-mail","emailused":"Questa email è già in uso","welcomeback":"Ben tornato!","welcometoour":"Ben arrivato! Entra con","visiblename":"Il tuo nome visibile","password":"Parola d'ordine","yourpassword":"La nostra password","alreadyaccount":"Hai già un account? Accesso","noaccount":"Nessun account? Registrati","forgotpassword":"Hai dimenticato la password","restorepassword":"Ripristina la password","return":"Ritorno","continue":"Continua","passwordresetsent":"Il collegamento di reimpostazione della password è stato inviato alla tua e-mail.","login":"Login","register":"Registrazione"}

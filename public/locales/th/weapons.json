@@ -1,0 +1,16 @@
+{
+    "w_name" : "ชื่อ",
+    "w_rarity" : "หายาก",
+    "w_effect" : "ผล",
+    
+    "w_claymore" : "ดาบใหญ่",
+    "w_polearm" : "หอก",
+    "w_sword" : "ดาบ",
+    "w_bow" : "ธนู",
+    "w_catalyst" : "สื่อเวท",
+
+    "w_baseatk" : "พลังโจมตีพื้นฐาน",
+    "w_ascension" : "การเสด็จขึ้นสู่สวรรค์",
+    "w_fullprogression" : "ความก้าวหน้าอย่างเต็มที่"
+
+}

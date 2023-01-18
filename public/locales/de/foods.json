@@ -1,0 +1,11 @@
+{
+    "f_suspicious" : "Verdächtig",
+    "f_normal" : "Normal",
+    "f_delicious" : "Lecker",
+    
+    "f_basedish" : "Grundgericht",
+    "f_character" : "Charakter",
+
+    "f_ingredients" : "Zutaten"
+
+}

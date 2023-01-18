@@ -20,5 +20,132 @@
     "e_geo" : "гео",
 
     "f_about" : "Genshin DB - это сайт с гайдами на персонажей и база данных для Genshin Impact.",
-    "f_policy" : "Политика кофиденциальности"
+    "f_policy" : "Политика кофиденциальности",
+
+    "filter" : "Фильтр",
+    "select_all" : "Выбрать всё",
+
+    "select_any_elements" : "Выберите любые элементы",
+    "h_materials" : "Материалы",
+
+    "h_foods" : "Еда",
+    "remove_all" : "Очистить выбор",
+
+    "h_tutorials" : "Туториалы",
+
+    "by" : "от",
+
+    "top" : "Лучшие",
+    "recent" : "Недавние",
+    "languages" : "Языки",
+
+    "f_credits" : "Авторы",
+
+    "reply" : "Ответить",
+    "your_comment" : "Ваш комментарий",
+    "b_post" : "Отправить",
+
+    "c_fullname" : "Полное имя",
+    "c_title" : "Титул",
+    "c_region" : "Регион",
+    "c_affiliation" : "Принадлежность",
+    "c_birthday" : "День рождения",
+
+    "c_talents" : "Навыки",
+    "c_passivetalents" : "Пассивные навыки",
+    "c_constellations" : "Создведия",
+    "c_ascensioncosts" : "Стоимость возвышения",
+    "c_talentascensioncosts" : "Стоимость возвышения таланта",
+
+    "h_teams" : "Команды",
+
+    "ascended" : "Возвышенный",
+
+    "full_progression" : "Полная прогрессия",
+
+    "description" : "Описание",
+    "attributes" : "Атрибуты",
+
+    "save" : "Сохранить",
+
+    "pleasewait" : "Пожалуйста подождите...",
+    "postsuccesfull" : "Пост успешно обновлён!",
+    "postfail" : "Что-то пошло не так! Пожалуйста, сохраните вашу работу.",
+
+    "uploading" : "Загрузка даннных на сервер...",
+
+
+    "success" : "Успешно!",
+    
+    "fail" : "Извините! Что-то пошло не так.",
+
+    "application" : "Приложение",
+
+    "myposts" : "Мои посты",
+
+    "accountsettings" : "Настройки аккаунта",
+
+    "logout" : "Выход",
+
+    "newcharacter" : "Создать гайд на персонажа",
+
+    "newtutorial" : "Создать туториал",
+
+    "newpostcreated" : "Новый пост был создан",
+    "newpostexist" : "Новый пост уже существует",
+
+    "postname" : "Имя поста",
+
+    "name" : "Имя",
+    "type" : "Тип",
+    "character" : "Персонаж",
+    
+    "language" : "Язык",
+
+    "public_q" : "Опубликован",
+
+    "action" : "Действие",
+
+    "signin" : "Войти",
+
+    "emailconfirmed" : "Ваш e-mail был подтверждён. Пожалуйста, войдите",
+    "invalidemail" : "Неправильный e-mail",
+
+    "password6" : "В пароле должно быть как минимум шесть символов",
+
+    "linksent" : "Ссылка для подтверждения была отправлена на ваш e-mail",
+
+    "emailused" : "Этот e-mail уже используется",
+
+    "welcomeback" : "С возвращением!",
+
+    "welcometoour" : "Добро пожаловать! Войдите при помощи",
+
+    "visiblename" : "Ваше видимое имя",
+
+    "password" : "Пароль",
+    "yourpassword" : "Ваш пароль",
+
+    "alreadyaccount" : "Уже есть аккаунт? Войдите",
+    "noaccount" : "Нет аккаунта? Зарегистрируйтесь",
+
+    "forgotpassword" : "Забыли пароль",
+
+    "restorepassword" : "Восстановить пароль",
+
+    "return" : "Назад",
+
+    "continue" : "Продолжить",
+
+    "passwordresetsent" : "Ссылка для сброса пароля была отправлена на ваш e-mail.",
+
+    "login" : "Войти",
+
+    "register" : "Регистрация"
+
+
+
+
+
+
 }

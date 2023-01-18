@@ -1,0 +1,32 @@
+{
+    "h_characters" : "Karakterler",
+    "h_tierlist" : "Seviye Listesi",
+    "h_map" : "İnteraktif harita",
+    "h_database" : "Veri tabanı",
+    "h_artifacts" : "Eserler",
+    "h_weapons" : "Silahlar",
+    "h_elements" : "Elementler",
+
+    "table_search" : "Herhangi bir alana göre ara",
+
+    "e_filter" : "Ateş|Su|Elektrik|Buz|Doğa|Rüzgar|Toprak",
+
+    "e_pyro" : "ateş",
+    "e_hydro" : "su",
+    "e_electro" : "elektrik",
+    "e_cryo" : "buz",
+    "e_dendro" : "doğa",
+    "e_anemo" : "rüzgar",
+    "e_geo" : "toprak",
+
+    "f_about" : "Genshin DB, karakter kılavuzları ve Genshin Impact oyunu için bir veritabanı içeren bir sitedir.",
+    "f_policy" : "Gizlilik Politikası",
+
+    "filter" : "Filtre",
+    "select_all" : "Hepsini seç",
+
+    "select_any_elements" : "Herhangi Bir Öğe Seçin",
+    "h_materials" : "Malzemeler",
+
+    "h_foods" : "Gıdalar",
+    "remove_all" : "Hiçbirini seçme","h_tutorials":"Öğreticiler","by":"tarafından","top":"En iyisi","recent":"Son","languages":"Diller","f_credits":"Yazarlar","reply":"Cevap","your_comment":"Senin yorumun","b_post":"Göndermek","c_fullname":"Ad Soyad","c_title":"Başlık","c_region":"Bölge","c_affiliation":"Bağlılık","c_birthday":"Doğum günü","c_talents":"Yetenekler","c_passivetalents":"Pasif yetenekler","c_constellations":"Takımyıldızlar","c_ascensioncosts":"Yükseliş Maliyetleri","c_talentascensioncosts":"Yetenek Yükseliş Maliyetleri","h_teams":"Takımlar","ascended":"Yükseltilmiş","full_progression":"Tam ilerleme","description":"Açıklama","attributes":"Öznitellikler","save":"Kayıt etmek","pleasewait":"Lütfen bekle...","postsuccesfull":"Gönderi başarıyla güncellendi!","postfail":"Bir şeyler yanlış gitti! Lütfen işinizi kaydedin.","uploading":"Verileri sunucuya yükleme ...","success":"Başarılı!","fail":"Üzgünüm! Bir şeyler yanlış gitti.","application":"Uygulama","myposts":"Benim gönderilerim","accountsettings":"Hesap ayarları","logout":"Çıkış Yap","newcharacter":"Bir karakter için bir rehber oluşturun","newtutorial":"Bir Eğitim Oluşturun","newpostcreated":"Yeni gönderi yaratıldı","newpostexist":"Yeni gönderi zaten var","postname":"Posta adı","name":"İsim","type":"Tip","character":"Karakter","language":"Dil","public_q":"Yayınlanan","action":"Eylem","signin":"Kayıt olmak","emailconfirmed":"E-posta teyit edilmiştir. lütfen içeri gel","invalidemail":"Yanlış E-posta","password6":"Parola en az altı karakter olmalı","linksent":"Onay bağlantısı e-postanıza gönderildi","emailused":"Bu e-posta zaten kullanıldı","welcomeback":"Tekrar hoşgeldiniz!","welcometoour":"Hoş geldin! İle giriş","visiblename":"Görünür Adınız","password":"Parola","yourpassword":"Şifre","alreadyaccount":"Zaten hesabınız var mı? Giriş yapmak","noaccount":"Hesap yok? Kayıt ol","forgotpassword":"Parolanızı mı unuttunuz","restorepassword":"Parola Yenile","return":"Dönüş","continue":"Devam et","passwordresetsent":"Parola sıfırlama bağlantısı e-postanıza gönderildi.","login":"Giriş yapmak","register":"Kayıt"}

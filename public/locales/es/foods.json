@@ -1,0 +1,11 @@
+{
+    "f_suspicious" : "Sospechosa",
+    "f_normal" : "Normal",
+    "f_delicious" : "Deliciosa",
+    
+    "f_basedish" : "Plato Base",
+    "f_character" : "Personaje",
+
+    "f_ingredients" : "Ingredientes"
+
+}

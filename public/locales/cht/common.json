@@ -20,6 +20,13 @@
     "e_geo" : "岩",
 
     "f_about" : "Genshin DB 是一個提供角色指南和 Genshin Impact 遊戲數據庫的網站。",
-    "f_policy" : "隱私政策"
-    
-}
+    "f_policy" : "隱私政策",
+
+    "filter" : "篩選",
+    "select_all" : "全選",
+
+    "select_any_elements" : "選擇任何元素",
+    "h_materials" : "材料",
+
+    "h_foods" : "食品",
+    "remove_all" : "取消全選","h_tutorials":"教程","by":"經過","top":"最好的","recent":"最近的","languages":"語言","f_credits":"作者","reply":"回答","your_comment":"你的評論","b_post":"發送","c_fullname":"全名","c_title":"標題","c_region":"地區","c_affiliation":"聯繫","c_birthday":"生日","c_talents":"才華","c_passivetalents":"被動才能","c_constellations":"星座","c_ascensioncosts":"提升成本","c_talentascensioncosts":"人才提升成本","h_teams":"團隊","ascended":"上升","full_progression":"完整的進展","description":"描述","attributes":"屬性","save":"救","pleasewait":"請稍等...","postsuccesfull":"該帖子已成功更新！","postfail":"有些不對勁！ 請保存您的工作。","uploading":"將數據加載到服務器...","success":"成功地！","fail":"對不起！ 有些不對勁。","application":"應用","myposts":"我的帖子","accountsettings":"帳號設定","logout":"登出","newcharacter":"為角色創建指南","newtutorial":"創建一個教程","newpostcreated":"新帖子是創建的","newpostexist":"新帖子已經存在","postname":"帖子名稱","name":"名稱","type":"類型","character":"特點","language":"語言","public_q":"出版","action":"行動","signin":"登入","emailconfirmed":"您的電子郵件已被確認。 請進來","invalidemail":"不正確的電子郵件","password6":"密碼至少應具有六個字符","linksent":"確認鏈接已發送到您的電子郵件","emailused":"此郵箱已被佔用","welcomeback":"歡迎回來！","welcometoour":"歡迎！ 登錄","visiblename":"您的可見名字","password":"密碼","yourpassword":"密碼","alreadyaccount":"已經有一個帳戶？ 登錄","noaccount":"沒有賬號？ 登記","forgotpassword":"忘記密碼了嗎","restorepassword":"還原密碼","return":"返回","continue":"繼續","passwordresetsent":"密碼重置鏈接已發送到您的電子郵件。","login":"登錄","register":"登記"}

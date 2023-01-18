@@ -20,6 +20,13 @@
     "e_geo" : "géo",
 
     "f_about" : "Genshin DB est un site avec des guides de personnages et une base de données pour le jeu Genshin Impact.",
-    "f_policy" : "Politique de confidentialité"
-    
-}
+    "f_policy" : "Politique de confidentialité",
+
+    "filter" : "Filtre",
+    "select_all" : "Tout sélectionner",
+
+    "select_any_elements" : "Sélectionnez tous les éléments",
+    "h_materials" : "Matériaux",
+
+    "h_foods" : "Nourriture",
+    "remove_all" : "Tout déselectionner","h_tutorials":"Tutoriels","by":"par","top":"Le meilleur","recent":"Récente","languages":"Langues","f_credits":"Auteures","reply":"Réponse","your_comment":"Votre commentaire","b_post":"Envoyer","c_fullname":"Nom et prénom","c_title":"Titre","c_region":"Région","c_affiliation":"Affiliation","c_birthday":"Anniversaire","c_talents":"Talents","c_passivetalents":"Talents passifs","c_constellations":"Constellations","c_ascensioncosts":"Coûts d'ascension","c_talentascensioncosts":"Coût d'ascension des talents","h_teams":"Équipes","ascended":"Ascensionné","full_progression":"Progression complète","description":"La description","attributes":"Les attributs","save":"Sauver","pleasewait":"S'il vous plaît, attendez...","postsuccesfull":"Le message est mis à jour avec succès!","postfail":"Quelque chose s'est mal passé! Veuillez enregistrer votre travail.","uploading":"Chargement des données sur le serveur ...","success":"Avec succès!","fail":"Pardon! Quelque chose s'est mal passé.","application":"Application","myposts":"Mes publications","accountsettings":"Paramètres du compte","logout":"Se déconnecter","newcharacter":"Créez un guide pour un personnage","newtutorial":"Créer un tutoriel","newpostcreated":"Le nouveau message a été créé","newpostexist":"Un nouveau message existe déjà","postname":"Après le nom","name":"Nom","type":"Taper","character":"Personnage","language":"Langue","public_q":"Publié","action":"Action","signin":"S'identifier","emailconfirmed":"Votre e-mail a été confirmé. Veuillez venir","invalidemail":"Adresse Email incorrecte","password6":"Le mot de passe devrait avoir au moins six caractères","linksent":"Le lien de confirmation a été envoyé à votre e-mail","emailused":"Cet e-mail est déjà pris","welcomeback":"Content de te revoir!","welcometoour":"Bienvenue! Connectez-vous avec","visiblename":"Votre nom visible","password":"Mot de passe","yourpassword":"Notre mot de passe","alreadyaccount":"Vous avez déjà un compte? Connexion","noaccount":"Pas de compte? S'inscrire","forgotpassword":"Mot de passe oublié","restorepassword":"Restaurer le mot de passe","return":"Revenir","continue":"Continuez","passwordresetsent":"Le lien de réinitialisation du mot de passe a été envoyé à votre e-mail.","login":"Connexion","register":"Inscription"}

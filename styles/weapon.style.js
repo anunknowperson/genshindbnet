@@ -2,7 +2,18 @@
 import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
-    
+  breadcrumbs: {
+    color: theme.white,
+    fontSize: '18px',
+    fontWeight: 500,
+    margin: '0px 0px 0px 0px',
+  },
+
+  breadcrumbsLink :{
+    color: 'inherit',
+    fontSize: 'inherit',
+    fontWeight: 'inherit'
+  },
 
   artifactSetNameHeader: {
     color: theme.white,

@@ -28,11 +28,11 @@ export default createStyles((theme) => ({
 
     backgroundColor: theme.colors.dark[7],
 
-    [theme.fn.largerThan(750)]:{
+    [theme.fn.largerThan(1200)]:{
         width: '1200px',
         
     },
-    [theme.fn.smallerThan(751)]:{
+    [theme.fn.smallerThan(1201)]:{
         width: '100%',
         
     }

@@ -6,25 +6,49 @@ import { PostWrapper } from '../../components/PostWrapper/PostWrapper';
 
 import { Layout } from '../../components/Layout/Layout';
 
-import { ArtifactsListTable } from '../../components/ArtifactsListTable/ArtifactsListTable';
+import { ArtifactsList } from '../../components/Artifacts/ArtifactsList/ArtifactsList';
 
+import { Chip, Group } from '@mantine/core';
+import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
+import { SearchBar } from '../../components/SearchBar/SearchBar';
+import Head from 'next/head';
 
-export default function ArtifactsPage({list}) {
+export default function ArtifactsPage({ }) {
   const router = useRouter();
-  
+
   const { t } = useTranslation('common');
 
   const { classes } = useStyles();
 
+  const [searchFilter, setSearchFilter] = useState('');
+  const [rarities, setRarities] = useState(['5']);
+
 
   return (
     <>
-        <h1 className={classes.artifactSetNameHeader}>{t('h_artifacts')}</h1>
+      <Head>
+        <title>Artifacts List</title>
+      </Head>
 
-        <ArtifactsListTable list={list}/>
+      <h1 className={classes.artifactSetNameHeader}>{t('h_artifacts')}</h1>
+
+      <SearchBar callback={setSearchFilter} placeholder={t("table_search")} />
+
+      <Group position='apart' style={{ marginBottom: '10px' }}>
+        <Chip.Group value={rarities} onChange={setRarities} multiple>
+          <Chip value="1">1</Chip>
+          <Chip value="2">2</Chip>
+          <Chip value="3">3</Chip>
+          <Chip value="4">4</Chip>
+          <Chip value="5">5</Chip>
+        </Chip.Group>
+      </Group>
+
+      <ArtifactsList rarityFilter={rarities} searchFilter={searchFilter} />
+
     </>
   );
 }
@@ -33,57 +57,15 @@ ArtifactsPage.getLayout = function getLayout(page) {
   return (
     <Layout>
       <PostWrapper>
-      {page}
+        {page}
       </PostWrapper>
     </Layout>
   )
 }
 
-async function fetchArtifactsFromDb(locale) {
-
-    const lang = locale;
-  
-    const lib = await import('../../lib/mongowrapper');
-
-    
-
-    const artifacts = await lib.withMongo(async (db) => {
-      const collection = db.collection('artifacts')
-      return await collection.find({}, {projection: { "_id" : 0, "name" : 1,  "rarities" : 1, "twoPiecesBonus" : 1, "fourPiecesBonus" : 1, "label" : 1, "flower": 1, "circlet": 1}}).toArray()
-    });
-    
-    var result = [];
-
-    for (var i = 0; i < artifacts.length; i++){
-        var ln = {
-          label: artifacts[i]['label'],
-          name: artifacts[i]['name'][lang],
-          rarities: artifacts[i]['rarities'],
-          twoPiecesBonus: artifacts[i]['twoPiecesBonus'][lang],
-          fourPiecesBonus: artifacts[i]['fourPiecesBonus'][lang],
-          
-        };
-
-        if (ln['fourPiecesBonus'] === ''){
-          ln['image'] = artifacts[i]['circlet']['image'];
-
-        } else {
-          ln['image'] = artifacts[i]['flower']['image'];
-        }
-
-        result.push(
-            ln
-        );
-    }
-
-    return result;
-  
-  }
-
 export async function getStaticProps(context) {
-    const list = await fetchArtifactsFromDb(context.locale );
-  
-    return {
-        props: { list: list, ...(await serverSideTranslations(context.locale, ['common', 'artifacts' ])) },
-    };
-  }
+
+  return {
+    props: { ...(await serverSideTranslations(context.locale, ['common', 'artifacts'])) },
+  };
+}

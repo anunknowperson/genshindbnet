@@ -1,0 +1,16 @@
+{
+    "w_name" : "Name",
+    "w_rarity" : "Rarity",
+    "w_effect" : "Effect",
+    
+    "w_claymore" : "Claymore",
+    "w_polearm" : "Polearm",
+    "w_sword" : "Sword",
+    "w_bow" : "Bow",
+    "w_catalyst" : "Catalyst",
+
+    "w_baseatk" : "Base ATK",
+    "w_ascension" : "Ascension",
+    "w_fullprogression" : "Full progression"
+
+}
