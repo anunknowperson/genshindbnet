@@ -91,7 +91,7 @@ export function ForgotForm({returnToLogin}) {
       />
       { (status) && ((status === 'ok') ?
       <Alert style={{marginTop: '20px'}} icon={<IconCircleCheck size={16} />} title="Success" color="green">
-        {t('passwordresetsent')}
+        {t('passwordresetsent')  + ' Please check spam/junk folders.' }
       </Alert> :
       <Alert style={{marginTop: '20px'}} icon={<IconAlertCircle size={16} />} title="Bummer!" color="red">
         {t('fail')} {status}

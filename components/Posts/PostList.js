@@ -25,6 +25,10 @@ import { NativeSelect } from '@mantine/core';
 
 import { CharacterSelect } from '../Characters/TeamLine/CharacterSelect';
 
+import debounce from 'lodash.debounce';
+
+import { useCallback } from 'react';
+
 import { Modal } from '@mantine/core';
 import { useQueryClient } from '@tanstack/react-query';
 export function PostList({ uid, searchFilter }) {
@@ -114,6 +118,10 @@ export function PostList({ uid, searchFilter }) {
     const NameEdit = ({ id, name }) => {
         const [value, setValue] = useState(name);
 
+        const debouncedFilter = useCallback(debounce(query =>
+            editPost(id, 'name', query), 500), []
+        )
+
         return <TextInput
 
             placeholder={t('postname')}
@@ -122,7 +130,9 @@ export function PostList({ uid, searchFilter }) {
             value={value}
             onChange={(event) => {
                 setValue(event.currentTarget.value);
-                editPost(id, 'name', event.currentTarget.value);
+                
+                debouncedFilter(event.currentTarget.value);
+
                 for (const post of data.posts) {
                     if (post.name == name) {
                         post['name'] = event.currentTarget.value;

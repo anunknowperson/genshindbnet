@@ -83,7 +83,7 @@ export function Footer() {
               : <div className={classes.friends}>
                 <div>Useful links:</div>
 
-                <Link href="https://discord.gg/xfkK7uAr46" legacyBehavior>
+                <Link href="https://discord.gg/fzDBJfBq2M" legacyBehavior>
                   <a>
                     <Image className={classes.friendButton} width={30} height={30} src="/discord.svg" alt={'Friends'}></Image>
                   </a>

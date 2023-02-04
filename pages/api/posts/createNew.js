@@ -12,17 +12,26 @@ async function handler(req, res) {
         //Getting email and password from body
         const { uid, type, lang } = req.body;
 
-        const sessionUid =  (await getToken({ req })).uid;
+        const sessionUid = (await getToken({ req })).uid;
 
         if (uid !== sessionUid) {
             res.status(401).json({});
             return;
         }
 
-        var postId = nanoid();
+        var postId = ((await withMongo('data', async (db) => {
+            return await db.collection('globals').findOneAndUpdate(
+                { "name": "postIdCounter" },
+                { $inc: { "val": 1 } },
+                { upsert: true },
+
+            );
+        })).value.val).toString(36);
+
+
         var postType = 'post';
 
-        if (type === 'post'){
+        if (type === 'post') {
             postType = 'post';
         } else if (type === 'character') {
             postType = 'character';
@@ -31,7 +40,7 @@ async function handler(req, res) {
         const checkExisting = await withMongo('data', async (db) => {
             const collection = db.collection('posts');
             return await collection.findOne({ createdBy: uid, name: 'My new post' });
-          });
+        });
 
         if (checkExisting) {
             res.status(422).json({ message: 'New post already exists' });
@@ -59,22 +68,22 @@ async function handler(req, res) {
                 artifacts: [],
                 weapons: [],
                 comments: {
-                    't1' : '',
-                    't2' : '',
-                    't3' : '',
-                    't4' : '',
-                    'p1' : '',
-                    'p2' : '',
-                    'p3' : '',
-                    'c1' : '',
-                    'c2' : '',
-                    'c3' : '',
-                    'c4' : '',
-                    'c5' : '',
-                    'c6' : '',
+                    't1': '',
+                    't2': '',
+                    't3': '',
+                    't4': '',
+                    'p1': '',
+                    'p2': '',
+                    'p3': '',
+                    'c1': '',
+                    'c2': '',
+                    'c3': '',
+                    'c4': '',
+                    'c5': '',
+                    'c6': '',
                 },
 
-                description : '',
+                description: '',
 
                 time: Date().toDate(),
 
@@ -83,12 +92,12 @@ async function handler(req, res) {
 
                 content: '<blockquote><p>You can start writing here…</p></blockquote>',
             });
-          });
+        });
 
         log('New post created: ' + process.env.SITE_URL + '/posts/' + postId);
 
         //Send success response
-        res.status(201).json({ message: 'Post created'});
+        res.status(201).json({ message: 'Post created' });
 
     } else {
         //Response for other than POST method

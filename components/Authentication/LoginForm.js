@@ -55,7 +55,7 @@ export function LoginForm({ passwordlessCallback, passwordForgotCallback, closeC
 
     validate: {
       email: (val) => (/^\S+@\S+$/.test(val) ? null : t('invalidemail')),
-      password: (val) => (val.length <= 6 ? t('password6') : null),
+      password: (val) => (val.length < 6 ? t('password6') : null),
     },
   });
 
@@ -85,7 +85,7 @@ export function LoginForm({ passwordlessCallback, passwordForgotCallback, closeC
       var registerResult = await tryRegisterUser(name, email, password);
 
       if (registerResult == 201) {
-        setStatus({ ok: true, text: t('linksent') });
+        setStatus({ ok: true, text: t('linksent') + ' (Please check spam/junk folders)' });
       } else if (registerResult == 422) {
         setStatus({ ok: false, text: t('emailused') });
       } else {

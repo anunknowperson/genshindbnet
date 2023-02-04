@@ -25,6 +25,8 @@ import Head from 'next/head';
 
 import { createStyles } from '@mantine/core';
 
+import ReactDOMServer from 'react-dom/server';
+
 const useStyles = createStyles((theme, _params, getRef) => ({
   nameHeader: {
     color: theme.white,
@@ -73,14 +75,7 @@ export default function PostPage({ postId, postName, postContent, postType, char
       <>
         <h1 className={classes.nameHeader}>{postName}</h1>
 
-
-        <Editor
-          key="viewer"
-          name="post"
-
-          value={postContent}
-          disabled={true}
-        /></>
+        {parse(postContent)}</>
     }
 
     {(postType === 'character') &&
