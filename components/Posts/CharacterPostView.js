@@ -37,6 +37,9 @@ import { WeaponLine } from '../Characters/WeaponLine/WeaponLine';
 
 import { TeamLine } from '../Characters/TeamLine/TeamLine';
 
+
+import parse from 'html-react-parser';
+
 export function CharacterPostView({ ed, character, initMainContent, mainContentChangeCallback, initWeapons, weaponsChangeCallback, initArtifacts, artifactsChangeCallback, initComments, commentsChangeCallback, initTeams, teamsChangeCallback }) {
     const Editor = ed;
 
@@ -246,13 +249,8 @@ export function CharacterPostView({ ed, character, initMainContent, mainContentC
                 </Text>
             </Paper>
 
-            <Editor
-                key="viewer"
-                name="post"
 
-                value={initMainContent}
-                disabled={true}
-            />
+            {parse(initMainContent)}
 
 
             <div className={classes.waContainer}>

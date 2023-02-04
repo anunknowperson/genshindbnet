@@ -46,7 +46,6 @@ import { TeamLine } from '../Characters/TeamLine/TeamLine';
 
 import { nanoid } from 'nanoid'
 
-import dynamic from "next/dynamic";
 
 export function CharacterEdit({ ed, character, initMainContent, mainContentChangeCallback, initWeapons, weaponsChangeCallback, initArtifacts, artifactsChangeCallback, initComments, commentsChangeCallback, initTeams, teamsChangeCallback }) {
     const Editor = ed;
@@ -63,9 +62,9 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
     const [progression, setProgression] = useState(true);
     const [tprogression, settProgression] = useState(true);
 
-    const [artifactLines, setArtifactLines] = useState(initArtifacts);
-    const [weaponLines, setWeaponLines] = useState(initWeapons);
-    const [teamLines, setTeamLines] = useState(initTeams);
+    const [artifactLines, setArtifactLines] = useState(initArtifacts['current']);
+    const [weaponLines, setWeaponLines] = useState(initWeapons['current']);
+    const [teamLines, setTeamLines] = useState(initTeams['current']);
 
     const talentsHeader = useRef(null);
     const passiveTalentsHeader = useRef(null);
@@ -118,7 +117,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
 
     const removeLine = (id) => {
 
-        var newLines = artifactLines.filter((_, i) => { return i !== id; });
+        var newLines = initArtifacts['current'].filter((_, i) => { return i !== id; });
 
         setArtifactLines(newLines);
 
@@ -126,7 +125,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
     }
 
     const changeLine = (id, field, val) => {
-        var newLines = [...artifactLines];
+        var newLines = [...initArtifacts['current']];
 
         newLines[id][field] = val;
 
@@ -139,7 +138,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
 
     const removeWeaponLine = (id) => {
 
-        var newLines = weaponLines.filter((_, i) => { return i !== id; });
+        var newLines = initWeapons['current'].filter((_, i) => { return i !== id; });
 
         setWeaponLines(newLines);
 
@@ -147,19 +146,20 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
     }
 
     const changeWeaponLine = (id, field, val) => {
-        var newLines = [...weaponLines];
 
+        var newLines = [...initWeapons['current']];
 
         newLines[id][field] = val;
 
         setWeaponLines(newLines);
+
 
         weaponsChangeCallback(newLines);
     }
 
     const removeTeamLine = (id) => {
 
-        var newLines = teamLines.filter((_, i) => { return i !== id; });
+        var newLines = initTeams['current'].filter((_, i) => { return i !== id; });
 
         setTeamLines(newLines);
 
@@ -167,7 +167,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
     }
 
     const changeTeamLine = (id, field, val) => {
-        var newLines = [...teamLines];
+        var newLines = [...initTeams['current']];
 
         newLines[id][field] = val;
 
@@ -284,6 +284,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
 
                     <ActionIcon color="teal" variant="light" onClick={() => {
 
+                        weaponsChangeCallback(weaponLines.concat({ uid: nanoid(), selected: '', comment: '' }));
                         setWeaponLines(weaponLines.concat({ uid: nanoid(), selected: '', comment: '' }));
 
                     }}>
@@ -292,7 +293,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
                 </div>
 
                 <div style={{ flex: '1' }}>
-                <h2>{t('h_artifacts')}</h2>
+                    <h2>{t('h_artifacts')}</h2>
 
 
                     {artifactLines.map((el, index) => (
@@ -301,6 +302,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
 
                     <ActionIcon mt={10} color="teal" variant="light" onClick={() => {
 
+                        artifactsChangeCallback(artifactLines.concat({ uid: nanoid(), type: '4x', twoP: '', fourP: '', comment: '' }));
                         setArtifactLines(artifactLines.concat({ uid: nanoid(), type: '4x', twoP: '', fourP: '', comment: '' }));
 
                     }}>
@@ -321,6 +323,7 @@ export function CharacterEdit({ ed, character, initMainContent, mainContentChang
 
             <ActionIcon mt={10} mb={30} color="teal" variant="light" onClick={() => {
 
+                teamsChangeCallback(teamLines.concat({ uid: nanoid(), c1: '', c2: '', c3: '', c4: '', comment: '' }));
                 setTeamLines(teamLines.concat({ uid: nanoid(), c1: '', c2: '', c3: '', c4: '', comment: '' }));
 
             }}>

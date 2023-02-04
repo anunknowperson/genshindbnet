@@ -94,7 +94,7 @@ export default function PostListPage({ }) {
 
             queryClient.invalidateQueries('myPosts');
         } else if (res.status == 422) {
-            setcStatus({ ok: false, text: t('newpostexist') })
+            setcStatus({ ok: false, text: t('newpostexist') + ' (Please rename existing post)' })
         } else {
             setcStatus({ ok: false, text: t('fail') })
         }

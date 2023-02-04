@@ -41,69 +41,35 @@ export default function PostEditPage({ postId, postName, postContent, postType, 
 
         await delay(1000);
 
-        const res = await fetch('/api/posts/propEdit', {
+        const updicts = {};
+
+        updicts['content'] = mainPostContent.current;
+        updicts['artifacts'] = artifactsList.current;
+        updicts['weapons'] = weaponsList.current;
+        updicts['comments'] = commentsList.current;
+        updicts['teams'] = teamsList.current;
+
+        
+        const res = await fetch('/api/posts/contentEdit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 id: postId,
-                field: 'content',
-                value: mainPostContent.current,
+                updict: updicts,
             }),
         });
 
-        const res2 = await fetch('/api/posts/propEdit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: postId,
-                field: 'artifacts',
-                value: artifactsList.current,
-            }),
-        });
-
-        const res3 = await fetch('/api/posts/propEdit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: postId,
-                field: 'weapons',
-                value: weaponsList.current,
-            }),
-        });
-        const res4 = await fetch('/api/posts/propEdit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: postId,
-                field: 'comments',
-                value: commentsList.current,
-            }),
-        });
-
-        const res5 = await fetch('/api/posts/propEdit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: postId,
-                field: 'teams',
-                value: teamsList.current,
-            }),
-        });
 
         setNotificationLoading(false);
 
         if (res.status == 201) {
             setNotificationSuccess(true);
+
+            await delay(3000);
+
+            setNotificationSuccess(false);
         } else {
             setNotificationFail(true);
         }
@@ -159,10 +125,10 @@ export default function PostEditPage({ postId, postName, postContent, postType, 
 
             {(postType === 'character') &&
 
-                <CharacterEdit ed={Editor} character={characterData} initMainContent={mainPostContent.current} mainContentChangeCallback={(val) => { mainPostContent.current = val; }} initArtifacts={postArtifacts}
+                <CharacterEdit ed={Editor} character={characterData} initMainContent={mainPostContent.current} mainContentChangeCallback={(val) => { mainPostContent.current = val; }} initArtifacts={artifactsList}
                     artifactsChangeCallback={
                         (val) => { artifactsList.current = val; }
-                    } initWeapons={postWeapons}
+                    } initWeapons={weaponsList}
                     weaponsChangeCallback={
                         (val) => { weaponsList.current = val; }
                     }
@@ -175,7 +141,7 @@ export default function PostEditPage({ postId, postName, postContent, postType, 
                         }
                     }
 
-                    initTeams={postTeams}
+                    initTeams={teamsList}
 
                     teamsChangeCallback={
                         (val) => { teamsList.current = val; }
