@@ -36,7 +36,6 @@ export default function InteractiveMap({ }) {
                 <meta property="og:site_name" content="Genshin Impact Guides &amp; Database" />
                 <meta property="article:modified_time" content="2023-02-05T06:53:43+00:00" />
 
-
             </Head>
 
             <iframe src="https://genshin-impact-map.appsample.com/" height="100%" width="100%" />
