@@ -16,6 +16,8 @@ import { Slider } from '@mantine/core';
 import { Textarea } from '@mantine/core';
 import debounce from 'lodash.debounce';
 
+import { Divider } from '@mantine/core';
+
 import { useCallback } from 'react';
 
 const MyTextField = ({ value, changedCallback }) => {
@@ -44,7 +46,7 @@ const MyTextField = ({ value, changedCallback }) => {
 }
 
 
-export function ConstellationView({readOnly, talent, image, nick, comment, commentCallback }) {
+export function ConstellationView({ readOnly, talent, image, nick, comment, commentCallback }) {
 
     const { height, width } = useViewportSize();
     const { t } = useTranslation(['common']);
@@ -85,10 +87,12 @@ export function ConstellationView({readOnly, talent, image, nick, comment, comme
                     </div>
 
 
+                    <Divider my="sm" />
+
                     {(readOnly != true) ?
                         <MyTextField changedCallback={(val) => { commentCallback(nick, val) }} value={comment} />
                         :
-                        <div>
+                        <div style={{padding: '5px', whiteSpace: 'pre-wrap'}}>
                             {comment}
                         </div>
                     }
