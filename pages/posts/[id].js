@@ -139,6 +139,16 @@ PostPage.getLayout = function getLayout(page) {
 
 export async function getStaticPaths() {
 
+  const posts = await withMongo('data', async (db) => {
+    const collection = db.collection('posts');
+    return await collection.find({}, { projection: { "_id": 0, "id": 1 } }).toArray();
+  });
+
+  const rts = posts.map((post) => ({
+    params: { id: post.id },
+  }));
+
+
   return {
     // ['chs', 'cht', 'en', 'fr', 'de', 'es', 'pt', 'ru', 'jp', 'kr', 'th', 'vi', 'id'],
     // Only `/posts/1` and `/posts/2` are generated at build time
@@ -158,6 +168,12 @@ export async function getStaticProps(context) {
     const collection = db.collection('posts');
     return await collection.findOne({ id: context.params['id'] });
   });
+
+  if (post === null) {
+    return {
+      notFound: true,
+    }
+  }
 
   var character = {};
 
@@ -196,7 +212,7 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { postId: context.params['id'], postName: post.name, postContent: post.content, postType: post.type, characterData: character, postArtifacts: post.artifacts, postWeapons: post.weapons, postComments: post.comments, postTeams: post.teams, ...(await serverSideTranslations(context.locale, ['common'])) },
+    props: { postId: context.params['id'], postName: post.name, postContent: post.content, postType: post.type, characterData: character, postArtifacts: post.artifacts, postWeapons: post.weapons, postComments: post.comments, postTeams: post.teams, ...(await serverSideTranslations(context.locale, ['common'])) }, revalidate: 60,
   };
 }
 

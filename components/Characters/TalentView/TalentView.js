@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 import { ContentPanel } from '../../ContentPanel/ContentPanel';
 
+import { Divider } from '@mantine/core';
 import { Center, Tabs } from '@mantine/core';
 import Image from 'next/image';
 import { Text, Paper } from '@mantine/core';
@@ -172,16 +173,17 @@ export function TalentView({ readOnly, talent, image, nick, comment, commentCall
                         </Tabs.Panel>
                     </Tabs>
 
+                    <Divider my="sm" />
 
                     {(readOnly != true) ?
                         <MyTextField changedCallback={(val) => { commentCallback(nick, val) }} value={comment} />
                         :
-                        <div>
+                        <div style={{padding: '5px', whiteSpace: 'pre-wrap'}}>
                             {comment}
                         </div>
                     }
 
-                    
+
 
                     <div style={{ marginBottom: '10px' }} />
                 </div>

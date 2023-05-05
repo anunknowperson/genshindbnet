@@ -10,6 +10,8 @@ import Image from 'next/image';
 import { Text, Paper } from '@mantine/core';
 import { TextFormat } from '../../TextFormat/TextFormat';
 
+import { Divider } from '@mantine/core';
+
 import ReactMarkdown from 'react-markdown'
 import { useViewportSize } from '@mantine/hooks';
 import { useState } from 'react';
@@ -91,10 +93,11 @@ export function PassiveView({ readOnly, talent, image, nick, comment, commentCal
                         {talent.description}
                     </Text>
 
+                    <Divider my="sm" />
                     {(readOnly != true) ?
                         <MyTextField changedCallback={(val) => { commentCallback(nick, val) }} value={comment} />
                         :
-                        <div>
+                        <div style={{padding: '5px', whiteSpace: 'pre-wrap'}}>
                             {comment}
                         </div>
                     }
